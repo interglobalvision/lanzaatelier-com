@@ -31,9 +31,23 @@ Site = {
   },
 
   toggleMenu: function() {
-    $('.mobile-toggle').on('click', function() {
+    $('#mobile-toggle').on('click', function() {
       $('#nav-holder').toggleClass('menu-open');
       $('.site-title').toggleClass('color-white');
+    });
+  }
+};
+
+Site.Menu = {
+  init: function() {
+    var _this = this;
+
+    _this.bindToggle();
+  },
+
+  bindToggle: function() {
+    $('#mobile-toggle').on('click', function() {
+      $('body').toggleClass('menu-open');
     });
   }
 };

@@ -1,10 +1,7 @@
+// BASIC
+
 .site-title
   text-align: center
-  &.color-white
-    background: none
-    color: $color-white
-    .mobile-toggle
-      color: $color-white
 
 // HEADER
 
@@ -16,7 +13,7 @@
   left: 0
   padding: $margin-small 0
   
-.mobile-toggle
+#mobile-toggle
   position: absolute
   height: 100%
   width: $margin-basic
@@ -40,8 +37,6 @@
   padding-top: $margin-mid
   padding-bottom: $margin-mid
   font-size: $font-size-h1
-  &.menu-open
-    display: flex
   
 #nav-menu
   display: flex
@@ -57,3 +52,12 @@
   
 #mobile-email
   font-size: $font-size-h3
+  
+body.menu-open
+  #nav-holder
+    display: flex
+  .site-title
+    background: none
+    color: $color-white
+  #mobile-toggle
+    color: $color-white
