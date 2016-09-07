@@ -35,7 +35,7 @@
         <div class="grid-item item-s-12 item-m-6">
           <div id="mobile-header" class="site-title">
             <a href="<?php echo home_url(); ?>">LANZA</a>
-            <div class="mobile-toggle mobile-only">=</div>
+            <div id="mobile-toggle" class="mobile-only">=</div>
           </div>
         </div>
         <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">
@@ -48,8 +48,8 @@
           </nav>
           <div class="grid-item item-s-12 item-m-3" id="lang-holder">
 <?php 
-  $en = is_404() ? site_url() : qtranxf_convertURL($url, 'en', false, true);
-  $es = is_404() ? site_url() : qtranxf_convertURL($url, 'es', false, true);
+  $en = is_404() ? site_url() : qtranxf_convertURL('', 'en', false, true);
+  $es = is_404() ? site_url() : qtranxf_convertURL('', 'es', false, true);
 
   $email = IGV_get_option('_igv_site_options', '_igv_contact_email');
 ?>
