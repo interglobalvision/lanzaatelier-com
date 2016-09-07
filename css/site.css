@@ -1374,7 +1374,6 @@ body.menu-active .menu-close {
   }
   #nav-menu {
     display: initial;
-    padding-left: 0;
   }
   #nav-menu ul li {
     display: inline-block;
