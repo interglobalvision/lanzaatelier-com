@@ -1,0 +1,59 @@
+.site-title
+  text-align: center
+  &.color-white
+    background: none
+    color: $color-white
+    .mobile-toggle
+      color: $color-white
+
+// HEADER
+
+#mobile-header
+  position: fixed
+  z-index: 999
+  width: 100%
+  top: 0
+  left: 0
+  padding: $margin-small 0
+  
+.mobile-toggle
+  position: absolute
+  height: 100%
+  width: $margin-basic
+  top: 0
+  right: $margin-small
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  color: blue
+
+#nav-holder
+  display: none
+  background: green
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+  padding-top: $margin-mid
+  padding-bottom: $margin-mid
+  font-size: $font-size-h1
+  &.menu-open
+    display: flex
+  
+#nav-menu
+  display: flex
+  flex-direction: column
+  justify-content: center
+  ul li 
+    display: block
+    
+#lang-holder
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  
+#mobile-email
+  font-size: $font-size-h3

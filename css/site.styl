@@ -27,8 +27,8 @@ normalize()
 
 // VARIABLES
 
-$color-black-soft = rgb(14, 14, 14)
-$color-white-soft = rgb(253, 253, 253)
+$color-black = rgb(0, 0, 0)
+$color-white = rgb(255, 255, 255)
 
 // ******************************************************
 
@@ -44,9 +44,19 @@ img
 
 // ******************************************************
 
+// HEADER 
+
+#header 
+  position: fixed 
+  top: 0
+  left: 0 
+  width: 100%
+
+// ******************************************************
+
 // MEDIA QUERIES
 
-$gutter = 14px 
+$gutter = 16px 
 
 $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
@@ -70,7 +80,7 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
 
 @media screen and (min-width: 720px)
 
-  $gutter = 21px
+  $gutter = 24px
   
   $margin-micro = ($gutter / 3)
   $margin-tiny = ($gutter / 2)
@@ -87,11 +97,14 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   
   font-size($font-size-basic)
   
+  .mobile-only
+    display: none
+  
   @import 'responsive/tablet'
 
 @media screen and (min-width: 1024px)
 
-  $gutter = 24px
+  $gutter = 32px
 
   $margin-micro = ($gutter / 3)
   $margin-tiny = ($gutter / 2)
