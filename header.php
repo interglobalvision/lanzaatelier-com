@@ -27,6 +27,47 @@
 
 <section id="main-container">
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="padding-top-small padding-bottom-small">
+    <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="grid-item item-s-12 item-m-6">
+          <div id="mobile-header" class="site-title">
+            <a href="<?php echo home_url(); ?>">LANZA</a>
+            <div class="mobile-toggle mobile-only">=</div>
+          </div>
+        </div>
+        <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">
+          <nav class="grid-item item-s-12 item-m-9" id="nav-menu">
+            <ul>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos"><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias"><?php _e('[:es]Noticias[:en]News'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/nosotros"><?php _e('[:es]Nosotros[:en]About'); ?></a></li>
+            </ul>
+          </nav>
+          <div class="grid-item item-s-12 item-m-3" id="lang-holder">
+<?php 
+  $url = is_404() ? get_option('home') : '';
+  $en = qtranxf_convertURL($url, 'en', false, true);
+  $es = qtranxf_convertURL($url, 'es', false, true);
+
+  $email = IGV_get_option('_igv_site_options', '_igv_contact_email');
+?>
+            <nav id="lang-menu">
+              <a href="<?php echo $en; ?>">EN</a> / <a href="<?php echo $es; ?>">ES</a>
+            </nav>
+<?php 
+  if (!empty($email)) {
+?>
+            <div id="mobile-email" class="mobile-only">
+              <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+            </div>
+<?php 
+  }
+?>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
