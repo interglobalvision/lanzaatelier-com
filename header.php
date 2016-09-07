@@ -35,7 +35,11 @@
         <div class="grid-item item-s-12 item-m-6">
           <div id="mobile-header" class="site-title">
             <a href="<?php echo home_url(); ?>">LANZA</a>
-            <div id="mobile-toggle" class="mobile-only">=</div>
+            <div class="mobile-toggle mobile-only"><span class="menu-open"><?php 
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-menu.svg'); 
+          ?></span><span class="menu-close"><?php 
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-close.svg'); 
+          ?></span></div>
           </div>
         </div>
         <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">

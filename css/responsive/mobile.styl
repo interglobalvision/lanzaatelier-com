@@ -13,7 +13,7 @@
   left: 0
   padding: $margin-small 0
   
-#mobile-toggle
+.mobile-toggle
   position: absolute
   height: 100%
   width: $margin-basic
@@ -24,6 +24,10 @@
   flex-direction: column
   justify-content: center
   color: blue
+  cursor: pointer
+  
+.menu-close
+  display: none
 
 #nav-holder
   display: none
@@ -53,11 +57,15 @@
 #mobile-email
   font-size: $font-size-h3
   
-body.menu-open
+body.menu-active
   #nav-holder
     display: flex
   .site-title
     background: none
     color: $color-white
-  #mobile-toggle
+  .mobile-toggle
     color: $color-white
+  .menu-open
+    display: none
+  .menu-close
+    display: initial

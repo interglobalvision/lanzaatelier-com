@@ -1007,7 +1007,7 @@ h3,
   left: 0;
   padding: 16px 0;
 }
-#mobile-toggle {
+.mobile-toggle {
   position: absolute;
   height: 100%;
   width: 32px;
@@ -1026,6 +1026,10 @@ h3,
       -ms-flex-pack: center;
           justify-content: center;
   color: #00f;
+  cursor: pointer;
+}
+.menu-close {
+  display: none;
 }
 #nav-holder {
   display: none;
@@ -1071,17 +1075,23 @@ h3,
 #mobile-email {
   font-size: 16px;
 }
-body.menu-open #nav-holder {
+body.menu-active #nav-holder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-body.menu-open .site-title {
+body.menu-active .site-title {
   background: none;
   color: #fff;
 }
-body.menu-open #mobile-toggle {
+body.menu-active .mobile-toggle {
   color: #fff;
+}
+body.menu-active .menu-open {
+  display: none;
+}
+body.menu-active .menu-close {
+  display: initial;
 }
 @media screen and (min-width: 720px) {
   .margin-top-micro {
@@ -1379,7 +1389,7 @@ body.menu-open #mobile-toggle {
   #mobile-email {
     font-size: inherit;
   }
-  body.menu-open .site-title {
+  body.menu-active .site-title {
     background: none;
     color: inherit;
   }

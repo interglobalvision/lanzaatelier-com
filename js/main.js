@@ -39,8 +39,8 @@ Site.Menu = {
   },
 
   bindToggle: function() {
-    $('#mobile-toggle').on('click', function() {
-      $('body').toggleClass('menu-open');
+    $('.mobile-toggle').on('click', function() {
+      $('body').toggleClass('menu-active');
     });
   }
 };
