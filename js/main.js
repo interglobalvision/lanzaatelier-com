@@ -11,7 +11,7 @@ Site = {
     });
 
     $(document).ready(function () {
-
+      _this.Menu.init();
     });
 
   },
@@ -29,6 +29,20 @@ Site = {
       $(this).html(string);
     });
   },
+};
+
+Site.Menu = {
+  init: function() {
+    var _this = this;
+
+    _this.bindToggle();
+  },
+
+  bindToggle: function() {
+    $('.mobile-toggle').on('click', function() {
+      $('body').toggleClass('menu-active');
+    });
+  }
 };
 
 Site.init();

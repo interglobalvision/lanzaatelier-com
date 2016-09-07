@@ -12,6 +12,16 @@ $metabox = array(
   'show_names' => true,
   'fields'     => array(
     array(
+      'name' => __( 'Contact Email', 'IGV' ),
+      'desc' => __( 'Appears in footer', 'IGV' ),
+      'id'   => $prefix . 'contact_email',
+      'type' => 'text',
+      'default' => 'info@lanzaatelier.com',
+    ),
+
+    // SOCIAL MEDIA OPTIONS
+
+    array(
       'name' => __( 'Social Media', 'cmb2' ),
       'desc' => __( 'urls and accounts for different social media platforms. For use in menus and metadata', 'cmb2' ),
       'id'   => $prefix . 'socialmedia_title',

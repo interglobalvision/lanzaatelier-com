@@ -27,6 +27,50 @@
 
 <section id="main-container">
 
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="padding-top-small padding-bottom-small">
+    <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+
+    <div class="container">
+      <div class="grid-row">
+        <div class="grid-item item-s-12 item-m-6">
+          <div id="mobile-header" class="site-title">
+            <a href="<?php echo home_url(); ?>">LANZA</a>
+            <div class="mobile-toggle mobile-only"><span class="menu-open"><?php 
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-menu.svg'); 
+          ?></span><span class="menu-close"><?php 
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-close.svg'); 
+          ?></span></div>
+          </div>
+        </div>
+        <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">
+          <nav class="grid-item item-s-12 item-m-9" id="nav-menu">
+            <ul>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos"><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias"><?php _e('[:es]Noticias[:en]News'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/info">Info</a></li>
+            </ul>
+          </nav>
+          <div class="grid-item item-s-12 item-m-3" id="lang-holder">
+<?php 
+  $en = is_404() ? site_url() : qtranxf_convertURL('', 'en', false, true);
+  $es = is_404() ? site_url() : qtranxf_convertURL('', 'es', false, true);
+
+  $email = IGV_get_option('_igv_site_options', '_igv_contact_email');
+?>
+            <nav id="lang-menu">
+              <a href="<?php echo $en; ?>">EN</a> / <a href="<?php echo $es; ?>">ES</a>
+            </nav>
+<?php 
+  if (!empty($email)) {
+?>
+            <div id="mobile-email" class="mobile-only">
+              <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+            </div>
+<?php 
+  }
+?>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
