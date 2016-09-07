@@ -43,7 +43,7 @@
             <ul>
               <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos"><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
               <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias"><?php _e('[:es]Noticias[:en]News'); ?></a></li>
-              <li class="nav-item"><a href="<?php echo home_url(); ?>/nosotros"><?php _e('[:es]Nosotros[:en]About'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/info">Info</a></li>
             </ul>
           </nav>
           <div class="grid-item item-s-12 item-m-3" id="lang-holder">
