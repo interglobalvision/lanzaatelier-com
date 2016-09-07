@@ -48,9 +48,8 @@
           </nav>
           <div class="grid-item item-s-12 item-m-3" id="lang-holder">
 <?php 
-  $url = is_404() ? get_option('home') : '';
-  $en = qtranxf_convertURL($url, 'en', false, true);
-  $es = qtranxf_convertURL($url, 'es', false, true);
+  $en = is_404() ? site_url() : qtranxf_convertURL($url, 'en', false, true);
+  $es = is_404() ? site_url() : qtranxf_convertURL($url, 'es', false, true);
 
   $email = IGV_get_option('_igv_site_options', '_igv_contact_email');
 ?>
