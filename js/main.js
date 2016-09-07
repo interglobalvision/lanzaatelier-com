@@ -11,7 +11,7 @@ Site = {
     });
 
     $(document).ready(function () {
-      _this.toggleMenu(); 
+      _this.Menu.init();
     });
 
   },
@@ -29,13 +29,6 @@ Site = {
       $(this).html(string);
     });
   },
-
-  toggleMenu: function() {
-    $('#mobile-toggle').on('click', function() {
-      $('#nav-holder').toggleClass('menu-open');
-      $('.site-title').toggleClass('color-white');
-    });
-  }
 };
 
 Site.Menu = {
