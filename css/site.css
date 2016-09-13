@@ -721,6 +721,10 @@ a:visited {
   color: inherit;
   text-decoration: none;
 }
+html,
+body {
+  height: 100%;
+}
 html {
   background-color: $color-white-soft;
   color: $color-black-soft;
@@ -734,6 +738,9 @@ img {
   top: 0;
   left: 0;
   width: 100%;
+}
+.front-page-section {
+  text-align: center;
 }
 .container {
   width: 96%;
@@ -1642,6 +1649,32 @@ body.menu-active .menu-close {
   }
   .nav-item {
     margin-right: 32px;
+  }
+  #front-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  #front-page .container,
+  #front-page .grid-row {
+    height: 100%;
+  }
+  .front-page-section {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    padding-top: 112px;
+    padding-bottom: 112px;
+    overflow: hidden;
+  }
+  .front-left {
+    left: 0;
+  }
+  .front-right {
+    right: 0;
   }
 }
 @media screen and (min-width: 1280px) {
