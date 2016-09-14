@@ -6,21 +6,30 @@ get_header();
   <section id="front-page">
     <div class="container">
       <div class="grid-row">
-
-
 <?php
-$projects_left = get_posts('post_type=project&order=DESC');
 
-if (count($projects_left) > 0) {
+// WP_Query arguments
+$args = array (
+  'post_type'              => array( 'project' ),
+  'posts_per_page'         => '5',
+);
+
+// The Query
+$query = new WP_Query( $args );
+
+// The Loop
+if ( $query->have_posts() ) {
 ?>
       <div class="grid-item item-s-12 item-l-6 front-left front-page-section">
-<?php 
-  foreach ($projects_left as $project) {
-    $image_id = get_post_meta($project->ID, '_igv_front_image_left_id', true);
+<?php
+  while ( $query->have_posts() ) {
+    $query->the_post();
+
+    $image_id = get_post_meta($post->ID, '_igv_front_image_left_id', true);
 
     if (!empty($image_id)) {
 ?>
-        <a href="<?php echo get_the_permalink($project->ID); ?>" class="project-<?php echo $project->ID; ?>">
+        <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
           <?php echo wp_get_attachment_image($image_id, 'full');?>
         </a>
 <?php 
@@ -29,15 +38,18 @@ if (count($projects_left) > 0) {
 ?>
       </div>
       <div class="grid-item item-s-12 item-l-6 front-right front-page-section">
-<?php 
-  $projects_right = get_posts('post_type=project&order=ASC');
+<?php
+  $posts_reversed = array_reverse($query->posts);
+  $query->posts = $posts_reversed;
 
-  foreach ($projects_right as $project) {
-    $image_id = get_post_meta($project->ID, '_igv_front_image_right_id', true);
+  while ( $query->have_posts() ) {
+    $query->the_post();
+
+    $image_id = get_post_meta($post->ID, '_igv_front_image_right_id', true);
 
     if (!empty($image_id)) {
 ?>
-        <a href="<?php echo get_the_permalink($project->ID); ?>" class="project-<?php echo $project->ID; ?>">
+        <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
           <?php echo wp_get_attachment_image($image_id, 'full');?>
         </a>
 <?php 
@@ -46,9 +58,11 @@ if (count($projects_left) > 0) {
 ?>
       </div>
 <?php
-  }
+}
+
+// Restore original Post Data
+wp_reset_postdata();
 ?>
-  
       </div>
     </div>
   </section>
