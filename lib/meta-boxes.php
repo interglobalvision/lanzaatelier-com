@@ -39,5 +39,20 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  $project_meta = new_cmb2_box( array(
+    'id'           => $prefix . 'project_meta',
+    'title'        => __( 'Project Options', 'cmb2' ),
+    'object_types' => array( 'project', ),
+  ) );
+
+  $project_meta->add_field( array(
+    'name'            => __( 'Galería', 'cmb2' ),
+    'button'          => 'Modificar galería', // Optionally set button label
+    'clear-button'    => 'Eliminar galería', // Optionally set clear button label
+    'id'              => $prefix . 'project_gallery',
+    'type'            => 'pw_gallery',
+    'preview_size'    => array( 150, 150 ), // Set the size of the thumbnails
+    'sanitization_cb' => 'pw_gallery_field_sanitise', // REQUIRED
+  ) );
 }
 ?>
