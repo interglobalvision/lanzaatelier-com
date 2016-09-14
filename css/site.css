@@ -1264,6 +1264,7 @@ img {
   left: 0;
   width: 100%;
 }
+<<<<<<< 53eaeba4ab25244611f6b7b323c14f04d852c66a
 .front-page-section {
   text-align: center;
   z-index: 1000;
@@ -1284,6 +1285,11 @@ img {
 }
 .swiper-slide img {
   width: auto;
+=======
+.archive-project-title:hover {
+  color: #0009ff;
+  font-style: italic;
+>>>>>>> add blue color. add hover state for project title
 }
 .container {
   width: 96%;
