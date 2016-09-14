@@ -34,7 +34,9 @@
       <div class="grid-row">
         <div class="grid-item item-s-12 item-m-6">
           <div id="mobile-header" class="site-title">
-            <a href="<?php echo home_url(); ?>">LANZA</a>
+            <a href="<?php echo home_url(); ?>" class="site-logo"><?php 
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo-lanza.svg'); 
+          ?></a>
             <div class="mobile-toggle mobile-only"><span class="menu-open"><?php 
             echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-menu.svg'); 
           ?></span><span class="menu-close"><?php 
