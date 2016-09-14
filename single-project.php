@@ -21,7 +21,16 @@ if( have_posts() ) {
           </div>
 
           <div class="grid-item item-s-12 item-l-6">
-            // SLIDER
+<?php
+    $gallery = get_post_meta($post->ID, '_igv_project_gallery', true);
+
+    if (!empty($gallery)) {
+      foreach($gallery as $image) {
+        echo wp_get_attachment_image( $image );
+      }
+    } 
+?>
+
           </div>
 
         </div>
