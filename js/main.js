@@ -12,6 +12,7 @@ Site = {
 
     $(document).ready(function () {
       _this.Menu.init();
+      _this.Project.init();
     });
 
   },
@@ -42,6 +43,35 @@ Site.Menu = {
     $('.mobile-toggle').on('click', function() {
       $('body').toggleClass('menu-active');
     });
+  }
+};
+
+Site.Project = {
+  init: function() {
+    var _this = this;
+
+    if ($('body').hasClass('post-type-archive-project')) {
+      _this.Archive.init();
+    }
+  },
+
+  Archive: {
+    init: function() {
+      var _this = this;
+
+      _this.bindTitleHover();
+    },
+
+    bindTitleHover: function() {
+      $('.archive-project-title').hover(
+        function() {
+          $('img[data-id=' + $(this).attr('data-id') + ']').show();
+        },
+        function() {
+          $('img[data-id=' + $(this).attr('data-id') + ']').hide();
+        }
+      );
+    }
   }
 };
 
