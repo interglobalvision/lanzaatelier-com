@@ -52,7 +52,9 @@ function register_cpt_project() {
         'has_archive' => true,
         'query_var' => true,
         'can_export' => true,
-        'rewrite' => true,
+        'rewrite' => array(
+            'slug' => 'proyectos',
+        ),
         'capability_type' => 'post'
     );
 
