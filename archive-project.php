@@ -36,7 +36,7 @@ if( have_posts() ) {
     the_post();
 ?>
 
-            <?php the_post_thumbnail('post-thumbnail', array('data-id'=>get_the_ID())); ?>
+            <?php the_post_thumbnail('item-l-6-4x3', array('data-id'=>get_the_ID())); ?>
 
 <?php
   }
