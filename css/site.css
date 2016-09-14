@@ -1110,6 +1110,9 @@ body.menu-active .menu-close {
 .footer-email-holder {
   display: none;
 }
+.single-project-title {
+  padding-left: 16px;
+}
 @media screen and (min-width: 720px) {
   .margin-top-micro {
     margin-top: 8px;
@@ -1415,6 +1418,9 @@ body.menu-active .menu-close {
   .footer-email-holder {
     display: block;
   }
+  .single-project-title {
+    padding-left: 24px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -1665,6 +1671,9 @@ body.menu-active .menu-close {
   }
   .nav-item {
     margin-right: 32px;
+  }
+  .single-project-title {
+    padding-left: 32px;
   }
 }
 @media screen and (min-width: 1280px) {

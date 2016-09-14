@@ -16,7 +16,7 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6">
-            <?php the_title(); ?>
+            <h1 class="single-project-title"><?php the_title(); ?></h1>
             <?php the_content(); ?>
           </div>
 
