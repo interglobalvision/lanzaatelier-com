@@ -82,6 +82,9 @@ Site.Project = {
   init: function() {
     var _this = this;
 
+    if ($('body').hasClass('post-type-archive-project')) {
+      _this.Archive.init();
+    }
     if ($('body').hasClass('single-project')) {
       _this.Single.init();
     }
@@ -99,7 +102,26 @@ Site.Project = {
         $('.project-content-holder').toggleClass('hide');
       });
     }
+  },
+
+  Archive: {
+    init: function() {
+      var _this = this;
+
+      _this.bindTitleHover();
+    },
+
+    bindTitleHover: function() {
+      $('.archive-project-title').hover(
+        function() {
+          $('img[data-id=' + $(this).attr('data-id') + ']').show();
+        },
+        function() {
+          $('img[data-id=' + $(this).attr('data-id') + ']').hide();
+        }
+      );
+    }
   }
-}
+};
 
 Site.init();
