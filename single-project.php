@@ -26,7 +26,7 @@ if( have_posts() ) {
 
     if (!empty($gallery)) {
       foreach($gallery as $image) {
-        echo wp_get_attachment_image( $image );
+        echo wp_get_attachment_image($image, 'item-l-6-4x3');
       }
     } 
 ?>
