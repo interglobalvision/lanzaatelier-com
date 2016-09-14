@@ -735,6 +735,10 @@ img {
   left: 0;
   width: 100%;
 }
+.archive-project-title:hover {
+  color: #0009ff;
+  font-style: italic;
+}
 .container {
   width: 96%;
 }
