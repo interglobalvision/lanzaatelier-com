@@ -733,6 +733,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+.site-logo svg {
+  height: 10px;
+}
 #header {
   position: fixed;
   top: 0;
@@ -741,6 +744,14 @@ img {
 }
 .front-page-section {
   text-align: center;
+  z-index: 1000;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .container {
   width: 96%;
@@ -1100,6 +1111,12 @@ body.menu-active .menu-open {
 body.menu-active .menu-close {
   display: initial;
 }
+.footer-logo-holder {
+  text-align: center;
+}
+.footer-email-holder {
+  display: none;
+}
 @media screen and (min-width: 720px) {
   .margin-top-micro {
     margin-top: 8px;
@@ -1398,6 +1415,12 @@ body.menu-active .menu-close {
   body.menu-active .site-title {
     background: none;
     color: inherit;
+  }
+  .footer-logo-holder {
+    text-align: left;
+  }
+  .footer-email-holder {
+    display: block;
   }
 }
 @media screen and (min-width: 1024px) {
