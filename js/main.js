@@ -12,6 +12,8 @@ Site = {
 
     $(document).ready(function () {
       _this.Menu.init();
+      _this.Layout.init();
+      _this.Project.init();
     });
 
   },
@@ -31,6 +33,36 @@ Site = {
   },
 };
 
+Site.Layout = {
+  init: function() {
+    var _this = this;
+
+    if ($('.swiper-slide').length) {
+      _this.initSwiper();
+    }
+  },
+
+  initSwiper: function() {
+    var _this = this;
+
+    _this.swiper = new Swiper('.swiper-container', {
+      loop: true,
+      nextButton: '.project-gallery-next',
+      prevButton: '.project-gallery-prev',
+      pagination: '.project-gallery-pagination',
+      paginationType: 'custom',
+      spaceBetween: 48,
+      paginationCustomRender: function (swiper, current, total) {
+        if ($('.project-gallery-pagination').length)
+          return '<span id="gallery-index-active">' + current + '</span> / <span id="gallery-index-length">' + total + '</span>';
+      },
+      onClick: function(swiper) {
+        swiper.slideNext();
+      },
+    });
+  },
+}
+
 Site.Menu = {
   init: function() {
     var _this = this;
@@ -44,5 +76,31 @@ Site.Menu = {
     });
   }
 };
+
+Site.Project = {
+  init: function() {
+    var _this = this;
+
+    if ($('body').hasClass('single-project')) {
+      _this.Single.init();
+    }
+  },
+
+  Single: {
+    init: function() {
+      var _this = this;
+
+      if ($('.project-drawings').length) {
+        _this.bindProjectToggle();
+      }
+    },
+
+    bindProjectToggle: function() {
+      $('.project-content-holder').bind('click', function() {
+        $(this).toggleClass('show-project-text');
+      });
+    }
+  }
+}
 
 Site.init();
