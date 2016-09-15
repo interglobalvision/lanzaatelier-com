@@ -39,5 +39,25 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  $project_meta = new_cmb2_box( array(
+    'id'            => $prefix . 'project_meta',
+    'title'         => __( 'Project Options', 'cmb2' ),
+    'object_types'  => array( 'project', ), // Post type
+  ) );
+
+  $project_meta->add_field( array(
+    'name' => __( 'Front Page Image (Left Column)', 'cmb2' ),
+    'desc' => __( '', 'cmb2' ),
+    'id'   => $prefix . 'front_image_left',
+    'type' => 'file',
+  ) );
+
+  $project_meta->add_field( array(
+    'name' => __( 'Front Page Image (Right Column)', 'cmb2' ),
+    'desc' => __( '', 'cmb2' ),
+    'id'   => $prefix . 'front_image_right',
+    'type' => 'file',
+  ) );
+
 }
 ?>
