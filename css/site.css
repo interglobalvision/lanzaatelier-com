@@ -60,7 +60,7 @@ ul.u-inline-list li {
 .u-fixed {
   position: fixed;
 }
-.u-pointer:hover {
+.u-pointer {
   cursor: pointer;
 }
 .u-holder {

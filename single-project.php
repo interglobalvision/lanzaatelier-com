@@ -49,7 +49,7 @@ if( have_posts() ) {
 <?php
       foreach($photos as $image) {
 ?>
-                <div class="swiper-slide grid-column justify-center align-items-center">
+                <div class="swiper-slide u-pointer grid-column justify-center align-items-center">
                   <?php echo wp_get_attachment_image($image, 'item-l-6-4x3'); ?>
                 </div>
 <?php
