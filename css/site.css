@@ -741,6 +741,8 @@ img {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
+  background-color: #fff;
 }
 .front-page-section {
   text-align: center;
@@ -752,6 +754,7 @@ img {
   left: 0;
   width: 100%;
   z-index: 1000;
+  background-color: #fff;
 }
 .container {
   width: 96%;
@@ -1674,24 +1677,27 @@ body.menu-active .menu-close {
     margin-right: 32px;
   }
   #front-page {
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
   }
   #front-page .container,
   #front-page .grid-row {
     height: 100%;
   }
   .front-page-section {
-    position: absolute;
     height: 100%;
     width: 50%;
+  }
+  .scroll-cols-container {
+    overflow: hidden;
+    max-height: 100vh;
+  }
+  .scroll-col {
     padding-top: 112px;
     padding-bottom: 112px;
-    overflow: hidden;
   }
   .front-left {
     left: 0;

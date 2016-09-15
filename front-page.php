@@ -5,7 +5,7 @@ get_header();
 <main id="main-content">
   <section id="front-page">
     <div class="container">
-      <div class="grid-row">
+      <div class="grid-row scroll-cols-container">
 <?php
 
 // WP_Query arguments
@@ -21,6 +21,7 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ) {
 ?>
       <div class="grid-item item-s-12 item-l-6 front-left front-page-section">
+        <div class="scroll-col scroll-col-left">
 <?php
   while ( $query->have_posts() ) {
     $query->the_post();
@@ -36,8 +37,10 @@ if ( $query->have_posts() ) {
     }
   }
 ?>
+        </div>
       </div>
       <div class="grid-item item-s-12 item-l-6 front-right front-page-section">
+        <div class="scroll-col scroll-col-right">
 <?php
   $posts_reversed = array_reverse($query->posts);
   $query->posts = $posts_reversed;
@@ -56,6 +59,7 @@ if ( $query->have_posts() ) {
     }
   }
 ?>
+        </div>
       </div>
 <?php
 }
