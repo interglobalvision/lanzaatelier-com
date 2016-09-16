@@ -52,6 +52,7 @@ Site.Layout = {
       pagination: '.project-gallery-pagination',
       paginationType: 'custom',
       spaceBetween: 48,
+      setWrapperSize: true,
       paginationCustomRender: function (swiper, current, total) {
         if ($('.project-gallery-pagination').length)
           return '<span id="gallery-index-active">' + current + '</span> / <span id="gallery-index-length">' + total + '</span>';

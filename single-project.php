@@ -33,7 +33,7 @@ if( have_posts() ) {
     }
 ?>
             <div class="project-text">
-              <h1 class="padding-left-basic"><?php the_title(); ?></h1>
+              <h1 class="padding-left-basic project-text-title"><?php the_title(); ?></h1>
               <?php the_content(); ?>
             </div>
           </div>
