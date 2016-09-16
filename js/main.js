@@ -68,7 +68,7 @@ Site.ScrollMagic = {
 
   setRightCol: function() {
     
-  }
+  },
 
   scroll: function() {
     var _this = this;
