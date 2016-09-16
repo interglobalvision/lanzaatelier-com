@@ -38,7 +38,7 @@ Site.ScrollMagic = {
     var _this = this;
 
     _this.cols = $('.scroll-col');
-    _this.moveBy = 13;
+    _this.moveBy = 1;
     _this.scrollPosition = 0;
 
     _this.setRightCol();
@@ -59,8 +59,9 @@ Site.ScrollMagic = {
 
   scroll: function(event) {
     var _this = this;
+    var col = event.currentTarget.dataset.side;
     var maxTop = 0;
-    var minTop = _this.getMaxTop(); // TODO: calc offset
+    var minTop = 100; //_this.getMaxTop(); // TODO: calc offset
     var scrollDirection = event.deltaY;
 
     if(scrollDirection > 0) {
@@ -100,7 +101,7 @@ Site.ScrollMagic = {
 
     requestAnimationFrame(function() {
       $.each(_this.cols, function(key,val) {
-        $(val).css('transform', 'translate(0px, ' + _this.scrollPosition + 'px)');
+        $(val).css('transform', 'translate(0px, ' + _this.scrollPosition + '%)');
       });
     });
   },
