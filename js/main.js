@@ -38,7 +38,7 @@ Site.ScrollMagic = {
     var _this = this;
 
     _this.cols = $('.scroll-col');
-    _this.moveBy = 25;
+    _this.moveBy = 13;
     _this.scrollPosition = 0;
 
     _this.setRightCol();
@@ -51,34 +51,33 @@ Site.ScrollMagic = {
     // Bind scroll in front page sections
     $('.scroll-col').on('mousewheel', $.proxy( _this.scroll, _this) );
 
-    
-    $('.scroll-col').on('scroll', function(event) { 
-      $.each(_this.cols, function(key,val) {
-        _this.scroll();
-      });
-
-      requestAnimationFrame(function() {
-        $.each(_this.cols, function(key,val) {
-          $(val).css('transform', 'translate(0px, ' + _this.scrollPosition + 'px)');
-        });
-      });
-
-    });
   },
 
   setRightCol: function() {
     
   },
 
-  scroll: function() {
+  scroll: function(event) {
     var _this = this;
     var maxTop = 0;
-    var minTop = _this.getMaxTop();
+    var minTop = _this.getMaxTop(); // TODO: calc offset
+    var scrollDirection = event.deltaY;
 
-    _this.scrollPosition -= _this.moveBy;
-    
-    if (_this.scrollPosition > maxTop && _this.moveBy < 0) {
-      _this.scrollPosition = maxTop;
+    if(scrollDirection > 0) {
+      _this.scrollPosition += _this.moveBy;
+
+      if (_this.scrollPosition > maxTop && _this.moveBy > 0) {
+        _this.scrollPosition = maxTop;
+      }
+
+
+    } else {
+      _this.scrollPosition -= _this.moveBy;
+      
+      if (_this.scrollPosition > maxTop && _this.moveBy < 0) {
+        _this.scrollPosition = maxTop;
+      }
+
     }
 
     _this.updateScroll();
@@ -99,8 +98,10 @@ Site.ScrollMagic = {
   updateScroll: function(event) {
     var _this = this;
 
-    $.each(_this.cols, function(key,val) {
-      $(val).css('transform', 'translate(0px, ' + _this.scrollPosition + 'px)');
+    requestAnimationFrame(function() {
+      $.each(_this.cols, function(key,val) {
+        $(val).css('transform', 'translate(0px, ' + _this.scrollPosition + 'px)');
+      });
     });
   },
 
