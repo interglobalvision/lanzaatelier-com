@@ -42,6 +42,9 @@ html
 body
   line-height: $font-leading-basic
   
+h1, h2, h3, h4
+  margin: 0 
+  
 p
   margin-bottom: 1rem
   
@@ -96,7 +99,7 @@ a:visited
   
 font-sizes($size-basic = 15px, $size-h1 = false, $size-h2 = false, $size-h3 = false, $size-h4 = false, $size-h5 = false, $size-h6 = false)
 
-  html
+  html, .font-size-basic
     font-size: $size-basic
     
   if ($size-h1) 
