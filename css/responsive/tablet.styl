@@ -1,4 +1,10 @@
+$header-height = 64px
+$footer-height = 64px
+
 // BASIC
+
+.main-content-padding
+  padding: $header-height 0 $footer-height
 
 .site-title
   background: none
@@ -57,14 +63,27 @@ body.menu-active
 
 .footer-email-holder
   display: block
-  
+
 // ******************************************************
 
 // SINGLE PROJECT
 
-.swiper-slide
+.project-photo-holder
   img 
     max-height: 500px
+  
+.single-project-drawings
+  padding-top: $header-height
+  
+.single-project-photos 
+  padding-bottom: $footer-height
+
+// ******************************************************
+
+// ARCHIVE PROJECT
+
+.archive-project-photos
+  display: none
   
 // ******************************************************
 

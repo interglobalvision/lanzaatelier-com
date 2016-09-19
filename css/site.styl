@@ -65,6 +65,7 @@ img
   top: 0
   left: 0 
   width: 100%
+  z-index: 9000
   
 // ******************************************************
 
@@ -83,8 +84,8 @@ img
   bottom: 0
   left: 0 
   width: 100%
-  z-index: 1000
-  
+  z-index: 9000
+
 // ******************************************************
 
 // SINGLE PROJECT
@@ -92,7 +93,7 @@ img
 .swiper-wrapper
   align-items: center
   
-.swiper-slide 
+.project-photo-holder
   img 
     width: auto
 
@@ -103,8 +104,9 @@ img
     color: $color-blue
     font-style: italic
   
-.archive-project-image
-  display: none
+.project-photos-container
+  &.hide
+    display: none
   
 // ******************************************************
 
