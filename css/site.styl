@@ -40,6 +40,9 @@ $color-white = rgb(255, 255, 255)
 
 // BASIC
 
+html, body 
+  height: 100%
+
 html
   background-color: $color-white-soft
   color: $color-black-soft
@@ -61,6 +64,13 @@ img
   top: 0
   left: 0 
   width: 100%
+  
+// ******************************************************
+
+// FRONT PAGE 
+
+.front-page-section
+  text-align: center
   z-index: 1000
 
 // ******************************************************
@@ -111,6 +121,12 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
 
 @import 'responsive/mobile'
 
+@media screen and (min-width: 500px)
+
+  $gutter = 24px 
+
+  grid(480px, $gutter, m)
+
 @media screen and (min-width: 720px)
 
   $gutter = 24px
@@ -126,7 +142,7 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
-  grid(680px, $gutter, m)
+  grid(680px)
   
   font-size($font-size-basic)
   

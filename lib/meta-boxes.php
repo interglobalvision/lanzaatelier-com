@@ -64,5 +64,20 @@ function igv_cmb_metaboxes() {
     'preview_size'    => array( 150, 150 ), // Set the size of the thumbnails
     'sanitization_cb' => 'pw_gallery_field_sanitise', // REQUIRED
   ) );
+
+  $project_meta->add_field( array(
+    'name' => __( 'Front Page Image (Left Column)', 'cmb2' ),
+    'desc' => __( '', 'cmb2' ),
+    'id'   => $prefix . 'front_image_left',
+    'type' => 'file',
+  ) );
+
+  $project_meta->add_field( array(
+    'name' => __( 'Front Page Image (Right Column)', 'cmb2' ),
+    'desc' => __( '', 'cmb2' ),
+    'id'   => $prefix . 'front_image_right',
+    'type' => 'file',
+  ) );
+
 }
 ?>
