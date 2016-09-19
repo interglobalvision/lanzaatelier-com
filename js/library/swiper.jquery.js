@@ -1,4 +1,3 @@
-
 /**
  * Swiper 3.3.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions

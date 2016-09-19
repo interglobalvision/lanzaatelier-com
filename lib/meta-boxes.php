@@ -40,9 +40,29 @@ function igv_cmb_metaboxes() {
 	 */
 
   $project_meta = new_cmb2_box( array(
-    'id'            => $prefix . 'project_meta',
-    'title'         => __( 'Project Options', 'cmb2' ),
-    'object_types'  => array( 'project', ), // Post type
+    'id'           => $prefix . 'project_meta',
+    'title'        => __( 'Project Options', 'cmb2' ),
+    'object_types' => array( 'project', ),
+  ) );
+
+  $project_meta->add_field( array(
+    'name'            => __( 'Dibujos', 'cmb2' ),
+    'button'          => 'Modificar galería', // Optionally set button label
+    'clear-button'    => 'Eliminar galería', // Optionally set clear button label
+    'id'              => $prefix . 'project_drawings',
+    'type'            => 'pw_gallery',
+    'preview_size'    => array( 150, 150 ), // Set the size of the thumbnails
+    'sanitization_cb' => 'pw_gallery_field_sanitise', // REQUIRED
+  ) );
+
+  $project_meta->add_field( array(
+    'name'            => __( 'Fotos', 'cmb2' ),
+    'button'          => 'Modificar galería', // Optionally set button label
+    'clear-button'    => 'Eliminar galería', // Optionally set clear button label
+    'id'              => $prefix . 'project_photos',
+    'type'            => 'pw_gallery',
+    'preview_size'    => array( 150, 150 ), // Set the size of the thumbnails
+    'sanitization_cb' => 'pw_gallery_field_sanitise', // REQUIRED
   ) );
 
   $project_meta->add_field( array(
