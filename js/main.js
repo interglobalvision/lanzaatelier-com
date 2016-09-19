@@ -114,10 +114,10 @@ Site.Project = {
     bindTitleHover: function() {
       $('.archive-project-title').hover(
         function() {
-          $('img[data-id=' + $(this).attr('data-id') + ']').show();
+          $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').removeClass('hide');
         },
         function() {
-          $('img[data-id=' + $(this).attr('data-id') + ']').hide();
+          $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').addClass('hide');
         }
       );
     }
