@@ -91,14 +91,12 @@ Site.Project = {
     init: function() {
       var _this = this;
 
-      if ($('.project-drawings').length) {
-        _this.bindProjectToggle();
-      }
+      _this.bindProjectToggle();
     },
 
     bindProjectToggle: function() {
       $('.project-content-holder').bind('click', function() {
-        $(this).toggleClass('show-project-text');
+        $('.project-content-holder').toggleClass('hide');
       });
     }
   }

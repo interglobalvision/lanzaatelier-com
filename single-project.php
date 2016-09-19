@@ -16,26 +16,21 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6 project-content-holder">
+            <h1 class="padding-left-basic"><?php the_title(); ?></h1>
 <?php
     $drawings = get_post_meta($post->ID, '_igv_project_drawings', true);
 
     if (!empty($drawings)) {
-?>
-            <div class="project-drawings">
-              <h1 class="padding-left-basic"><?php the_title(); ?></h1>
-<?php
       foreach($drawings as $image) {
         echo wp_get_attachment_image($image, 'item-l-6-4x3');
       }
-?>
-            </div>
-<?php
     }
 ?>
-            <div class="project-text">
-              <h1 class="padding-left-basic project-text-title"><?php the_title(); ?></h1>
-              <?php the_content(); ?>
-            </div>
+          </div>
+          
+          <div class="grid-item item-s-12 item-l-6 project-content-holder hide">
+            <h1 class="padding-left-basic project-text-title"><?php the_title(); ?></h1>
+            <?php the_content(); ?>
           </div>
 
           <div class="grid-item item-s-12 item-l-6">
@@ -60,7 +55,7 @@ if( have_posts() ) {
 <?php
     } 
 ?>
-          <div class="project-gallery-pagination padding-top-tiny padding-left-mid"></div>
+            <div class="project-gallery-pagination padding-top-tiny padding-left-mid"></div>
           </div>
 
         </div>

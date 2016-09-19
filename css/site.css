@@ -2315,17 +2315,11 @@ body.menu-active .menu-close {
     padding-top: 80px;
     padding-bottom: 80px;
   }
-  .project-content-holder .project-text {
-    display: none;
-  }
-  .project-content-holder.show-project-text .project-text {
-    display: block;
-  }
-  .project-content-holder.show-project-text .project-drawings {
+  .project-content-holder.hide {
     display: none;
   }
   .project-text-title {
-    display: initial;
+    display: block;
   }
   .swiper-container {
     margin-top: 144px;
