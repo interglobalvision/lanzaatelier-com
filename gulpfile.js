@@ -1,4 +1,4 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
   watch = require('gulp-watch'),
   rename = require('gulp-rename'),
   notify = require('gulp-notify'),
@@ -19,24 +19,13 @@ var gulp = require('gulp');
   swiss = require('kouto-swiss'),
   stylint = require('gulp-stylint'),
 
-  imagemin = require('gulp-imagemin'),
+  imagemin = require('gulp-imagemin');
 
-  phplint = require('gulp-phplint');
 
 function errorNotify(error){
   notify.onError("Error: <%= error.message %>")
   util.log(util.colors.red('Error'), error.message);
 }
-
-// PHP
-
-gulp.task('phplint', function() {
-  gulp.src(['**/*.php', '!lib/thirdparty/**/*.php', '!lib/CMB2/**/*.php'])
-  .pipe(cache('php'))
-  .pipe(phplint())
-  .on('error', errorNotify)
-  .pipe(notify({ message: 'PHP lint task complete' }));
-});
 
 // JAVASCRIPT
 
@@ -116,7 +105,6 @@ gulp.task('watch', function() {
   gulp.watch(['css/*.styl', 'css/responsive/*.styl'], ['style']);
   gulp.watch(['css/*.styl', 'css/responsive/*.styl'], ['style-lint']);
   gulp.watch(['img/src/*.*'], ['images']);
-  gulp.watch(['**/*.php', '!lib/thirdparty/**/*.php', '!lib/CMB2/**/*.php'], ['phplint']);
 });
 
 gulp.task('build', ['style', 'javascript', 'javascript-library']);
