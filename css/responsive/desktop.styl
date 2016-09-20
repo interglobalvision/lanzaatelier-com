@@ -1,5 +1,10 @@
 $header-height = 80px
 $footer-height = 80px
+
+// BASIC
+
+.main-content-padding
+  padding: $header-height 0 $footer-height
   
 // ******************************************************
 
@@ -25,9 +30,11 @@ $footer-height = 80px
   
 .swiper-container
   margin-top: $header-height + $margin-basic
+  
+.project-photos-container
   height: calc("100vh - " ($header-height + $footer-height + ($margin-basic * 2)))
   
-.swiper-slide
+.project-photo-holder
   img 
     flex: 0 1 auto
     max-height: 100%
@@ -58,6 +65,16 @@ $footer-height = 80px
   
 .front-right
   right: 0
+
+// ******************************************************
+
+// ARCHIVE PROJECT
+
+.archive-project-photos
+  display: flex
+  
+.archive-photos-container
+  margin-top: $margin-basic
   
 // ******************************************************
 
