@@ -85,9 +85,11 @@ Site.Project = {
     if ($('body').hasClass('post-type-archive-project')) {
       _this.Archive.init();
     }
+
     if ($('body').hasClass('single-project')) {
       _this.Single.init();
     }
+
   },
 
   Single: {
@@ -112,14 +114,13 @@ Site.Project = {
     },
 
     bindTitleHover: function() {
-      $('.archive-project-title').hover(
-        function() {
-          $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').removeClass('hide');
-        },
-        function() {
-          $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').addClass('hide');
-        }
-      );
+      $('.archive-project-title').hover( function() {
+        // Mouse enter
+        $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').removeClass('hide');
+      }, function() {
+        // Mouse leave
+        $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').addClass('hide');
+      });
     }
   }
 };
