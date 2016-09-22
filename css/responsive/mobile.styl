@@ -1,4 +1,10 @@
+$header-height = 48px
+$footer-height = 48px
+
 // BASIC
+
+.main-content-padding
+  padding: $header-height 0 $footer-height
 
 .site-title
   text-align: center
@@ -9,7 +15,7 @@
 
 #mobile-header
   position: fixed
-  z-index: 999
+  z-index: 1000
   width: 100%
   top: 0
   left: 0
@@ -81,3 +87,20 @@ body.menu-active
 
 .footer-email-holder
   display: none
+  
+// ******************************************************
+
+// SINGLE PROJECT
+
+.project-text-title 
+  display: none
+
+.project-photo-holder
+  img 
+    max-height: 300px
+  
+// INDEX
+
+.index-container
+  padding-left: $margin-basic
+  padding-right: $margin-basic

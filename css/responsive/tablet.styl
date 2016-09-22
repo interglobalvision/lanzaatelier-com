@@ -1,4 +1,10 @@
+$header-height = 64px
+$footer-height = 64px
+
 // BASIC
+
+.main-content-padding
+  padding: $header-height 0 $footer-height
 
 .site-title
   background: none
@@ -30,8 +36,9 @@
   
 #nav-menu
   display: initial
-  ul li 
-    display: inline-block
+  ul 
+    li 
+      display: inline-block
     
 .nav-item 
   margin-right: $margin-small
@@ -57,3 +64,32 @@ body.menu-active
 
 .footer-email-holder
   display: block
+
+// ******************************************************
+
+// SINGLE PROJECT
+
+.project-photo-holder
+  img 
+    max-height: 500px
+  
+.single-project-drawings
+  padding-top: $header-height
+  
+.single-project-photos 
+  padding-bottom: $footer-height
+
+// ******************************************************
+
+// ARCHIVE PROJECT
+
+.archive-project-photos
+  display: none
+  
+// ******************************************************
+
+// INDEX
+
+.index-container
+  padding-left: $margin-small
+  padding-right: $margin-small

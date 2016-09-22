@@ -1,6 +1,16 @@
 $header-height = 80px
 $footer-height = 80px
 
+<<<<<<< HEAD
+=======
+// BASIC
+
+.main-content-padding
+  padding: $header-height 0 $footer-height
+  
+// ******************************************************
+
+>>>>>>> master
 // HEADER
 
 .nav-item 
@@ -8,6 +18,31 @@ $footer-height = 80px
   
 // ******************************************************
 
+// SINGLE PROJECT
+  
+.project-content-holder
+  height: 100vh
+  overflow-y: scroll
+  padding-top: $header-height
+  padding-bottom: $footer-height
+  &.hide
+    display: none
+      
+.project-text-title 
+  display: block
+  
+.swiper-container
+  margin-top: $header-height + $margin-basic
+  
+.project-photos-container
+  height: calc("100vh - " ($header-height + $footer-height + ($margin-basic * 2)))
+  
+.project-photo-holder
+  img 
+    flex: 0 1 auto
+    max-height: 100%
+    width: auto
+  
 // FRONT PAGE
 
 #front-page 
@@ -32,6 +67,7 @@ $footer-height = 80px
   top: $header-height
   left: 0
   
+<<<<<<< HEAD
 .scroll-col 
   position: absolute
   font-size: 0
@@ -46,3 +82,25 @@ $footer-height = 80px
 .scroll-col-right
   bottom: 0 
 
+=======
+.front-right
+  right: 0
+
+// ******************************************************
+
+// ARCHIVE PROJECT
+
+.archive-project-photos
+  display: flex
+  
+.archive-photos-container
+  margin-top: $margin-basic
+  
+// ******************************************************
+
+// INDEX
+
+.index-container
+  padding-left: $margin-small
+  padding-right: $margin-small
+>>>>>>> master

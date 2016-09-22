@@ -12,9 +12,10 @@ Site = {
 
     $(document).ready(function () {
       _this.Menu.init();
+      _this.Layout.init();
+      _this.Project.init();
+      _this.ScrollMagic.init();
     });
-
-    _this.ScrollMagic.init();
 
   },
 
@@ -133,6 +134,37 @@ Site.ScrollMagic = {
 
 };
 
+Site.Layout = {
+  init: function() {
+    var _this = this;
+
+    if ($('.swiper-slide').length) {
+      _this.initSwiper();
+    }
+  },
+
+  initSwiper: function() {
+    var _this = this;
+
+    _this.swiper = new Swiper('.swiper-container', {
+      loop: true,
+      nextButton: '.project-gallery-next',
+      prevButton: '.project-gallery-prev',
+      pagination: '.project-gallery-pagination',
+      paginationType: 'custom',
+      spaceBetween: 48,
+      setWrapperSize: true,
+      paginationCustomRender: function (swiper, current, total) {
+        if ($('.project-gallery-pagination').length)
+          return '<span id="gallery-index-active">' + current + '</span> / <span id="gallery-index-length">' + total + '</span>';
+      },
+      onClick: function(swiper) {
+        swiper.slideNext();
+      },
+    });
+  },
+}
+
 Site.Menu = {
   init: function() {
     var _this = this;
@@ -144,6 +176,53 @@ Site.Menu = {
     $('.mobile-toggle').on('click', function() {
       $('body').toggleClass('menu-active');
     });
+  }
+};
+
+Site.Project = {
+  init: function() {
+    var _this = this;
+
+    if ($('body').hasClass('post-type-archive-project')) {
+      _this.Archive.init();
+    }
+
+    if ($('body').hasClass('single-project')) {
+      _this.Single.init();
+    }
+
+  },
+
+  Single: {
+    init: function() {
+      var _this = this;
+
+      _this.bindProjectToggle();
+    },
+
+    bindProjectToggle: function() {
+      $('.project-content-holder').bind('click', function() {
+        $('.project-content-holder').toggleClass('hide');
+      });
+    }
+  },
+
+  Archive: {
+    init: function() {
+      var _this = this;
+
+      _this.bindTitleHover();
+    },
+
+    bindTitleHover: function() {
+      $('.archive-project-title').hover( function() {
+        // Mouse enter
+        $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').removeClass('hide');
+      }, function() {
+        // Mouse leave
+        $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').addClass('hide');
+      });
+    }
   }
 };
 
