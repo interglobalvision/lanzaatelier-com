@@ -43,7 +43,7 @@ Site.ScrollMagic = {
     _this.cols.right = $('.scroll-col-right');
     _this.cols.holder = $('.scroll-cols-holder');
 
-    _this.divideDistance = 100;
+    _this.speedLimit = 4000;
 
     _this.scrollDirection = 0;
     _this.cols.left.pos = 0;
@@ -64,9 +64,6 @@ Site.ScrollMagic = {
     _this.cols.right.height = $('.scroll-col-right').height();
     _this.cols.holder.height = $('.scroll-cols-holder').height();
 
-    _this.cols.left.move = (_this.cols.left.height - _this.cols.holder.height) / _this.divideDistance;
-    _this.cols.right.move = (_this.cols.right.height - _this.cols.holder.height) / _this.divideDistance;
-
     _this.cols.left.max = -(_this.cols.left.height - _this.cols.holder.height);
     _this.cols.right.max = (_this.cols.right.height - _this.cols.holder.height);
 
@@ -85,6 +82,12 @@ Site.ScrollMagic = {
     var _this = this;
 
     _this.scrollDirection = event.deltaY;
+    _this.scrollSpeed = _this.speedLimit / Math.abs(event.deltaY);
+
+    _this.cols.left.move = (_this.cols.left.height - _this.cols.holder.height) / _this.scrollSpeed;
+    _this.cols.right.move = (_this.cols.right.height - _this.cols.holder.height) / _this.scrollSpeed;
+
+    console.log(Math.abs(_this.scrollDirection));
 
     if(_this.scrollDirection > 0) {
       _this.cols.left.pos = _this.cols.left.pos + _this.cols.left.move;
