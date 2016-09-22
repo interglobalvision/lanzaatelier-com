@@ -16,7 +16,7 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6 single-project-drawings project-content-holder">
-            <h1 class="padding-left-basic"><?php the_title(); ?></h1>
+            <h1 class="padding-left-basic"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 <?php
     $drawings = get_post_meta($post->ID, '_igv_project_drawings', true);
 

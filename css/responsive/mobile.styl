@@ -1,5 +1,5 @@
-$header-height = 48px
-$footer-height = 48px
+$header-height = 64px
+$footer-height = 64px
 
 // BASIC
 
@@ -8,6 +8,10 @@ $footer-height = 48px
 
 .site-title
   text-align: center
+  
+.site-logo
+  svg
+    height: 12px
   
 // ******************************************************
 
@@ -19,27 +23,35 @@ $footer-height = 48px
   width: 100%
   top: 0
   left: 0
-  padding: $margin-small 0
+  padding: $margin-small 0 $margin-basic
   
 .mobile-toggle
   position: absolute
   height: 100%
   width: $margin-basic
-  top: 0
+  top: $margin-small - 2
   right: $margin-small
+  height: 18px
+  width: 21px
   text-align: center
-  display: flex
-  flex-direction: column
-  justify-content: center
-  color: blue
+  color: $color-blue
   cursor: pointer
+  
+.menu-open 
+  svg 
+    width: 21px
+    height: 16px
+    fill: $color-blue
   
 .menu-close
   display: none
+  svg 
+    width: 18px
+    height: 18px
 
 #nav-holder
   display: none
-  background: green
+  background: $color-green
   position: fixed
   width: 100%
   height: 100%
@@ -63,7 +75,7 @@ $footer-height = 48px
   justify-content: space-around
   
 #mobile-email
-  font-size: $font-size-h3
+  font-size: $font-size-h2
   
 body.menu-active
   #nav-holder
@@ -77,10 +89,24 @@ body.menu-active
     display: none
   .menu-close
     display: initial
+  #header, #footer 
+    background: initial
+    a
+      &:hover,
+      &.current
+        font-style: italic
+        color: $color-black
+        svg 
+          fill: $color-white
+    svg 
+      fill: $color-white
     
 // ******************************************************
     
 // FOOTER
+
+#footer 
+  padding: $margin-basic 0 $margin-small
 
 .footer-logo-holder
   text-align: center
@@ -98,7 +124,22 @@ body.menu-active
 .project-photo-holder
   img 
     max-height: 300px
+    
+.single-project-drawings
+  padding-top: $header-height
   
+.single-project-photos
+  padding-bottom: $footer-height
+
+// ******************************************************
+
+// ARCHIVE PROJECT
+
+.archive-project-photos
+  display: none
+
+// ******************************************************
+
 // INDEX
 
 .index-container

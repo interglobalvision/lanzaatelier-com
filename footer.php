@@ -1,4 +1,4 @@
-  <footer id="footer" class="padding-top-small padding-bottom-small">
+  <footer id="footer">
     <div class="container">
       <div class="grid-row">
         <div class="grid-item item-s-12 item-m-6 footer-logo-holder">

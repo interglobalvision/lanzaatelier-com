@@ -25,17 +25,19 @@ normalize()
 
 // ******************************************************
 
-// TYPOGRAPHY
-
-@import 'type'
-
-// ******************************************************
-
 // VARIABLES
 
 $color-black = rgb(0, 0, 0)
-$color-white = rgb(255, 255, 255)
+$color-white = rgba(255, 255, 255, 1)
+$color-white-trans = rgba(255, 255, 255, 0)
 $color-blue = rgb(0, 9, 255)
+$color-green = rgb(33, 83, 47)
+
+// ******************************************************
+
+// TYPOGRAPHY
+
+@import 'type'
 
 // ******************************************************
 
@@ -45,16 +47,29 @@ html, body
   height: 100%
 
 html
-  background-color: $color-white-soft
-  color: $color-black-soft
+  background-color: $color-white
 
 img
   max-width: 100%
   height: auto
-  
-.site-logo
-  svg
-    height: 10px
+    
+#header,
+#footer 
+  a
+    &:hover,
+    &.current
+      font-style: italic
+      color: $color-blue
+      svg 
+        fill: $color-blue
+    &.current-lang
+      text-decoration: underline
+      cursor: default
+      &:hover
+        font-style: normal
+        color: $color-black
+        padding-right: 0
+    
 
 // ******************************************************
 
@@ -65,8 +80,8 @@ img
   top: 0
   left: 0 
   width: 100%
-  z-index: 1000
-  background-color: $color-white
+  z-index: 9000
+  background-image: linear-gradient(to bottom, $color-white 0, $color-white 80%, $color-white-trans 100%)
   
 // ******************************************************
 
@@ -85,8 +100,8 @@ img
   bottom: 0
   left: 0 
   width: 100%
-  z-index: 1000
-  background-color: $color-white
+  z-index: 9000
+  background-image: linear-gradient(to top, $color-white 0, $color-white 80%, $color-white-trans 100%)
 
 // ******************************************************
 
@@ -98,12 +113,13 @@ img
 .project-photo-holder
   img 
     width: auto
+    
+// ******************************************************
 
 // ARCHIVE PROJECT
 
 .archive-project-title
   &:hover
-    color: $color-blue
     font-style: italic
   
 .project-photos-container
@@ -124,7 +140,8 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
     
 $font-size-basic = 12px
-$font-size-h1 = 28px
+$font-size-small = 10px
+$font-size-h1 = 36px
 $font-size-h2 = 21px
 $font-size-h3 = 16px
 
@@ -132,7 +149,7 @@ grid(96%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
+font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $font-size-h3)
 
 @import 'responsive/mobile'
 
@@ -140,7 +157,7 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
 
   $gutter = 24px 
 
-  grid(480px, $gutter, m)
+  grid(480px, $gutter, s)
 
 @media screen and (min-width: 720px)
 
@@ -154,12 +171,13 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   $margin-large = ($gutter * 5)
   
   $font-size-basic = 14px
+  $font-size-small = 12px
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
-  grid(680px)
+  grid(680px, $gutter, m)
   
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, $font-size-small)
   
   .mobile-only
     display: none
@@ -177,13 +195,14 @@ font-sizes($font-size-basic, $font-size-h1, $font-size-h2, $font-size-h3)
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
   
-  $font-size-basic = 16px
+  $font-size-basic = 17px
+  $font-size-small = 14px
 
   grid(1000px, $gutter, l)
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
-  font-size($font-size-basic)
+  font-sizes($font-size-basic, $font-size-small)
 
   @import 'responsive/desktop'
   
