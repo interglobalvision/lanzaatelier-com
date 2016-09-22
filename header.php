@@ -27,7 +27,7 @@
 
 <section id="main-container">
 
-  <header id="header" class="padding-top-small padding-bottom-small">
+  <header id="header">
     <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
 
     <div class="container">
@@ -47,20 +47,21 @@
         <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">
           <nav class="grid-item item-s-12 item-m-9" id="nav-menu">
             <ul>
-              <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos"><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
-              <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias"><?php _e('[:es]Noticias[:en]News'); ?></a></li>
-              <li class="nav-item"><a href="<?php echo home_url(); ?>/info">Info</a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos" <?php echo is_post_type_archive('project') ? 'class="current"' : ''; ?>><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias" <?php echo is_home() ? 'class="current"' : ''; ?>><?php _e('[:es]Noticias[:en]News'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/info" <?php echo is_page('info') ? 'class="current"' : ''; ?>>Info</a></li>
             </ul>
           </nav>
           <div class="grid-item item-s-12 item-m-3" id="lang-holder">
 <?php 
   $en = is_404() ? site_url() : qtranxf_convertURL('', 'en', false, true);
   $es = is_404() ? site_url() : qtranxf_convertURL('', 'es', false, true);
+  $lang = qtranxf_getLanguage();
 
   $email = IGV_get_option('_igv_site_options', '_igv_contact_email');
 ?>
             <nav id="lang-menu">
-              <a href="<?php echo $en; ?>">EN</a> / <a href="<?php echo $es; ?>">ES</a>
+              <a href="<?php echo $en; ?>" <?php echo $lang == 'en' ? 'class="current-lang"' : ''; ?>>EN</a> / <a href="<?php echo $es; ?>" <?php echo $lang == 'es' ? 'class="current-lang"' : ''; ?>>ES</a>
             </nav>
 <?php 
   if (!empty($email)) {
