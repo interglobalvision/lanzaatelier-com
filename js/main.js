@@ -39,26 +39,28 @@ Site.ScrollMagic = {
   init: function() {
     var _this = this;
 
-    // Higher means slower
-    _this.speedLimit = 4000;
+    if ($('body').hasClass('home')) {
+      // Higher means slower
+      _this.speedLimit = 4000;
 
-    _this.cols = {};
-    _this.cols.left = $('.scroll-col-left');
-    _this.cols.right = $('.scroll-col-right');
-    _this.cols.holder = $('.scroll-cols-holder');
+      _this.cols = {};
+      _this.cols.left = $('.scroll-col-left');
+      _this.cols.right = $('.scroll-col-right');
+      _this.cols.holder = $('.scroll-cols-holder');
 
-    _this.scrollDirection = 0;
-    _this.cols.left.pos = 0;
-    _this.cols.right.pos = 0;
+      _this.scrollDirection = 0;
+      _this.cols.left.pos = 0;
+      _this.cols.right.pos = 0;
 
-    // This is to avoind 'elastic' scroll on macOS and iOS
-    $('html, body').css({
-      'overflow': 'hidden',
-    });
+      // This is to avoind 'elastic' scroll on macOS and iOS
+      $('html, body').css({
+        'overflow': 'hidden',
+      });
 
-    _this.bind();
+      _this.bind();
 
-    _this.getColHeights();
+      _this.getColHeights();
+    }
   },
 
   getColHeights: function() {
