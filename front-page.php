@@ -22,7 +22,7 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ) {
 ?>
       <div class="grid-item item-s-12 item-l-6">
-        <div class="scroll-col scroll-col-left" data-side="left">
+        <div class="scroll-col scroll-col-left text-align-center" data-side="left">
 <?php
   while ( $query->have_posts() ) {
     $query->the_post();
@@ -41,7 +41,7 @@ if ( $query->have_posts() ) {
         </div>
       </div>
       <div class="grid-item item-s-12 item-l-6">
-        <div class="scroll-col scroll-col-right" data-side="right">
+        <div class="scroll-col scroll-col-right text-align-center" data-side="right">
 <?php
   $posts_reversed = array_reverse($query->posts);
   $query->posts = $posts_reversed;
