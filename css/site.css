@@ -1319,17 +1319,9 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-<<<<<<< HEAD
-  z-index: 1000;
-  background-color: #fff;
-=======
   z-index: 9000;
-<<<<<<< HEAD
   background-image: -webkit-linear-gradient(top,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
   background-image: linear-gradient(to bottom,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
-=======
->>>>>>> master
->>>>>>> master
 }
 .front-page-section {
   text-align: center;
@@ -1340,10 +1332,6 @@ img {
   bottom: 0;
   left: 0;
   width: 100%;
-<<<<<<< HEAD
-  z-index: 1000;
-  background-color: #fff;
-=======
   z-index: 9000;
   background-image: -webkit-linear-gradient(bottom,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
   background-image: linear-gradient(to top,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
@@ -1363,7 +1351,6 @@ img {
 }
 .project-photos-container.hide {
   display: none;
->>>>>>> master
 }
 .container {
   width: 96%;
@@ -2668,6 +2655,42 @@ body.menu-active #footer svg {
   .nav-item {
     margin-right: 32px;
   }
+  #front-page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #front-page .container,
+  #front-page .grid-row {
+    height: 100%;
+  }
+  .scroll-cols-holder {
+    overflow: hidden;
+    height: calc(100vh - 224px);
+    width: 100%;
+    position: fixed;
+    top: 112px;
+    left: 0;
+  }
+  .scroll-col {
+    position: absolute;
+    font-size: 0;
+    margin-right: 16px;
+  }
+  .scroll-col img {
+    margin: 32px 0;
+  }
+  .scroll-col a:first-of-type img {
+    margin-top: 0;
+  }
+  .scroll-col a:last-of-type img {
+    margin-bottom: 0;
+  }
+  .scroll-col-right {
+    bottom: 0;
+  }
   .project-content-holder {
     height: 100vh;
     overflow-y: scroll;
@@ -2692,46 +2715,6 @@ body.menu-active #footer svg {
             flex: 0 1 auto;
     max-height: 100%;
     width: auto;
-  }
-  #front-page {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-  }
-  #front-page .container,
-  #front-page .grid-row {
-    height: 100%;
-  }
-  .front-page-section {
-    height: 100%;
-    width: 50%;
-  }
-  .scroll-cols-holder {
-    overflow: hidden;
-    height: calc(100vh - 160px);
-    width: 100%;
-    position: fixed;
-    top: 80px;
-    left: 0;
-  }
-  .scroll-col {
-    position: absolute;
-    font-size: 0;
-    margin-right: 16px;
-  }
-  .scroll-col img {
-    margin: 32px 0;
-  }
-  .scroll-col a:first-of-type img {
-    margin-top: 0;
-  }
-  .scroll-col a:last-of-type img {
-    margin-bottom: 0;
-  }
-  .scroll-col-right {
-    bottom: 0;
   }
   .archive-project-photos {
     display: -webkit-box;
