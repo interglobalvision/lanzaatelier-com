@@ -1696,14 +1696,14 @@ body.menu-active .menu-close {
     max-height: 100vh;
   }
   .scroll-col {
-    padding-top: 112px;
-    padding-bottom: 112px;
+    padding-top: 64px;
   }
-  .front-left {
-    left: 0;
+  .scroll-col a {
+    display: block;
+    padding-bottom: 32px;
   }
-  .front-right {
-    right: 0;
+  .scroll-col-right {
+    margin-top: 100vh;
   }
 }
 @media screen and (min-width: 1280px) {

@@ -37,7 +37,10 @@ Site.ScrollMagic = {
   init: function() {
     var _this = this;
 
-    _this.cols = $('.scroll-col');
+    _this.cols = {};
+    _this.cols.left = $('.scroll-col-left');
+    _this.cols.right = $('.scroll-col-right');
+
     _this.moveBy = 1;
     _this.scrollPosition = 0;
 
@@ -49,60 +52,63 @@ Site.ScrollMagic = {
     var _this = this;
 
     // Bind scroll in front page sections
-    $('.scroll-col').on('mousewheel', $.proxy( _this.scroll, _this) );
+    $('.front-page-section').on('mousewheel', $.proxy( _this.scroll, _this) );
 
   },
 
   setRightCol: function() {
-    
+    var _this = this;
+
+    var headerHeight = $('#header').outerHeight();
+    var footerHeight = $('#footer').outerHeight();
+
+    _this.rightColOffset = 100 - ((window.innerHeight - headerHeight * 2 - footerHeight * 2) * 100 / _this.cols.right.outerHeight());
+    _this.cols.right.css({
+      'transform': 'translate(0px, -100%)'
+    });
   },
 
   scroll: function(event) {
     var _this = this;
-    var col = event.currentTarget.dataset.side;
+
     var maxTop = 0;
-    var minTop = 100; //_this.getMaxTop(); // TODO: calc offset
+    var minTop = -1 * _this.rightColOffset; // _this.getMaxTop(); // TODO: calc offset
     var scrollDirection = event.deltaY;
 
     if(scrollDirection > 0) {
       _this.scrollPosition += _this.moveBy;
-
-      if (_this.scrollPosition > maxTop && _this.moveBy > 0) {
-        _this.scrollPosition = maxTop;
-      }
-
-
     } else {
       _this.scrollPosition -= _this.moveBy;
-      
-      if (_this.scrollPosition > maxTop && _this.moveBy < 0) {
-        _this.scrollPosition = maxTop;
-      }
-
     }
+
+    // Reach bottom (left)
+    if (_this.scrollPosition <= minTop) {
+      _this.scrollPosition = minTop;
+    }
+
+    // Reach bottom (right)
+    if (_this.scrollPosition >= maxTop) {
+      _this.scrollPosition = maxTop;
+    }
+
+    console.log('scrollPosition', _this.scrollPosition);
 
     _this.updateScroll();
 
   },
 
   getMaxTop: function() {
-    var _this = this;
-    var heights = [];
-    
-    $.each(_this.cols, function(key,val) {
-      heights.push($(val).height());
-    });
 
-    return Math.max.apply(null, heights);
   },
 
-  updateScroll: function(event) {
+  updateScroll: function() {
     var _this = this;
 
     requestAnimationFrame(function() {
-      $.each(_this.cols, function(key,val) {
-        $(val).css('transform', 'translate(0px, ' + _this.scrollPosition + '%)');
-      });
+      _this.cols.left.css('transform', 'translate(0px, ' + _this.scrollPosition + '%)');
+
+      _this.cols.right.css('transform', 'translate(0px, ' +  (100 + _this.scrollPosition) * -1 + '%)');
+
     });
   },
 
