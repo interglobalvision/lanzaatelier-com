@@ -21,6 +21,7 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    _this.ScrollMagic.getColHeights();
   },
 
   fixWidows: function() {
@@ -40,74 +41,88 @@ Site.ScrollMagic = {
     _this.cols = {};
     _this.cols.left = $('.scroll-col-left');
     _this.cols.right = $('.scroll-col-right');
+    _this.cols.holder = $('.scroll-cols-holder');
 
-    _this.moveBy = 1;
-    _this.scrollPosition = 0;
+    _this.divideDistance = 100;
 
-    _this.setRightCol();
+    _this.scrollDirection = 0;
+    _this.cols.left.pos = 0;
+    _this.cols.right.pos = 0;
+
+    $('html, body').css({
+      'overflow': 'hidden',
+    })
+
     _this.bind();
+    _this.getColHeights();
+  },
+
+  getColHeights: function() {
+    var _this = this;
+
+    _this.cols.left.height = $('.scroll-col-left').height();
+    _this.cols.right.height = $('.scroll-col-right').height();
+    _this.cols.holder.height = $('.scroll-cols-holder').height();
+
+    _this.cols.left.move = (_this.cols.left.height - _this.cols.holder.height) / _this.divideDistance;
+    _this.cols.right.move = (_this.cols.right.height - _this.cols.holder.height) / _this.divideDistance;
+
+    _this.cols.left.max = -(_this.cols.left.height - _this.cols.holder.height);
+    _this.cols.right.max = (_this.cols.right.height - _this.cols.holder.height);
+
+    _this.updateScroll();
   },
 
   bind: function() {
     var _this = this;
 
     // Bind scroll in front page sections
-    $('.front-page-section').on('mousewheel', $.proxy( _this.scroll, _this) );
+    $(document).on('mousewheel', $.proxy( _this.scroll, _this) );
 
-  },
-
-  setRightCol: function() {
-    var _this = this;
-
-    var headerHeight = $('#header').outerHeight();
-    var footerHeight = $('#footer').outerHeight();
-
-    _this.rightColOffset = 100 - ((window.innerHeight - headerHeight * 2 - footerHeight * 2) * 100 / _this.cols.right.outerHeight());
-    _this.cols.right.css({
-      'transform': 'translate(0px, -100%)'
-    });
   },
 
   scroll: function(event) {
     var _this = this;
 
-    var maxTop = 0;
-    var minTop = -1 * _this.rightColOffset; // _this.getMaxTop(); // TODO: calc offset
-    var scrollDirection = event.deltaY;
+    _this.scrollDirection = event.deltaY;
 
-    if(scrollDirection > 0) {
-      _this.scrollPosition += _this.moveBy;
+    if(_this.scrollDirection > 0) {
+      _this.cols.left.pos = _this.cols.left.pos + _this.cols.left.move;
+      _this.cols.right.pos = _this.cols.right.pos - _this.cols.right.move;
     } else {
-      _this.scrollPosition -= _this.moveBy;
+      _this.cols.left.pos = _this.cols.left.pos - _this.cols.left.move;
+      _this.cols.right.pos = _this.cols.right.pos + _this.cols.right.move;
     }
-
-    // Reach bottom (left)
-    if (_this.scrollPosition <= minTop) {
-      _this.scrollPosition = minTop;
-    }
-
-    // Reach bottom (right)
-    if (_this.scrollPosition >= maxTop) {
-      _this.scrollPosition = maxTop;
-    }
-
-    console.log('scrollPosition', _this.scrollPosition);
 
     _this.updateScroll();
-
   },
 
-  getMaxTop: function() {
+  checkScrollPos: function() {
+    var _this = this; 
 
+    if (_this.cols.left.pos > 0 || _this.cols.left.height <  _this.cols.holder.height) {
+      _this.cols.left.pos = 0;
+    } else if (_this.cols.left.pos < _this.cols.left.max) {
+      _this.cols.left.pos = _this.cols.left.max;
+    }
+
+    if (_this.cols.right.pos < 0 || _this.cols.right.height <  _this.cols.holder.height) {
+      _this.cols.right.pos = 0;
+    } else if (_this.cols.right.pos > _this.cols.right.max) {
+      _this.cols.right.pos = _this.cols.right.max;
+    }
   },
 
   updateScroll: function() {
     var _this = this;
 
-    requestAnimationFrame(function() {
-      _this.cols.left.css('transform', 'translate(0px, ' + _this.scrollPosition + '%)');
+    _this.checkScrollPos();
 
-      _this.cols.right.css('transform', 'translate(0px, ' +  (100 + _this.scrollPosition) * -1 + '%)');
+    requestAnimationFrame(function() {
+
+      _this.cols.left.css('transform', 'translateY(' + _this.cols.left.pos + 'px)');
+
+      _this.cols.right.css('transform', 'translateY(' + _this.cols.right.pos + 'px)');
 
     });
   },
