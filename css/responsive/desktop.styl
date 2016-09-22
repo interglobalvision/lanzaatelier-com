@@ -1,3 +1,6 @@
+$header-height = 80px
+$footer-height = 80px
+
 // HEADER
 
 .nav-item 
@@ -21,18 +24,25 @@
   height: 100%
   width: 50%
 
-.scroll-cols-container
+.scroll-cols-holder
   overflow: hidden
-  max-height: 100vh
-
-.scroll-col
-  padding-top: $margin-basic
-
-  a
-    display: block
-    padding-bottom: $margin-small
-    
-
+  height: calc("100vh - " + ($header-height + $footer-height))
+  width: 100%
+  position: fixed
+  top: $header-height
+  left: 0
+  
+.scroll-col 
+  position: absolute
+  font-size: 0
+  margin-right: $margin-tiny
+  img 
+    margin: $margin-small 0
+  a:first-of-type img
+    margin-top: 0
+  a:last-of-type img
+    margin-bottom: 0
+  
 .scroll-col-right
-  margin-top: 100vh
+  bottom: 0 
 

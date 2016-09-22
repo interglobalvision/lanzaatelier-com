@@ -1691,19 +1691,30 @@ body.menu-active .menu-close {
     height: 100%;
     width: 50%;
   }
-  .scroll-cols-container {
+  .scroll-cols-holder {
     overflow: hidden;
-    max-height: 100vh;
+    height: calc(100vh - 160px);
+    width: 100%;
+    position: fixed;
+    top: 80px;
+    left: 0;
   }
   .scroll-col {
-    padding-top: 64px;
+    position: absolute;
+    font-size: 0;
+    margin-right: 16px;
   }
-  .scroll-col a {
-    display: block;
-    padding-bottom: 32px;
+  .scroll-col img {
+    margin: 32px 0;
+  }
+  .scroll-col a:first-of-type img {
+    margin-top: 0;
+  }
+  .scroll-col a:last-of-type img {
+    margin-bottom: 0;
   }
   .scroll-col-right {
-    margin-top: 100vh;
+    bottom: 0;
   }
 }
 @media screen and (min-width: 1280px) {
