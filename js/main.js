@@ -22,7 +22,9 @@ Site = {
   onResize: function() {
     var _this = this;
 
-    _this.ScrollMagic.getColHeights();
+    if ($('body').hasClass('home')) {
+      _this.ScrollMagic.getColHeights();
+    }
   },
 
   fixWidows: function() {
