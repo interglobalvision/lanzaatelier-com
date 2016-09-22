@@ -4,8 +4,9 @@ get_header();
 
 <main id="main-content">
   <section id="front-page">
-    <div class="container">
-      <div class="grid-row scroll-cols-container">
+    <div class="scroll-cols-holder">
+      <div class="container">
+        <div class="grid-row">
 <?php
 
 // WP_Query arguments
@@ -67,6 +68,7 @@ if ( $query->have_posts() ) {
 // Restore original Post Data
 wp_reset_postdata();
 ?>
+        </div>
       </div>
     </div>
   </section>
