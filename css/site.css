@@ -1792,6 +1792,15 @@ body.menu-active #footer svg {
 .project-photo-holder img {
   max-height: 300px;
 }
+.single-project-drawings {
+  padding-top: 64px;
+}
+.single-project-photos {
+  padding-bottom: 64px;
+}
+.archive-project-photos {
+  display: none;
+}
 .index-container {
   padding-left: 32px;
   padding-right: 32px;
@@ -2339,8 +2348,11 @@ body.menu-active #footer svg {
     padding-top: 88px;
     padding-bottom: 88px;
   }
-  .archive-project-photos {
-    display: none;
+  .single-project-drawings {
+    padding-top: 0;
+  }
+  .single-project-photos {
+    padding-bottom: 0;
   }
   .index-container {
     padding-left: 24px;
