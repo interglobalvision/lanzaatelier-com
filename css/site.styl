@@ -69,7 +69,6 @@ img
         font-style: normal
         color: $color-black
         padding-right: 0
-    
 
 // ******************************************************
 
@@ -142,7 +141,7 @@ $margin-large = ($gutter * 5)
 $font-size-basic = 12px
 $font-size-small = 10px
 $font-size-h1 = 36px
-$font-size-h2 = 21px
+$font-size-h2 = 29px
 $font-size-h3 = 16px
 
 grid(96%, $gutter, s)
@@ -195,8 +194,8 @@ font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $fo
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
   
-  $font-size-basic = 17px
-  $font-size-small = 14px
+  $font-size-basic = 15px
+  $font-size-small = 13px
 
   grid(1000px, $gutter, l)
   
@@ -217,6 +216,13 @@ font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $fo
 @media screen and (min-width: 1680px)
 
   grid(1600px)
+  
+  $font-size-basic = 17px
+  $font-size-small = 14px
+  
+  font-sizes($font-size-basic, $font-size-small)
+  
+  @import 'responsive/monitor'
 
 @media screen and (min-width: 1920px)
 
