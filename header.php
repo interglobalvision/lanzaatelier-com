@@ -47,8 +47,8 @@
         <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">
           <nav class="grid-item item-s-12 item-m-9" id="nav-menu">
             <ul>
-              <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos" <?php echo is_post_type_archive('project') ? 'class="current"' : ''; ?>><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
-              <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias" <?php echo is_home() ? 'class="current"' : ''; ?>><?php _e('[:es]Noticias[:en]News'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos" <?php echo is_post_type_archive('project') || is_single() && get_post_type() == 'project' ? 'class="current"' : ''; ?>><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
+              <li class="nav-item"><a href="<?php echo home_url(); ?>/noticias" <?php echo is_home() || is_single() && get_post_type() == 'post' ? 'class="current"' : ''; ?>><?php _e('[:es]Noticias[:en]News'); ?></a></li>
               <li class="nav-item"><a href="<?php echo home_url(); ?>/info" <?php echo is_page('info') ? 'class="current"' : ''; ?>>Info</a></li>
             </ul>
           </nav>

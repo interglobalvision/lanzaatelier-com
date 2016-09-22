@@ -1647,14 +1647,14 @@ h1,
 }
 h2,
 .font-size-h2 {
-  font-size: 21px;
+  font-size: 29px;
 }
 h3,
 .font-size-h3 {
   font-size: 16px;
 }
 .main-content-padding {
-  padding: 64px 0 64px;
+  padding: 65px 0 65px;
 }
 .site-title {
   text-align: center;
@@ -1669,6 +1669,8 @@ h3,
   top: 0;
   left: 0;
   padding: 16px 0 32px;
+  background-image: -webkit-linear-gradient(top,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
+  background-image: linear-gradient(to bottom,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
 }
 .mobile-toggle {
   position: absolute;
@@ -1736,7 +1738,7 @@ h3,
       justify-content: space-around;
 }
 #mobile-email {
-  font-size: 21px;
+  font-size: 29px;
 }
 body.menu-active #nav-holder {
   display: -webkit-box;
@@ -1793,10 +1795,10 @@ body.menu-active #footer svg {
   max-height: 300px;
 }
 .single-project-drawings {
-  padding-top: 64px;
+  padding-top: 65px;
 }
 .single-project-photos {
-  padding-bottom: 64px;
+  padding-bottom: 65px;
 }
 .archive-project-photos {
   display: none;
@@ -1804,6 +1806,9 @@ body.menu-active #footer svg {
 .index-container {
   padding-left: 32px;
   padding-right: 32px;
+}
+body.blog .post-content {
+  display: none;
 }
 @media screen and (min-width: 500px) {
   .container {
@@ -2275,7 +2280,7 @@ body.menu-active #footer svg {
     display: none;
   }
   .main-content-padding {
-    padding: 88px 0 88px;
+    padding: 90px 0 90px;
   }
   .site-title {
     background: none;
@@ -2345,8 +2350,8 @@ body.menu-active #footer svg {
     max-height: 500px;
   }
   .project-content-holder {
-    padding-top: 88px;
-    padding-bottom: 88px;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
   .single-project-drawings {
     padding-top: 0;
@@ -2357,6 +2362,9 @@ body.menu-active #footer svg {
   .index-container {
     padding-left: 24px;
     padding-right: 24px;
+  }
+  body.blog .post-content {
+    display: block;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -2644,13 +2652,13 @@ body.menu-active #footer svg {
   }
   html,
   .font-size-basic {
-    font-size: 17px;
+    font-size: 15px;
   }
   .font-size-small {
-    font-size: 14px;
+    font-size: 13px;
   }
   .main-content-padding {
-    padding: 112px 0 112px;
+    padding: 94px 0 94px;
   }
   .nav-item {
     margin-right: 32px;
@@ -2668,10 +2676,10 @@ body.menu-active #footer svg {
   }
   .scroll-cols-holder {
     overflow: hidden;
-    height: calc(100vh - 224px);
+    height: calc(100vh - 188px);
     width: 100%;
     position: fixed;
-    top: 112px;
+    top: 94px;
     left: 0;
   }
   .scroll-col {
@@ -2694,8 +2702,8 @@ body.menu-active #footer svg {
   .project-content-holder {
     height: 100vh;
     overflow-y: scroll;
-    padding-top: 112px;
-    padding-bottom: 112px;
+    padding-top: 94px;
+    padding-bottom: 94px;
   }
   .project-content-holder.hide {
     display: none;
@@ -2704,10 +2712,10 @@ body.menu-active #footer svg {
     display: block;
   }
   .swiper-container {
-    margin-top: 176px;
+    margin-top: 158px;
   }
   .project-photos-container {
-    height: calc(100vh -  352px);
+    height: calc(100vh -  316px);
   }
   .project-photo-holder img {
     -ms-flex: 0 1 auto;
@@ -2728,6 +2736,10 @@ body.menu-active #footer svg {
     padding-left: 32px;
     padding-right: 32px;
   }
+  .info-content p {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
 @media screen and (min-width: 1280px) {
   .container {
@@ -2742,6 +2754,17 @@ body.menu-active #footer svg {
 @media screen and (min-width: 1680px) {
   .container {
     width: 1600px;
+  }
+  html,
+  .font-size-basic {
+    font-size: 17px;
+  }
+  .font-size-small {
+    font-size: 14px;
+  }
+  .index-container {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 @media screen and (min-width: 1920px) {

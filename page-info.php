@@ -12,11 +12,11 @@ if( have_posts() ) {
 ?>
 
         <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
-          <div class="grid-item item-s-12 item-m-10 offset-m-1 item-l-6 offset-l-3">
+          <div class="grid-item item-s-12 item-m-10 offset-m-1 item-l-6 offset-l-3 text-align-center">
             <?php the_post_thumbnail('item-l-6-4x3'); ?>
           </div>
 
-          <div class="grid-item item-s-12 item-m-12 item-l-8 offset-l-2">
+          <div class="grid-item item-s-12 item-m-12 item-l-8 offset-l-2 font-size-h2 margin-top-basic info-content">
             <?php the_content(); ?>
           </div>
         </article>
