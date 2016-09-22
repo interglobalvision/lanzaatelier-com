@@ -87,8 +87,6 @@ Site.ScrollMagic = {
     _this.cols.left.move = (_this.cols.left.height - _this.cols.holder.height) / _this.scrollSpeed;
     _this.cols.right.move = (_this.cols.right.height - _this.cols.holder.height) / _this.scrollSpeed;
 
-    console.log(Math.abs(_this.scrollDirection));
-
     if(_this.scrollDirection > 0) {
       _this.cols.left.pos = _this.cols.left.pos + _this.cols.left.move;
       _this.cols.right.pos = _this.cols.right.pos - _this.cols.right.move;
