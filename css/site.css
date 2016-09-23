@@ -85,6 +85,9 @@ ul.u-inline-list li {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.u-overflow-hidden {
+  overflow: hidden;
+}
 html,
 body,
 div,
@@ -1788,6 +1791,18 @@ body.menu-active #footer svg {
 .footer-email-holder {
   display: none;
 }
+.scroll-cols-holder {
+  padding: 65px 0 65px;
+}
+.scroll-col img {
+  margin: 32px;
+}
+.scroll-col a:first-of-type img {
+  margin-top: 0;
+}
+.scroll-col a:last-of-type img {
+  margin-bottom: 0;
+}
 .project-text-title {
   display: none;
 }
@@ -2346,6 +2361,12 @@ body.blog .post-content {
   .footer-email-holder {
     display: block;
   }
+  .scroll-cols-holder {
+    padding: 90px 0 90px;
+  }
+  .scroll-col img {
+    margin: 84px;
+  }
   .project-photo-holder img {
     max-height: 500px;
   }
@@ -2679,6 +2700,7 @@ body.blog .post-content {
     height: 100%;
     width: 100%;
     position: fixed;
+    padding: 0;
     top: 0;
     left: 0;
   }
@@ -2687,15 +2709,6 @@ body.blog .post-content {
     font-size: 0;
     margin-right: 16px;
     padding: 94px 0 94px;
-  }
-  .scroll-col img {
-    margin: 32px 0;
-  }
-  .scroll-col a:first-of-type img {
-    margin-top: 0;
-  }
-  .scroll-col a:last-of-type img {
-    margin-bottom: 0;
   }
   .scroll-col-right {
     bottom: 0;

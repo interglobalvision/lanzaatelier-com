@@ -23,7 +23,10 @@ Site = {
     var _this = this;
 
     if ($('body').hasClass('home')) {
-      _this.ScrollMagic.getColHeights();
+      if (_this.ScrollMagic.overMinWindowWidth()) {
+        _this.ScrollMagic.getColHeights();
+      }
+      _this.ScrollMagic.toggleOverflow();
     }
   },
 
@@ -54,15 +57,19 @@ Site.ScrollMagic = {
       _this.cols.left.pos = 0;
       _this.cols.right.pos = 0;
 
-      // This is to avoind 'elastic' scroll on macOS and iOS
-      $('html, body').css({
-        'overflow': 'hidden',
-      });
-
       _this.bind();
+
+      _this.toggleOverflow();
 
       _this.getColHeights();
     }
+  },
+
+  overMinWindowWidth: function() {
+    if ($(window).width() >= 1024) {
+      return true;
+    }
+    return false;
   },
 
   getColHeights: function() {
@@ -127,13 +134,35 @@ Site.ScrollMagic = {
 
     _this.checkScrollPos();
 
-    requestAnimationFrame(function() {
+    if (_this.overMinWindowWidth()) {
 
-      _this.cols.left.css('transform', 'translateY(' + _this.cols.left.pos + 'px)');
+      requestAnimationFrame(function() {
 
-      _this.cols.right.css('transform', 'translateY(' + _this.cols.right.pos + 'px)');
+        _this.cols.left.css('transform', 'translateY(' + _this.cols.left.pos + 'px)');
 
-    });
+        _this.cols.right.css('transform', 'translateY(' + _this.cols.right.pos + 'px)');
+
+      });
+
+    } else {
+      _this.cols.left.css('transform', 'translateY(0)');
+      _this.cols.right.css('transform', 'translateY(0)');
+    }
+  },
+
+  toggleOverflow: function() {
+    var _this = this;
+
+    if (_this.overMinWindowWidth()) {
+      if (!$('html, body').hasClass('u-overflow-hidden')) {
+        // This is to avoid 'elastic' scroll on macOS and iOS
+        $('html, body').addClass('u-overflow-hidden');
+      }
+    } else {
+      if ($('html, body').hasClass('u-overflow-hidden')) {
+        $('html, body').removeClass('u-overflow-hidden');
+      }
+    }
   },
 
 };
