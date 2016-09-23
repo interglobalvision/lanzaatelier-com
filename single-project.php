@@ -13,6 +13,14 @@ if( have_posts() ) {
     $drawings = get_post_meta($post->ID, '_igv_project_drawings', true);
     $credits = get_post_meta($post->ID, '_igv_project_credits', true);
     $photos = get_post_meta($post->ID, '_igv_project_photos', true);
+
+    $lang = qtranxf_getLanguage();
+
+    if ($lang == 'en') {
+      $pdf = get_post_meta($post->ID, '_igv_project_pdf_en', true);
+    } else {
+      $pdf = get_post_meta($post->ID, '_igv_project_pdf_es', true);
+    }
 ?>
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -64,7 +72,14 @@ if( have_posts() ) {
 <?php
     } 
 ?>
-            <div class="project-gallery-pagination padding-top-tiny padding-left-mid"></div>
+            <div class="project-gallery-pagination font-mono padding-top-tiny padding-left-mid u-inline-block"></div>
+<?php 
+if (!empty($pdf)) { 
+?>
+            <div class="project-pdf font-mono padding-top-tiny u-inline-block"><a href="<?php echo esc_url($pdf); ?>">PDF</a></div>
+<?php 
+}
+?>
           </div>
 
         </div>

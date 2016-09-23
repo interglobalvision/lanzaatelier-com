@@ -162,7 +162,7 @@ Site.Layout = {
       setWrapperSize: true,
       paginationCustomRender: function (swiper, current, total) {
         if ($('.project-gallery-pagination').length)
-          return '<span id="gallery-index-active">' + current + '</span> / <span id="gallery-index-length">' + total + '</span>';
+          return '<span id="gallery-index-active">' + current + '</span>/<span id="gallery-index-length">' + total + '</span>';
       },
       onClick: function(swiper) {
         swiper.slideNext();
