@@ -32,7 +32,7 @@
 
     <div class="container">
       <div class="grid-row">
-        <div class="grid-item item-s-12 item-m-6">
+        <div class="grid-item item-s-12 item-m-4 item-l-6">
           <div id="mobile-header" class="site-title">
             <a href="<?php echo home_url(); ?>" class="site-logo"><?php 
             echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo-lanza.svg'); 
@@ -44,7 +44,7 @@
           ?></span></div>
           </div>
         </div>
-        <div class="grid-item item-s-12 item-m-6 grid-column no-gutter" id="nav-holder">
+        <div class="grid-item item-s-12 item-m-8 item-l-6 grid-column no-gutter" id="nav-holder">
           <nav class="grid-item item-s-12 item-m-9" id="nav-menu">
             <ul>
               <li class="nav-item"><a href="<?php echo home_url(); ?>/proyectos" <?php echo is_post_type_archive('project') || is_single() && get_post_type() == 'project' ? 'class="current"' : ''; ?>><?php _e('[:es]Proyectos[:en]Projects'); ?></a></li>
