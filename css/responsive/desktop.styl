@@ -28,16 +28,17 @@ $footer-height = 94px
 
 .scroll-cols-holder
   overflow: hidden
-  height: calc("100vh - " + ($header-height + $footer-height))
+  height: 100%
   width: 100%
   position: fixed
-  top: $header-height
+  top: 0
   left: 0
   
 .scroll-col 
   position: absolute
   font-size: 0
   margin-right: $margin-tiny
+  padding: $header-height 0 $footer-height
   img 
     margin: $margin-small 0
   a:first-of-type img
@@ -65,7 +66,7 @@ $footer-height = 94px
   
 .swiper-container
   margin-top: $header-height + $margin-basic
-  
+
 .project-photos-container
   height: calc('100vh - ' ($header-height + $footer-height + ($margin-basic * 2)))
   

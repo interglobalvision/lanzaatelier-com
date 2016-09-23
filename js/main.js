@@ -68,9 +68,9 @@ Site.ScrollMagic = {
   getColHeights: function() {
     var _this = this;
 
-    _this.cols.left.height = $('.scroll-col-left').height();
-    _this.cols.right.height = $('.scroll-col-right').height();
-    _this.cols.holder.height = $('.scroll-cols-holder').height();
+    _this.cols.left.height = $('.scroll-col-left').outerHeight(true);
+    _this.cols.right.height = $('.scroll-col-right').outerHeight(true);
+    _this.cols.holder.height = $('.scroll-cols-holder').outerHeight(true);
 
     _this.cols.left.max = -(_this.cols.left.height - _this.cols.holder.height);
     _this.cols.right.max = (_this.cols.right.height - _this.cols.holder.height);

@@ -2676,16 +2676,17 @@ body.blog .post-content {
   }
   .scroll-cols-holder {
     overflow: hidden;
-    height: calc(100vh - 188px);
+    height: 100%;
     width: 100%;
     position: fixed;
-    top: 94px;
+    top: 0;
     left: 0;
   }
   .scroll-col {
     position: absolute;
     font-size: 0;
     margin-right: 16px;
+    padding: 94px 0 94px;
   }
   .scroll-col img {
     margin: 32px 0;
