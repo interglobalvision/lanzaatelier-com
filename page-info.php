@@ -16,7 +16,7 @@ if( have_posts() ) {
             <?php the_post_thumbnail('item-l-6-4x3'); ?>
           </div>
 
-          <div class="grid-item item-s-12 item-m-12 item-l-8 offset-l-2 font-size-h2 margin-top-basic info-content">
+          <div class="grid-item item-s-12 item-m-12 item-l-8 offset-l-2 font-size-large margin-top-basic info-content">
             <?php the_content(); ?>
           </div>
         </article>
