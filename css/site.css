@@ -1351,14 +1351,7 @@ img {
   width: auto;
 }
 .single-project-drawings {
-  cursor: url("../img/dist/ui-cursor-plus.png"), pointer;
   font-size: 0;
-}
-.single-project-text {
-  cursor: url("../img/dist/ui-cursor-close.png"), pointer;
-}
-.project-content-holder a:link {
-  cursor: pointer;
 }
 .swiper-pagination-custom {
   width: auto;
@@ -1828,6 +1821,12 @@ body.menu-active #footer svg {
 }
 .single-project-photos {
   padding-bottom: 65px;
+}
+.project-content-holder {
+  margin-bottom: 32px;
+}
+.single-project-text p {
+  max-width: 500px;
 }
 .archive-project-photos {
   display: none;
@@ -2380,18 +2379,20 @@ body.blog .post-content {
   .footer-email-holder {
     display: block;
   }
+  .single-project-drawings {
+    padding-top: 90px;
+  }
+  .single-project-photos {
+    padding-bottom: 90px;
+  }
+  .project-content-holder {
+    margin-bottom: 48px;
+  }
   .project-photo-holder img {
     max-height: 500px;
   }
-  .project-content-holder {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-  .single-project-drawings {
-    padding-top: 0;
-  }
-  .single-project-photos {
-    padding-bottom: 0;
+  .single-project-text p {
+    max-width: 550px;
   }
   .index-container {
     padding-left: 24px;
@@ -2744,6 +2745,7 @@ body.blog .post-content {
     overflow-y: scroll;
     padding-top: 94px;
     padding-bottom: 94px;
+    margin-bottom: 0;
   }
   .project-content-holder.hide {
     display: none;
@@ -2769,6 +2771,15 @@ body.blog .post-content {
             flex: 0 1 auto;
     max-height: 100%;
     width: auto;
+  }
+  .single-project-drawings {
+    cursor: url("../img/dist/ui-cursor-plus.png"), pointer;
+  }
+  .single-project-text {
+    cursor: url("../img/dist/ui-cursor-close.png"), pointer;
+  }
+  .project-content-holder a:link {
+    cursor: pointer;
   }
   .archive-project-photos {
     display: -webkit-box;
