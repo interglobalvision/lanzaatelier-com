@@ -22,6 +22,8 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    $('body').removeClass('menu-active');
+
     if ($('body').hasClass('home')) {
       _this.ScrollMagic.getColHeights();
     }
@@ -205,8 +207,10 @@ Site.Project = {
     },
 
     bindProjectToggle: function() {
-      $('.project-content-holder').bind('click', function() {
-        $('.project-content-holder').toggleClass('hide');
+      $('.project-content-holder').bind('click', function(event) {
+        if (event.target.nodeName !== 'A') {
+          $('.project-content-holder').toggleClass('hide');
+        }
       });
     }
   },
