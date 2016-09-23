@@ -1277,7 +1277,11 @@ a:visited {
 }
 a:hover {
   color: #0009ff;
-  text-decoration: none;
+}
+p a,
+p a:active,
+p a:visited {
+  text-decoration: underline;
 }
 html,
 body {
@@ -1345,6 +1349,16 @@ img {
 }
 .project-photo-holder img {
   width: auto;
+}
+.single-project-drawings {
+  cursor: url("../img/dist/ui-cursor-plus.png"), pointer;
+  font-size: 0;
+}
+.single-project-text {
+  cursor: url("../img/dist/ui-cursor-close.png"), pointer;
+}
+.project-content-holder a:link {
+  cursor: pointer;
 }
 .archive-project-title:hover {
   font-style: italic;
@@ -1638,20 +1652,20 @@ html,
 .font-size-basic {
   font-size: 12px;
 }
+.font-size-tiny {
+  font-size: $size-tiny;
+}
 .font-size-small {
   font-size: 10px;
 }
-h1,
-.font-size-h1 {
+.font-size-mid {
+  font-size: 14px;
+}
+.font-size-large {
+  font-size: 28px;
+}
+.font-size-extra {
   font-size: 36px;
-}
-h2,
-.font-size-h2 {
-  font-size: 29px;
-}
-h3,
-.font-size-h3 {
-  font-size: 16px;
 }
 .main-content-padding {
   padding: 65px 0 65px;
@@ -1661,6 +1675,9 @@ h3,
 }
 .site-logo svg {
   height: 12px;
+}
+#header {
+  font-size: 14px;
 }
 #mobile-header {
   position: fixed;
@@ -1738,7 +1755,10 @@ h3,
       justify-content: space-around;
 }
 #mobile-email {
-  font-size: 29px;
+  font-size: $font-size-h2;
+}
+body.menu-active #mobile-header {
+  background: initial;
 }
 body.menu-active #nav-holder {
   display: -webkit-box;
@@ -2273,8 +2293,14 @@ body.blog .post-content {
   .font-size-basic {
     font-size: 14px;
   }
+  .font-size-tiny {
+    font-size: $size-tiny;
+  }
   .font-size-small {
     font-size: 12px;
+  }
+  .font-size-mid {
+    font-size: 16px;
   }
   .mobile-only {
     display: none;
@@ -2289,6 +2315,7 @@ body.blog .post-content {
   }
   #header {
     padding: 24px 0 48px;
+    font-size: 16px;
   }
   #mobile-header {
     background: none;
@@ -2326,8 +2353,6 @@ body.blog .post-content {
   #lang-holder {
     display: initial;
     text-align: right;
-  }
-  #lang-menu {
     font-size: 12px;
   }
   #mobile-email {
@@ -2654,8 +2679,14 @@ body.blog .post-content {
   .font-size-basic {
     font-size: 15px;
   }
+  .font-size-tiny {
+    font-size: $size-tiny;
+  }
   .font-size-small {
     font-size: 13px;
+  }
+  .font-size-mid {
+    font-size: 17px;
   }
   .main-content-padding {
     padding: 94px 0 94px;
@@ -2711,6 +2742,12 @@ body.blog .post-content {
   .project-text-title {
     display: block;
   }
+  .single-project-text p {
+    max-width: 650px;
+  }
+  .single-project-credits {
+    max-width: 500px;
+  }
   .swiper-container {
     margin-top: 158px;
   }
@@ -2757,10 +2794,19 @@ body.blog .post-content {
   }
   html,
   .font-size-basic {
-    font-size: 17px;
+    font-size: 16px;
+  }
+  .font-size-tiny {
+    font-size: $size-tiny;
   }
   .font-size-small {
     font-size: 14px;
+  }
+  .font-size-mid {
+    font-size: 18px;
+  }
+  #header {
+    font-size: 18px;
   }
   .index-container {
     padding-left: 80px;

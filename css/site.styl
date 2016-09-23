@@ -113,6 +113,18 @@ img
   img 
     width: auto
     
+.single-project-drawings 
+  cursor: url('../img/dist/ui-cursor-plus.png'), pointer 
+  // eliminates white-space between imgs
+  font-size: 0
+  
+.single-project-text 
+  cursor: url('../img/dist/ui-cursor-close.png'), pointer 
+  
+.project-content-holder
+  a:link
+    cursor: pointer 
+
 // ******************************************************
 
 // ARCHIVE PROJECT
@@ -140,15 +152,16 @@ $margin-large = ($gutter * 5)
     
 $font-size-basic = 12px
 $font-size-small = 10px
-$font-size-h1 = 36px
-$font-size-h2 = 29px
-$font-size-h3 = 16px
+$font-size-mid = 14px
+$font-size-large = 28px
+$font-size-extra = 36px
+
 
 grid(96%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $font-size-h3)
+font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large, $font-size-extra)
 
 @import 'responsive/mobile'
 
@@ -171,12 +184,13 @@ font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $fo
   
   $font-size-basic = 14px
   $font-size-small = 12px
+  $font-size-mid = 16px
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
   grid(680px, $gutter, m)
   
-  font-sizes($font-size-basic, $font-size-small)
+  font-sizes($font-size-basic, $font-size-small, $font-size-mid)
   
   .mobile-only
     display: none
@@ -196,12 +210,13 @@ font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $fo
   
   $font-size-basic = 15px
   $font-size-small = 13px
+  $font-size-mid = 17px
 
   grid(1000px, $gutter, l)
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
-  font-sizes($font-size-basic, $font-size-small)
+  font-sizes($font-size-basic, $font-size-small, $font-size-mid)
 
   @import 'responsive/desktop'
   
@@ -217,10 +232,11 @@ font-sizes($font-size-basic, $font-size-small, $font-size-h1, $font-size-h2, $fo
 
   grid(1600px)
   
-  $font-size-basic = 17px
+  $font-size-basic = 16px
   $font-size-small = 14px
+  $font-size-mid = 18px
   
-  font-sizes($font-size-basic, $font-size-small)
+  font-sizes($font-size-basic, $font-size-small, $font-size-mid)
   
   @import 'responsive/monitor'
 
