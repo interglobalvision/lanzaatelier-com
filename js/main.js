@@ -23,9 +23,7 @@ Site = {
     var _this = this;
 
     if ($('body').hasClass('home')) {
-      if (_this.ScrollMagic.overMinWindowWidth()) {
-        _this.ScrollMagic.getColHeights();
-      }
+      _this.ScrollMagic.getColHeights();
       _this.ScrollMagic.toggleOverflow();
     }
   },
@@ -75,14 +73,16 @@ Site.ScrollMagic = {
   getColHeights: function() {
     var _this = this;
 
-    _this.cols.left.height = $('.scroll-col-left').outerHeight(true);
-    _this.cols.right.height = $('.scroll-col-right').outerHeight(true);
-    _this.cols.holder.height = $('.scroll-cols-holder').outerHeight(true);
+    if (_this.overMinWindowWidth()) {
+      _this.cols.left.height = $('.scroll-col-left').outerHeight(true);
+      _this.cols.right.height = $('.scroll-col-right').outerHeight(true);
+      _this.cols.holder.height = $('.scroll-cols-holder').outerHeight(true);
 
-    _this.cols.left.max = -(_this.cols.left.height - _this.cols.holder.height);
-    _this.cols.right.max = (_this.cols.right.height - _this.cols.holder.height);
+      _this.cols.left.max = -(_this.cols.left.height - _this.cols.holder.height);
+      _this.cols.right.max = (_this.cols.right.height - _this.cols.holder.height);
 
-    _this.updateScroll();
+      _this.updateScroll();
+    }
   },
 
   bind: function() {
