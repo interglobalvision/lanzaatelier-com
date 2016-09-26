@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, Swiper, document, Site */
 
 Site = {
   mobileThreshold: 601,
@@ -161,15 +161,16 @@ Site.Layout = {
       spaceBetween: 48,
       setWrapperSize: true,
       paginationCustomRender: function (swiper, current, total) {
-        if ($('.project-gallery-pagination').length)
+        if ($('.project-gallery-pagination').length) {
           return '<span id="gallery-index-active">' + current + '</span>/<span id="gallery-index-length">' + total + '</span>';
+        }
       },
       onClick: function(swiper) {
         swiper.slideNext();
       },
     });
   },
-}
+};
 
 Site.Menu = {
   init: function() {
