@@ -1,5 +1,5 @@
 /* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, jQuery, document, Site, Modernizr */
+/* global $, Swiper, document, Site */
 
 Site = {
   mobileThreshold: 601,
@@ -21,6 +21,8 @@ Site = {
 
   onResize: function() {
     var _this = this;
+
+    $('body').removeClass('menu-active');
 
     if ($('body').hasClass('home')) {
       _this.ScrollMagic.getColHeights();
@@ -188,15 +190,16 @@ Site.Layout = {
       spaceBetween: 48,
       setWrapperSize: true,
       paginationCustomRender: function (swiper, current, total) {
-        if ($('.project-gallery-pagination').length)
-          return '<span id="gallery-index-active">' + current + '</span> / <span id="gallery-index-length">' + total + '</span>';
+        if ($('.project-gallery-pagination').length) {
+          return '<span id="gallery-index-active">' + current + '</span>/<span id="gallery-index-length">' + total + '</span>';
+        }
       },
       onClick: function(swiper) {
         swiper.slideNext();
       },
     });
   },
-}
+};
 
 Site.Menu = {
   init: function() {
@@ -234,8 +237,10 @@ Site.Project = {
     },
 
     bindProjectToggle: function() {
-      $('.project-content-holder').bind('click', function() {
-        $('.project-content-holder').toggleClass('hide');
+      $('.project-content-holder').bind('click', function(event) {
+        if (event.target.nodeName !== 'A') {
+          $('.project-content-holder').toggleClass('hide');
+        }
       });
     }
   },

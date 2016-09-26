@@ -46,6 +46,29 @@ function igv_cmb_metaboxes() {
   ) );
 
   $project_meta->add_field( array(
+    'name'    => __( 'Credits', 'cmb2' ),
+    'id'      => $prefix . 'project_credits',
+    'type'    => 'wysiwyg',
+    'options' => array( 
+      'media_buttons' => false,
+      'textarea_rows' => 3, 
+      'editor_class' => 'cmb2-qtranslate'
+    )
+  ) );
+
+  $project_meta->add_field( array(
+    'name'    => __( 'PDF Español', 'cmb2' ),
+    'id'      => $prefix . 'project_pdf_es',
+    'type'    => 'file',
+  ) );
+
+    $project_meta->add_field( array(
+    'name'    => __( 'PDF Inglés', 'cmb2' ),
+    'id'      => $prefix . 'project_pdf_en',
+    'type'    => 'file',
+  ) );
+
+  $project_meta->add_field( array(
     'name'            => __( 'Dibujos', 'cmb2' ),
     'button'          => 'Modificar galería', // Optionally set button label
     'clear-button'    => 'Eliminar galería', // Optionally set clear button label

@@ -9,6 +9,18 @@ get_header();
 if( have_posts() ) {
   while( have_posts() ) {
     the_post();
+
+    $drawings = get_post_meta($post->ID, '_igv_project_drawings', true);
+    $credits = get_post_meta($post->ID, '_igv_project_credits', true);
+    $photos = get_post_meta($post->ID, '_igv_project_photos', true);
+
+    $lang = qtranxf_getLanguage();
+
+    if ($lang == 'en') {
+      $pdf = get_post_meta($post->ID, '_igv_project_pdf_en', true);
+    } else {
+      $pdf = get_post_meta($post->ID, '_igv_project_pdf_es', true);
+    }
 ?>
 
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -16,27 +28,32 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6 single-project-drawings project-content-holder">
-            <h1 class="padding-left-basic"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+            <h1 class="padding-left-basic margin-bottom-small font-size-mid"><a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 <?php
-    $drawings = get_post_meta($post->ID, '_igv_project_drawings', true);
-
     if (!empty($drawings)) {
       foreach($drawings as $image) {
-        echo wp_get_attachment_image($image, 'item-l-6-4x3');
+        echo wp_get_attachment_image($image, 'item-l-6-4x3', '', array('class'=>'margin-bottom-small'));
       }
     }
 ?>
           </div>
           
           <div class="grid-item item-s-12 item-l-6 single-project-text project-content-holder hide">
-            <h1 class="padding-left-basic project-text-title"><?php the_title(); ?></h1>
+            <h1 class="padding-left-basic project-text-title margin-bottom-small font-size-mid"><a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             <?php the_content(); ?>
-          </div>
+            <?php 
+              if (!empty($credits)) {
+            ?>
+            <div class="single-project-credits margin-top-small padding-left-basic padding-right-basic font-mono">
+              <?php echo apply_filters('the_content', $credits); ?>
+            </div>
+            <?php 
+              }
+            ?>          
+            </div>
 
           <div class="grid-item item-s-12 item-l-6 single-project-photos">
 <?php
-    $photos = get_post_meta($post->ID, '_igv_project_photos', true);
-
     if (!empty($photos)) {
 ?>
             <div class="swiper-container project-photos-container">
@@ -55,7 +72,14 @@ if( have_posts() ) {
 <?php
     } 
 ?>
-            <div class="project-gallery-pagination padding-top-tiny padding-left-mid"></div>
+            <div class="project-gallery-pagination font-mono padding-top-tiny padding-left-mid u-inline-block"></div>
+<?php 
+if (!empty($pdf)) { 
+?>
+            <div class="project-pdf font-mono padding-top-tiny u-inline-block"><a href="<?php echo esc_url($pdf); ?>">PDF</a></div>
+<?php 
+}
+?>
           </div>
 
         </div>

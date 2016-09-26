@@ -19,7 +19,7 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 ?>
-              <li><a class="archive-project-title" href="<?php the_permalink() ?>" data-id="<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></li>
+              <li><a class="archive-project-title u-inline-block font-size-extra" href="<?php the_permalink() ?>" data-id="<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></li>
 <?php
   }
 ?>

@@ -17,6 +17,9 @@ $footer-height = 65px
 
 // HEADER
 
+#header 
+  font-size: $font-size-mid
+
 #mobile-header
   position: fixed
   z-index: 1000
@@ -61,7 +64,7 @@ $footer-height = 65px
   text-align: center
   padding-top: $margin-mid
   padding-bottom: $margin-mid
-  font-size: $font-size-h1
+  font-size: $font-size-extra
   
 #nav-menu
   display: flex
@@ -79,6 +82,8 @@ $footer-height = 65px
   font-size: $font-size-h2
   
 body.menu-active
+  #mobile-header
+    background: initial
   #nav-holder
     display: flex
   .site-title
@@ -150,6 +155,13 @@ body.menu-active
   
 .single-project-photos
   padding-bottom: $footer-height
+  
+.project-content-holder
+  margin-bottom: $margin-basic
+  
+.single-project-text
+  p 
+    max-width: 500px
 
 // ******************************************************
 
@@ -157,7 +169,7 @@ body.menu-active
 
 .archive-project-photos
   display: none
-
+  
 // ******************************************************
 
 // INDEX

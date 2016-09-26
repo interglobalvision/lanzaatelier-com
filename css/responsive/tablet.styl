@@ -17,6 +17,7 @@ $footer-height = 90px
 
 #header 
   padding: $margin-small 0 $margin-basic
+  font-size: $font-size-mid
 
 #mobile-header
   background: none
@@ -49,8 +50,6 @@ $footer-height = 90px
 #lang-holder
   display: initial
   text-align: right
-  
-#lang-menu
   font-size: $font-size-small
   
 #mobile-email
@@ -94,20 +93,23 @@ body.menu-active
 // ******************************************************
 
 // SINGLE PROJECT
-
+    
+.single-project-drawings
+  padding-top: $header-height
+  
+.single-project-photos
+  padding-bottom: $footer-height
+  
+.project-content-holder
+  margin-bottom: $margin-basic
+  
 .project-photo-holder
   img 
     max-height: 500px
-  
-.project-content-holder
-  padding-top: $header-height
-  padding-bottom: $footer-height
-  
-.single-project-drawings
-  padding-top: 0
-  
-.single-project-photos
-  padding-bottom: 0
+    
+.single-project-text
+  p 
+    max-width: 550px
 
 // ******************************************************
 
