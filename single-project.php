@@ -90,7 +90,7 @@ if (!empty($pdf)) {
   }
 } else {
 ?>
-    <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
+    <article class="u-alert"><?php _e('[:es]Disculpa, no hay entradas para lo que buscas[:en]Sorry, no posts matched your criteria[:] :{'); ?></article>
 <?php
 } ?>
   </section>
