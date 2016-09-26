@@ -46,7 +46,7 @@ function igv_cmb_metaboxes() {
   ) );
 
   $project_meta->add_field( array(
-    'name'    => __( 'Credits', 'cmb2' ),
+    'name'    => __( 'Creditos', 'cmb2' ),
     'id'      => $prefix . 'project_credits',
     'type'    => 'wysiwyg',
     'options' => array( 
@@ -89,15 +89,15 @@ function igv_cmb_metaboxes() {
   ) );
 
   $project_meta->add_field( array(
-    'name' => __( 'Front Page Image (Left Column)', 'cmb2' ),
-    'desc' => __( '', 'cmb2' ),
+    'name' => __( 'Portada izquierda', 'cmb2' ),
+    'desc' => __( 'Imagen que aparece en la columna izquierda del Home', 'cmb2' ),
     'id'   => $prefix . 'front_image_left',
     'type' => 'file',
   ) );
 
   $project_meta->add_field( array(
-    'name' => __( 'Front Page Image (Right Column)', 'cmb2' ),
-    'desc' => __( '', 'cmb2' ),
+    'name' => __( 'Portada derecha', 'cmb2' ),
+    'desc' => __( 'Imagen que aparece en la columna derecha del Home', 'cmb2' ),
     'id'   => $prefix . 'front_image_right',
     'type' => 'file',
   ) );
