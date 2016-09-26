@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <section id="main-content">
-  <h1>Not found</h1>
+  <h1><?php _e('[:en]Not found[:es]No encontramos lo qué estás buscando[:]'); ?></h1>
   <p>:(</p>
 </section>
 
