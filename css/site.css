@@ -85,6 +85,9 @@ ul.u-inline-list li {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.u-overflow-hidden {
+  overflow: hidden;
+}
 html,
 body,
 div,
@@ -1810,6 +1813,18 @@ body.menu-active #footer svg {
 .footer-email-holder {
   display: none;
 }
+.scroll-cols-holder {
+  padding: 65px 0 65px;
+}
+.scroll-col img {
+  margin: 32px 0;
+}
+.scroll-col-left a:first-of-type img {
+  margin-top: 0;
+}
+.scroll-col-right a:last-of-type img {
+  margin-bottom: 0;
+}
 .project-text-title {
   display: none;
 }
@@ -2379,6 +2394,22 @@ body.blog .post-content {
   .footer-email-holder {
     display: block;
   }
+  .scroll-cols-holder {
+    padding: 90px 0 90px;
+  }
+  .scroll-col {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+  .scroll-col img {
+    margin: 48px 0;
+  }
+  .scroll-col a:first-of-type img {
+    margin-top: 0;
+  }
+  .scroll-col a:last-of-type img {
+    margin-bottom: 0;
+  }
   .single-project-drawings {
     padding-top: 90px;
   }
@@ -2717,25 +2748,18 @@ body.blog .post-content {
   }
   .scroll-cols-holder {
     overflow: hidden;
-    height: calc(100vh - 188px);
+    height: 100%;
     width: 100%;
     position: fixed;
-    top: 94px;
+    padding: 0;
+    top: 0;
     left: 0;
   }
   .scroll-col {
     position: absolute;
     font-size: 0;
     margin-right: 16px;
-  }
-  .scroll-col img {
-    margin: 32px 0;
-  }
-  .scroll-col a:first-of-type img {
-    margin-top: 0;
-  }
-  .scroll-col a:last-of-type img {
-    margin-bottom: 0;
+    padding: 94px 32px 94px;
   }
   .scroll-col-right {
     bottom: 0;
