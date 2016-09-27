@@ -147,15 +147,15 @@ $gutter = 16px
 $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
 $margin-small = ($gutter)
-$margin-basic = ($gutter * 2)
+$margin-basic = ($gutter * 1.5)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
     
 $font-size-basic = 12px
 $font-size-small = 10px
 $font-size-mid = 14px
-$font-size-large = 28px
-$font-size-extra = 36px
+$font-size-large = 19px
+$font-size-extra = 24px
 
 
 grid(96%, $gutter, s)
@@ -170,7 +170,7 @@ font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large,
 
   $gutter = 24px 
 
-  grid(480px, $gutter, s)
+  grid(96%, $gutter, s)
 
 @media screen and (min-width: 720px)
 
@@ -186,12 +186,14 @@ font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large,
   $font-size-basic = 14px
   $font-size-small = 12px
   $font-size-mid = 16px
+  $font-size-large = 28px
+  $font-size-extra = 36px
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
   grid(680px, $gutter, m)
   
-  font-sizes($font-size-basic, $font-size-small, $font-size-mid)
+  font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large, $font-size-extra)
   
   .mobile-only
     display: none
