@@ -22,10 +22,6 @@ if( have_posts() ) {
 
 <?php
   }
-} else {
-?>
-        <article class="u-alert grid-item item-s-12"><?php _e('[:es]Disculpa, no hay entradas para lo que buscas[:en]Sorry, no posts matched your criteria[:] :{'); ?></article>
-<?php
 } ?>
       </div>
     </div>
