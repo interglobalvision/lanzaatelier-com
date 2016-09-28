@@ -1327,8 +1327,8 @@ img {
   left: 0;
   width: 100%;
   z-index: 9000;
-  background-image: -webkit-linear-gradient(top,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
-  background-image: linear-gradient(to bottom,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
+  background-image: -webkit-linear-gradient(top,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
+  background-image: linear-gradient(to bottom,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
 }
 .scroll-cols-holder {
   font-size: 0;
@@ -1339,8 +1339,8 @@ img {
   left: 0;
   width: 100%;
   z-index: 9000;
-  background-image: -webkit-linear-gradient(bottom,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
-  background-image: linear-gradient(to top,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
+  background-image: -webkit-linear-gradient(bottom,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
+  background-image: linear-gradient(to top,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
 }
 .swiper-wrapper {
   -webkit-box-align: center;
@@ -1602,22 +1602,22 @@ img {
   padding-left: 16px;
 }
 .margin-top-basic {
-  margin-top: 32px;
+  margin-top: 24px;
 }
 .margin-bottom-basic {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .padding-top-basic {
-  padding-top: 32px;
+  padding-top: 24px;
 }
 .padding-bottom-basic {
-  padding-bottom: 32px;
+  padding-bottom: 24px;
 }
 .margin-left-basic {
-  margin-left: 32px;
+  margin-left: 24px;
 }
 .padding-left-basic {
-  padding-left: 32px;
+  padding-left: 24px;
 }
 .margin-top-mid {
   margin-top: 56px;
@@ -1669,10 +1669,10 @@ html,
   font-size: 14px;
 }
 .font-size-large {
-  font-size: 28px;
+  font-size: 19px;
 }
 .font-size-extra {
-  font-size: 36px;
+  font-size: 24px;
 }
 .main-content-padding {
   padding: 66px 0 65px;
@@ -1692,14 +1692,14 @@ html,
   width: 100%;
   top: 0;
   left: 0;
-  padding: 16px 0 32px;
-  background-image: -webkit-linear-gradient(top,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
-  background-image: linear-gradient(to bottom,#fff 0,#fff 80%,rgba(255,255,255,0) 100%);
+  padding: 16px 0 24px;
+  background-image: -webkit-linear-gradient(top,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
+  background-image: linear-gradient(to bottom,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
 }
 .mobile-toggle {
   position: absolute;
   height: 100%;
-  width: 32px;
+  width: 24px;
   top: 14px;
   right: 16px;
   height: 18px;
@@ -1762,7 +1762,7 @@ html,
       justify-content: space-around;
 }
 #mobile-email {
-  font-size: $font-size-h2;
+  font-size: 19px;
 }
 body.menu-active #mobile-header {
   background: initial;
@@ -1807,7 +1807,7 @@ body.menu-active #footer svg {
   fill: #fff;
 }
 #footer {
-  padding: 32px 0 16px;
+  padding: 24px 0 16px;
 }
 .footer-logo-holder {
   text-align: center;
@@ -1819,7 +1819,7 @@ body.menu-active #footer svg {
   padding: 66px 0 65px;
 }
 .scroll-col img {
-  margin: 32px 0;
+  margin: 24px 0;
 }
 .scroll-col-left a:first-of-type img {
   margin-top: 0;
@@ -1840,24 +1840,28 @@ body.menu-active #footer svg {
   padding-bottom: 65px;
 }
 .project-content-holder {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .single-project-text p {
   max-width: 500px;
+}
+.archive-project-title {
+  text-indent: -24px;
+  margin-left: 24px;
 }
 .archive-project-photos {
   display: none;
 }
 .index-container {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 body.blog .post-content {
   display: none;
 }
 @media screen and (min-width: 500px) {
   .container {
-    width: 480px;
+    width: 96%;
   }
   .grid-item {
     padding: 0 12px;
@@ -2087,22 +2091,22 @@ body.blog .post-content {
     padding-left: 24px;
   }
   .margin-top-basic {
-    margin-top: 48px;
+    margin-top: 36px;
   }
   .margin-bottom-basic {
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
   .padding-top-basic {
-    padding-top: 48px;
+    padding-top: 36px;
   }
   .padding-bottom-basic {
-    padding-bottom: 48px;
+    padding-bottom: 36px;
   }
   .margin-left-basic {
-    margin-left: 48px;
+    margin-left: 36px;
   }
   .padding-left-basic {
-    padding-left: 48px;
+    padding-left: 36px;
   }
   .margin-top-mid {
     margin-top: 84px;
@@ -2327,6 +2331,12 @@ body.blog .post-content {
   .font-size-mid {
     font-size: 16px;
   }
+  .font-size-large {
+    font-size: 28px;
+  }
+  .font-size-extra {
+    font-size: 36px;
+  }
   .mobile-only {
     display: none;
   }
@@ -2339,7 +2349,7 @@ body.blog .post-content {
     text-align: left;
   }
   #header {
-    padding: 24px 0 48px;
+    padding: 24px 0 36px;
     font-size: 16px;
   }
   #mobile-header {
@@ -2388,7 +2398,7 @@ body.blog .post-content {
     color: inherit;
   }
   #footer {
-    padding: 48px 0 24px;
+    padding: 36px 0 24px;
   }
   .footer-logo-holder {
     text-align: left;
@@ -2400,11 +2410,11 @@ body.blog .post-content {
     padding: 93px 0 90px;
   }
   .scroll-col {
-    padding-right: 48px;
-    padding-left: 48px;
+    padding-right: 36px;
+    padding-left: 36px;
   }
   .scroll-col img {
-    margin: 48px 0;
+    margin: 36px 0;
   }
   .scroll-col a:first-of-type img {
     margin-top: 0;
@@ -2419,13 +2429,17 @@ body.blog .post-content {
     padding-bottom: 90px;
   }
   .project-content-holder {
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
   .project-photo-holder img {
     max-height: 500px;
   }
   .single-project-text p {
     max-width: 550px;
+  }
+  .archive-project-title {
+    text-indent: -24px;
+    margin-left: 24px;
   }
   .index-container {
     padding-left: 24px;
@@ -2665,22 +2679,22 @@ body.blog .post-content {
     padding-left: 32px;
   }
   .margin-top-basic {
-    margin-top: 64px;
+    margin-top: 48px;
   }
   .margin-bottom-basic {
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
   .padding-top-basic {
-    padding-top: 64px;
+    padding-top: 48px;
   }
   .padding-bottom-basic {
-    padding-bottom: 64px;
+    padding-bottom: 48px;
   }
   .margin-left-basic {
-    margin-left: 64px;
+    margin-left: 48px;
   }
   .padding-left-basic {
-    padding-left: 64px;
+    padding-left: 48px;
   }
   .margin-top-mid {
     margin-top: 112px;
@@ -2785,10 +2799,10 @@ body.blog .post-content {
     max-width: 500px;
   }
   .swiper-container {
-    margin-top: 157px;
+    margin-top: 141px;
   }
   .project-photos-container {
-    height: calc(100vh -  313px);
+    height: calc(100vh -  281px);
   }
   .project-photo-holder img {
     -ms-flex: 0 1 auto;
@@ -2812,7 +2826,11 @@ body.blog .post-content {
     display: flex;
   }
   .archive-photos-container {
-    margin-top: 64px;
+    margin-top: 48px;
+  }
+  .archive-project-title {
+    text-indent: -32px;
+    margin-left: 32px;
   }
   .index-container {
     padding-left: 32px;

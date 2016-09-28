@@ -27,7 +27,7 @@ $footer-height = 65px
   top: 0
   left: 0
   padding: $margin-small 0 $margin-basic
-  background-image: linear-gradient(to bottom, $color-white 0, $color-white 80%, $color-white-trans 100%)
+  background-image: linear-gradient(to bottom, $color-white 0, $color-white 75%, $color-white-trans 100%)
   
 .mobile-toggle
   position: absolute
@@ -64,7 +64,7 @@ $footer-height = 65px
   text-align: center
   padding-top: $margin-mid
   padding-bottom: $margin-mid
-  font-size: $font-size-extra
+  font-size: 36px
   
 #nav-menu
   display: flex
@@ -80,7 +80,7 @@ $footer-height = 65px
   justify-content: space-around
   
 #mobile-email
-  font-size: $font-size-h2
+  font-size: $font-size-large
   
 body.menu-active
   #mobile-header
@@ -167,6 +167,10 @@ body.menu-active
 // ******************************************************
 
 // ARCHIVE PROJECT
+
+.archive-project-title
+  text-indent: -($margin-basic)
+  margin-left: $margin-basic
 
 .archive-project-photos
   display: none
