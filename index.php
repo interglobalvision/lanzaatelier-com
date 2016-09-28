@@ -4,10 +4,13 @@ get_header();
 
 <main id="main-content" class="main-content-padding">
   <section id="posts">
+
+<?php
+if( have_posts() ) {
+?>
     <div class="container index-container">
       <div class="grid-row">
 <?php
-if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 ?>
@@ -26,13 +29,22 @@ if( have_posts() ) {
 
 <?php
   }
-} else {
 ?>
-        <article class="u-alert grid-item item-s-12"><?php _e('[:es]Disculpa, no hay entradas para lo que buscas[:en]Sorry, no posts matched your criteria[:] :{'); ?></article>
-<?php
-} ?>
       </div>
     </div>
+<?php
+} else {
+?>
+    <div class="container">
+      <div class="grid-row">
+        <div class="grid-item item-s-12 text-align-center">
+          <p><?php _e('[:es]Disculpa, no hay entradas para lo que buscas[:en]Sorry, no posts matched your criteria'); ?></p>
+        </div>
+      </div>
+    </div>
+<?php
+} ?>
+
   </section>
 
   <?php get_template_part('partials/pagination'); ?>

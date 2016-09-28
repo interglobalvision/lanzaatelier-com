@@ -1330,9 +1330,8 @@ img {
   background-image: -webkit-linear-gradient(top,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
   background-image: linear-gradient(to bottom,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
 }
-.front-page-section {
-  text-align: center;
-  z-index: 1000;
+.scroll-cols-holder {
+  font-size: 0;
 }
 #footer {
   position: fixed;
@@ -1349,6 +1348,9 @@ img {
   -ms-flex-align: center;
       -ms-grid-row-align: center;
       align-items: center;
+}
+.project-photo-holder.swiper-slide {
+  cursor: url("../img/dist/ui-cursor-arrow.png"), pointer;
 }
 .project-photo-holder img {
   width: auto;
@@ -1673,7 +1675,7 @@ html,
   font-size: 24px;
 }
 .main-content-padding {
-  padding: 65px 0 65px;
+  padding: 66px 0 65px;
 }
 .site-title {
   text-align: center;
@@ -1814,7 +1816,7 @@ body.menu-active #footer svg {
   display: none;
 }
 .scroll-cols-holder {
-  padding: 65px 0 65px;
+  padding: 66px 0 65px;
 }
 .scroll-col img {
   margin: 24px 0;
@@ -1832,7 +1834,7 @@ body.menu-active #footer svg {
   max-height: 300px;
 }
 .single-project-drawings {
-  padding-top: 65px;
+  padding-top: 66px;
 }
 .single-project-photos {
   padding-bottom: 65px;
@@ -2339,7 +2341,7 @@ body.blog .post-content {
     display: none;
   }
   .main-content-padding {
-    padding: 90px 0 90px;
+    padding: 93px 0 90px;
   }
   .site-title {
     background: none;
@@ -2405,7 +2407,7 @@ body.blog .post-content {
     display: block;
   }
   .scroll-cols-holder {
-    padding: 90px 0 90px;
+    padding: 93px 0 90px;
   }
   .scroll-col {
     padding-right: 36px;
@@ -2421,7 +2423,7 @@ body.blog .post-content {
     margin-bottom: 0;
   }
   .single-project-drawings {
-    padding-top: 90px;
+    padding-top: 93px;
   }
   .single-project-photos {
     padding-bottom: 90px;
@@ -2744,7 +2746,7 @@ body.blog .post-content {
     font-size: 17px;
   }
   .main-content-padding {
-    padding: 94px 0 94px;
+    padding: 93px 0 92px;
   }
   .nav-item {
     margin-right: 32px;
@@ -2752,9 +2754,8 @@ body.blog .post-content {
   #front-page {
     width: 100%;
     height: 100%;
-    overflow: hidden;
     position: relative;
-    z-index: 1;
+    z-index: 100;
   }
   #front-page .container,
   #front-page .grid-row {
@@ -2773,7 +2774,7 @@ body.blog .post-content {
     position: absolute;
     font-size: 0;
     margin-right: 16px;
-    padding: 94px 32px 94px;
+    padding: 93px 32px 92px;
   }
   .scroll-col-right {
     bottom: 0;
@@ -2781,8 +2782,8 @@ body.blog .post-content {
   .project-content-holder {
     height: 100vh;
     overflow-y: scroll;
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 93px;
+    padding-bottom: 92px;
     margin-bottom: 0;
   }
   .project-content-holder.hide {
@@ -2798,10 +2799,10 @@ body.blog .post-content {
     max-width: 500px;
   }
   .swiper-container {
-    margin-top: 142px;
+    margin-top: 141px;
   }
   .project-photos-container {
-    height: calc(100vh -  284px);
+    height: calc(100vh -  281px);
   }
   .project-photo-holder img {
     -ms-flex: 0 1 auto;

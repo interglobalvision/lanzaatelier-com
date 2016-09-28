@@ -23,14 +23,6 @@ if( have_posts() ) {
 
 <?php
   }
-} else {
-?>
-        <article class="u-alert grid-row">
-          <div class="grid-item item-s-12">
-            <?php _e('[:es]Lo sentimos, no se pudo encontrar la página solicitada[:en]Sorry, page not found'); ?>
-          </div>
-        </article>
-<?php
 } ?>
     </div>
   </section>

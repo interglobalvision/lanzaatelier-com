@@ -86,9 +86,9 @@ img
 
 // FRONT PAGE 
 
-.front-page-section
-  text-align: center
-  z-index: 1000
+.scroll-cols-holder
+  // eliminates white-space between imgs
+  font-size: 0
 
 // ******************************************************
 
@@ -110,6 +110,8 @@ img
   align-items: center
   
 .project-photo-holder
+  &.swiper-slide
+    cursor: url('../img/dist/ui-cursor-arrow.png'), pointer 
   img 
     width: auto
     
