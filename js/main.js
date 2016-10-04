@@ -173,7 +173,7 @@ Site.Layout = {
   init: function() {
     var _this = this;
 
-    if ($('.swiper-slide').length) {
+    if ($('.swiper-slide').length > 1) {
       _this.initSwiper();
     }
   },
