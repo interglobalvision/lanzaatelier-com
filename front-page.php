@@ -31,9 +31,11 @@ if ( $query->have_posts() ) {
 
     if (!empty($image_id)) {
 ?>
-        <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
-          <?php echo wp_get_attachment_image($image_id, 'full');?>
-        </a>
+          <div class="front-image-holder">
+            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+              <?php echo wp_get_attachment_image($image_id, 'full');?>
+            </a>
+          </div>
 <?php 
     }
   }
@@ -53,9 +55,11 @@ if ( $query->have_posts() ) {
 
     if (!empty($image_id)) {
 ?>
-        <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
-          <?php echo wp_get_attachment_image($image_id, 'full');?>
-        </a>
+          <div class="front-image-holder">
+            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+              <?php echo wp_get_attachment_image($image_id, 'full');?>
+            </a>
+          </div>
 <?php 
     }
   }
