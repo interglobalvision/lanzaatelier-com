@@ -30,9 +30,14 @@ if ( $query->have_posts() ) {
     $image_id = get_post_meta($post->ID, '_igv_front_image_left_id', true);
 
     if (!empty($image_id)) {
+      if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+      } else {
+        $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+      }
 ?>
         <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
-          <?php echo wp_get_attachment_image($image_id, 'full');?>
+          <?php echo $img_elem; ?>
         </a>
 <?php 
     }
@@ -52,9 +57,14 @@ if ( $query->have_posts() ) {
     $image_id = get_post_meta($post->ID, '_igv_front_image_right_id', true);
 
     if (!empty($image_id)) {
+      if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+      } else {
+        $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+      }
 ?>
         <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
-          <?php echo wp_get_attachment_image($image_id, 'full');?>
+          <?php echo $img_elem; ?>
         </a>
 <?php 
     }
