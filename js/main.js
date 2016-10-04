@@ -98,6 +98,7 @@ Site.ScrollMagic = {
   scroll: function(event) {
     var _this = this;
 
+    console.log(event.deltaFactor);
     _this.scrollDirection = event.deltaY * event.deltaFactor;
     _this.scrollSpeed = _this.speedLimit / Math.abs(_this.scrollDirection);
 
