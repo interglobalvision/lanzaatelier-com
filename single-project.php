@@ -44,7 +44,7 @@ if( have_posts() ) {
             <?php 
               if (!empty($credits)) {
             ?>
-            <div class="single-project-credits margin-top-small padding-left-basic padding-right-basic font-mono">
+            <div class="single-project-credits margin-top-small padding-left-basic padding-right-basic font-mono font-size-small">
               <?php echo apply_filters('the_content', $credits); ?>
             </div>
             <?php 
