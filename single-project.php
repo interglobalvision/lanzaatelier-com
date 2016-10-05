@@ -66,7 +66,7 @@ if( have_posts() ) {
           $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
         }
 ?>
-                <div class="swiper-slide project-photo-holder u-pointer grid-column justify-center align-items-center <?php echo count($photos) > 1 ? 'slider-cursor' : ''; ?>">
+                <div class="swiper-slide project-photo-holder grid-column justify-center align-items-center <?php echo count($photos) > 1 ? 'slider-cursor' : ''; ?>">
                   <?php echo $img_elem ?>
                 </div>
 <?php
