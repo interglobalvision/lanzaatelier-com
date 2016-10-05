@@ -36,9 +36,11 @@ if ( $query->have_posts() ) {
         $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
       }
 ?>
-        <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
-          <?php echo $img_elem; ?>
-        </a>
+          <div class="front-image-holder">
+            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+              <?php echo $img_elem; ?>
+            </a>
+          </div>
 <?php 
     }
   }
@@ -63,9 +65,11 @@ if ( $query->have_posts() ) {
         $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
       }
 ?>
-        <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>">
-          <?php echo $img_elem; ?>
-        </a>
+          <div class="front-image-holder">
+            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+              <?php echo $img_elem; ?>
+            </a>
+          </div>
 <?php 
     }
   }

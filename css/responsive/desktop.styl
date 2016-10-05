@@ -36,12 +36,25 @@ $footer-height = 92px
   
 .scroll-col 
   position: absolute
+  width: 100%
   font-size: 0
-  margin-right: $margin-tiny
-  padding: $header-height $margin-small $footer-height
+  padding: $header-height $margin-small $footer-height 0
+  img 
+    margin: 0
   
 .scroll-col-right
   bottom: 0 
+  
+.front-image-holder 
+  width: 100%
+  height: calc('100vh - ' + ($header-height + $footer-height))
+  padding: $margin-basic 0 
+  a
+    height: 100%
+    width: 100%
+  img 
+    width: auto
+    max-height: 100%
   
 // ******************************************************
 

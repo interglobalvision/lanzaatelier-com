@@ -2409,19 +2409,6 @@ body.blog .post-content {
   .scroll-cols-holder {
     padding: 93px 0 90px;
   }
-  .scroll-col {
-    padding-right: 36px;
-    padding-left: 36px;
-  }
-  .scroll-col img {
-    margin: 36px 0;
-  }
-  .scroll-col a:first-of-type img {
-    margin-top: 0;
-  }
-  .scroll-col a:last-of-type img {
-    margin-bottom: 0;
-  }
   .single-project-drawings {
     padding-top: 93px;
   }
@@ -2772,12 +2759,28 @@ body.blog .post-content {
   }
   .scroll-col {
     position: absolute;
+    width: 100%;
     font-size: 0;
-    margin-right: 16px;
-    padding: 93px 32px 92px;
+    padding: 93px 32px 92px 0;
+  }
+  .scroll-col img {
+    margin: 0;
   }
   .scroll-col-right {
     bottom: 0;
+  }
+  .front-image-holder {
+    width: 100%;
+    height: calc(100vh - 185px);
+    padding: 48px 0;
+  }
+  .front-image-holder a {
+    height: 100%;
+    width: 100%;
+  }
+  .front-image-holder img {
+    width: auto;
+    max-height: 100%;
   }
   .project-content-holder {
     height: 100vh;
