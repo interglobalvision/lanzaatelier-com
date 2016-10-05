@@ -2761,8 +2761,7 @@ body.blog .post-content {
     position: absolute;
     width: 100%;
     font-size: 0;
-    margin-right: 16px;
-    padding: 93px 0 92px;
+    padding: 93px 32px 92px 0;
   }
   .scroll-col img {
     margin: 0;

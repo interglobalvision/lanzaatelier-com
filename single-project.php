@@ -60,10 +60,14 @@ if( have_posts() ) {
               <div class="swiper-wrapper">
 <?php
       foreach($photos as $image) {
+        if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
+          $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+        } else {
+          $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+        }
 ?>
-                <div class="swiper-slide project-photo-holder grid-column justify-center align-items-center <?php 
-                echo count($photos) > 1 ? 'slider-cursor' : ''; ?>">
-                  <?php echo wp_get_attachment_image($image, 'item-l-6-4x3'); ?>
+                <div class="swiper-slide project-photo-holder u-pointer grid-column justify-center align-items-center">
+                  <?php echo $img_elem ?>
                 </div>
 <?php
       }

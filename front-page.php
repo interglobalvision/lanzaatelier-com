@@ -27,13 +27,18 @@ if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
 
-    $image_id = get_post_meta($post->ID, '_igv_front_image_left_id', true);
+    $image = get_post_meta($post->ID, '_igv_front_image_left_id', true);
 
-    if (!empty($image_id)) {
+    if (!empty($image)) {
+      if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+      } else {
+        $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+      }
 ?>
           <div class="front-image-holder">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
-              <?php echo wp_get_attachment_image($image_id, 'full');?>
+              <?php echo $img_elem; ?>
             </a>
           </div>
 <?php 
@@ -51,13 +56,18 @@ if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
 
-    $image_id = get_post_meta($post->ID, '_igv_front_image_right_id', true);
+    $image = get_post_meta($post->ID, '_igv_front_image_right_id', true);
 
-    if (!empty($image_id)) {
+    if (!empty($image)) {
+      if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+      } else {
+        $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+      }
 ?>
           <div class="front-image-holder">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
-              <?php echo wp_get_attachment_image($image_id, 'full');?>
+              <?php echo $img_elem; ?>
             </a>
           </div>
 <?php 
