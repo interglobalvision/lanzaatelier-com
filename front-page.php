@@ -4,7 +4,7 @@ get_header();
 
 <main id="main-content">
   <section id="front-page">
-    <div class="scroll-cols-holder">
+    <div class="scroll-cols-holder u-hidden">
       <div class="container">
         <div class="grid-row">
 <?php
