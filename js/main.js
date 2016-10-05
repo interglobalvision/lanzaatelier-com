@@ -98,8 +98,8 @@ Site.ScrollMagic = {
   scroll: function(event) {
     var _this = this;
 
-    _this.scrollDirection = event.deltaY;
-    _this.scrollSpeed = _this.speedLimit / Math.abs(event.deltaY);
+    _this.scrollDirection = event.deltaY * event.deltaFactor;
+    _this.scrollSpeed = _this.speedLimit / Math.abs(_this.scrollDirection);
 
     _this.cols.left.move = (_this.cols.left.height - _this.cols.holder.height) / _this.scrollSpeed;
     _this.cols.right.move = (_this.cols.right.height - _this.cols.holder.height) / _this.scrollSpeed;
@@ -173,7 +173,7 @@ Site.Layout = {
   init: function() {
     var _this = this;
 
-    if ($('.swiper-slide').length) {
+    if ($('.swiper-slide').length > 1) {
       _this.initSwiper();
     }
   },
