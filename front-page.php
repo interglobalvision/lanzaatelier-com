@@ -27,16 +27,32 @@ if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
 
-    $image = get_post_meta($post->ID, '_igv_front_image_left_id', true);
+    $image_left = get_post_meta($post->ID, '_igv_front_image_left_id', true);
+    $image_right = get_post_meta($post->ID, '_igv_front_image_right_id', true);
 
-    if (!empty($image)) {
-      if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
-        $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+    if (!empty($image_left)) {
+      if (wp_check_filetype(wp_get_attachment_url($image_left))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image_left) . '">';
       } else {
-        $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+        $img_elem = wp_get_attachment_image($image_left, 'item-l-6-4x3');
       }
 ?>
           <div class="front-image-holder">
+            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+              <?php echo $img_elem; ?>
+            </a>
+          </div>
+<?php 
+    }
+
+    if (!empty($image_right)) {
+      if (wp_check_filetype(wp_get_attachment_url($image_right))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image_right) . '">';
+      } else {
+        $img_elem = wp_get_attachment_image($image_right, 'item-l-6-4x3');
+      }
+?>
+          <div class="front-image-holder mobile-front-item">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>
@@ -48,7 +64,7 @@ if ( $query->have_posts() ) {
         </div>
       </div>
       <div class="grid-item item-s-12 item-l-6">
-        <div class="scroll-col scroll-col-right text-align-center" data-side="right">
+        <div class="scroll-col scroll-col-right text-align-center desktop-front-item" data-side="right">
 <?php
   $posts_reversed = array_reverse($query->posts);
   $query->posts = $posts_reversed;
@@ -56,15 +72,16 @@ if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
 
-    $image = get_post_meta($post->ID, '_igv_front_image_right_id', true);
+    $image_right = get_post_meta($post->ID, '_igv_front_image_right_id', true);
 
-    if (!empty($image)) {
-      if (wp_check_filetype(wp_get_attachment_url($image))['ext'] == 'gif') {
-        $img_elem = '<img src="' . wp_get_attachment_url($image) . '">';
+    if (!empty($image_right)) {
+      if (wp_check_filetype(wp_get_attachment_url($image_right))['ext'] == 'gif') {
+        $img_elem = '<img src="' . wp_get_attachment_url($image_right) . '">';
       } else {
-        $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
+        $img_elem = wp_get_attachment_image($image_right, 'item-l-6-4x3');
       }
 ?>
+          
           <div class="front-image-holder">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
