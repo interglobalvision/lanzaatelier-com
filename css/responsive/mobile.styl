@@ -1,5 +1,5 @@
-$header-height = 66px
-$footer-height = 65px
+$header-height = 58px
+$footer-height = 57px
 
 // BASIC
 
@@ -131,14 +131,15 @@ body.menu-active
 .scroll-col
   img 
     margin: $margin-basic 0
-
-.scroll-col-left
-  a:first-of-type img
-    margin-top: 0
     
-.scroll-col-right
-  a:last-of-type img
+.scroll-col-left
+  .front-image-holder:first-of-type img
+    margin-top: 0
+  .front-image-holder:last-of-type img
     margin-bottom: 0
+    
+.desktop-front-item
+  display: none
   
 // ******************************************************
 

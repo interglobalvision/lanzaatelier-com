@@ -1,8 +1,41 @@
+$header-height = 84px
+$footer-height = 81px
+
+// BASIC
+
+.main-content-padding
+  padding: $header-height 0 $footer-height
+
+// ******************************************************
 
 // HEADER
 
 #header 
   font-size: $font-size-mid
+  
+// ******************************************************
+
+// FRONT PAGE
+
+.scroll-col 
+  padding: $header-height $margin-small $footer-height 0
+  
+.front-image-holder 
+  height: calc('100vh - ' + ($header-height + $footer-height))
+  
+// ******************************************************
+
+// SINGLE PROJECT
+  
+.project-content-holder
+  padding-top: $header-height
+  padding-bottom: $footer-height
+  
+.swiper-container
+  margin-top: $header-height + $margin-basic
+
+.project-photos-container
+  height: calc('100vh - ' ($header-height + $footer-height + ($margin-basic * 2)))
   
 // ******************************************************
 
