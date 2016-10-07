@@ -1321,6 +1321,9 @@ img {
   color: #000;
   padding-right: 0;
 }
+.qtranxs-available-languages-message {
+  display: none;
+}
 #header {
   position: fixed;
   top: 0;
