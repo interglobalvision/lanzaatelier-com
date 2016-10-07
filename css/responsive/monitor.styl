@@ -17,8 +17,11 @@ $footer-height = 81px
 
 // FRONT PAGE
 
-.scroll-col 
-  padding: $header-height $margin-small $footer-height 0
+.scroll-col-left
+  padding: $header-height ($margin-small * 2) $footer-height 0
+
+.scroll-col-right
+  padding: $header-height $margin-small $footer-height
   
 .front-image-holder 
   height: calc('100vh - ' + ($header-height + $footer-height))
@@ -30,6 +33,10 @@ $footer-height = 81px
 .project-content-holder
   padding-top: $header-height
   padding-bottom: $footer-height
+  padding-right: $margin-basic
+  
+.single-project-photos
+  padding-left: $margin-basic
   
 .swiper-container
   margin-top: $header-height + $margin-basic

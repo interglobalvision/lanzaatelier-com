@@ -38,12 +38,15 @@ $footer-height = 80px
   position: absolute
   width: 100%
   font-size: 0
-  padding: $header-height $margin-small $footer-height 0
   img 
     margin: 0
   
+.scroll-col-left
+  padding: $header-height ($margin-small * 2) $footer-height 0
+
 .scroll-col-right
   bottom: 0 
+  padding: $header-height $margin-small $footer-height
   
 .front-image-holder 
   width: 100%
@@ -71,9 +74,13 @@ $footer-height = 80px
   overflow-y: scroll
   padding-top: $header-height
   padding-bottom: $footer-height
+  padding-right: $margin-basic
   margin-bottom: 0
   &.hide
     display: none
+    
+.single-project-photos
+  padding-left: $margin-basic
       
 .project-text-title 
   display: block
