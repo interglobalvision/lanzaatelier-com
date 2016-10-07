@@ -53,6 +53,8 @@ Site.ScrollMagic = {
       _this.cols.right = $('.scroll-col-right');
       _this.cols.holder = $('.scroll-cols-holder');
 
+      _this.cols.holder.removeClass('u-hidden');
+
       _this.scrollDirection = 0;
       _this.cols.left.pos = 0;
       _this.cols.right.pos = 0;
