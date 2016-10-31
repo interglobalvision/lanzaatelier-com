@@ -244,7 +244,13 @@ Site.Project = {
           $('.project-content-holder').toggleClass('hide');
         }
       });
-    }
+    },
+
+    perfectScrollbar: function() {
+      $('.project-content-holder').perfectScrollbar({
+
+      });
+    },
   },
 
   Archive: {
