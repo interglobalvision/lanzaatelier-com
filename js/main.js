@@ -236,6 +236,7 @@ Site.Project = {
       var _this = this;
 
       _this.bindProjectToggle();
+      _this.perfectScrollbar();
     },
 
     bindProjectToggle: function() {
@@ -244,7 +245,13 @@ Site.Project = {
           $('.project-content-holder').toggleClass('hide');
         }
       });
-    }
+    },
+
+    perfectScrollbar: function() {
+      $('.project-content-holder').perfectScrollbar({
+        suppressScrollX: true,
+      });
+    },
   },
 
   Archive: {
