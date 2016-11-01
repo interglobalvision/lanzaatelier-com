@@ -1318,11 +1318,7 @@ img {
 }
 #header a.current,
 #footer a.current {
-  color: #21532f;
-}
-#header a.current svg,
-#footer a.current svg {
-  fill: #21532f;
+  color: #397e58;
 }
 #header a.current-lang,
 #footer a.current-lang {
