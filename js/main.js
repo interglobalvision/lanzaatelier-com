@@ -236,6 +236,7 @@ Site.Project = {
       var _this = this;
 
       _this.bindProjectToggle();
+      _this.perfectScrollbar();
     },
 
     bindProjectToggle: function() {
@@ -248,7 +249,7 @@ Site.Project = {
 
     perfectScrollbar: function() {
       $('.project-content-holder').perfectScrollbar({
-
+        suppressScrollX: true,
       });
     },
   },
