@@ -78,19 +78,14 @@ Site.ScrollMagic = {
   setColPadding: function() {
     var _this = this;
 
-    var $leftColFirstItem = _this.cols.left.children('.desktop-front-item').first(),
-      $leftColLastItem = _this.cols.left.children('.desktop-front-item').last(),
-      $rightColFirstItem = _this.cols.right.children('.desktop-front-item').first(),
-      $rightColLastItem = _this.cols.right.children('.desktop-front-item').last();
-
     if (_this.overMinWindowWidth()) {
-      var halfWindowMinusFooter = ($(window).height() / 2) - $('#footer').outerHeight(),
+      var $colFirstItem = $('.scroll-col').children('.desktop-front-item').first(),
+        $colLastItem = $('.scroll-col').children('.desktop-front-item').last(),
+        halfWindowMinusFooter = ($(window).height() / 2) - $('#footer').outerHeight(),
         halfWindowMinusHeader = ($(window).height() / 2) - $('#header').outerHeight();
 
-      $leftColFirstItem.css('padding-top', (halfWindowMinusHeader - ($leftColFirstItem.find('img').height() / 2)) + 'px');
-      $leftColLastItem.css('padding-bottom', (halfWindowMinusFooter - ($leftColLastItem.find('img').height() / 2)) + 'px');
-      $rightColFirstItem.css('padding-top', (halfWindowMinusHeader - ($rightColFirstItem.find('img').height() / 2)) + 'px');
-      $rightColLastItem.css('padding-bottom', (halfWindowMinusFooter - ($rightColLastItem.find('img').height() / 2)) + 'px');
+      $colFirstItem.css('padding-top', (halfWindowMinusHeader - ($colFirstItem.find('img').height() / 2)) + 'px');
+      $colLastItem.css('padding-bottom', (halfWindowMinusFooter - ($colLastItem.find('img').height() / 2)) + 'px');
     }
   },
 
