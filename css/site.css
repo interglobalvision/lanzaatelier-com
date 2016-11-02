@@ -2829,7 +2829,7 @@ body.blog .post-content {
   .front-image-holder {
     width: 100%;
     height: auto;
-    padding: 48px 0;
+    padding: 5vh 0;
   }
   .front-image-holder a {
     height: 100%;
