@@ -1841,13 +1841,7 @@ body.menu-active #footer svg {
   padding: 58px 0 57px;
 }
 .scroll-col img {
-  margin: 24px 0;
-}
-.scroll-col-left .front-image-holder:first-of-type img {
-  margin-top: 0;
-}
-.scroll-col-left .front-image-holder:last-of-type img {
-  margin-bottom: 0;
+  margin: 0 0 56px;
 }
 .desktop-front-item {
   display: none;
@@ -2834,7 +2828,7 @@ body.blog .post-content {
   }
   .front-image-holder {
     width: 100%;
-    height: calc(100vh - 161px);
+    height: auto;
     padding: 48px 0;
   }
   .front-image-holder a {
@@ -2955,9 +2949,6 @@ body.blog .post-content {
   }
   .scroll-col-right {
     padding: 84px 16px 81px;
-  }
-  .front-image-holder {
-    height: calc(100vh - 165px);
   }
   .project-content-holder {
     padding-top: 84px;

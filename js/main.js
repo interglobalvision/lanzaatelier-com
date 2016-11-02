@@ -74,10 +74,33 @@ Site.ScrollMagic = {
     return false;
   },
 
+  // set padding on top and bottom items of each col
+  setColPadding: function() {
+    var _this = this;
+
+    var $leftColFirstItem = _this.cols.left.children('.desktop-front-item').first(),
+      $leftColLastItem = _this.cols.left.children('.desktop-front-item').last(),
+      $rightColFirstItem = _this.cols.right.children('.desktop-front-item').first(),
+      $rightColLastItem = _this.cols.right.children('.desktop-front-item').last();
+
+    if (_this.overMinWindowWidth()) {
+      var halfWindowMinusFooter = ($(window).height() / 2) - $('#footer').outerHeight(),
+        halfWindowMinusHeader = ($(window).height() / 2) - $('#header').outerHeight();
+
+      $leftColFirstItem.css('padding-top', (halfWindowMinusHeader - ($leftColFirstItem.find('img').height() / 2)) + 'px');
+      $leftColLastItem.css('padding-bottom', (halfWindowMinusFooter - ($leftColLastItem.find('img').height() / 2)) + 'px');
+      $rightColFirstItem.css('padding-top', (halfWindowMinusHeader - ($rightColFirstItem.find('img').height() / 2)) + 'px');
+      $rightColLastItem.css('padding-bottom', (halfWindowMinusFooter - ($rightColLastItem.find('img').height() / 2)) + 'px');
+    }
+  },
+
   getColHeights: function() {
     var _this = this;
 
+    _this.setColPadding();
+
     if (_this.overMinWindowWidth()) {
+      
       _this.cols.left.height = $('.scroll-col-left').outerHeight(true);
       _this.cols.right.height = $('.scroll-col-right').outerHeight(true);
       _this.cols.holder.height = $('.scroll-cols-holder').outerHeight(true);
