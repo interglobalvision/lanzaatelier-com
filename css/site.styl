@@ -32,6 +32,7 @@ $color-white = rgba(255, 255, 255, 1)
 $color-white-trans = rgba(255, 255, 255, 0)
 $color-blue = rgb(0, 9, 255)
 $color-green = rgb(33, 83, 47)
+$color-green-light = rgb(57, 126, 88)
 
 // ******************************************************
 
@@ -59,9 +60,12 @@ img
     &:hover,
     &.current
       font-style: italic
+    &:hover
       color: $color-blue
       svg 
         fill: $color-blue
+    &.current
+      color: $color-green-light
     &.current-lang
       text-decoration: underline
       cursor: default

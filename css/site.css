@@ -1307,13 +1307,18 @@ img {
 #header a.current,
 #footer a.current {
   font-style: italic;
+}
+#header a:hover,
+#footer a:hover {
   color: #0009ff;
 }
 #header a:hover svg,
-#footer a:hover svg,
-#header a.current svg,
-#footer a.current svg {
+#footer a:hover svg {
   fill: #0009ff;
+}
+#header a.current,
+#footer a.current {
+  color: #397e58;
 }
 #header a.current-lang,
 #footer a.current-lang {
