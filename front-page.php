@@ -77,7 +77,8 @@ if ( $query->have_posts() ) {
     $image_right = get_post_meta($post->ID, '_igv_front_image_right_id', true);
 
     if (!empty($image_right)) {
-      if (wp_check_filetype(wp_get_attachment_url($image_right))['ext'] == 'gif') {
+      $check_filetype = wp_check_filetype(wp_get_attachment_url($image_right));
+      if ($check_filetype['ext'] == 'gif') { 
         $img_elem = '<img src="' . wp_get_attachment_url($image_right) . '">';
       } else {
         $img_elem = wp_get_attachment_image($image_right, 'item-l-6-4x3');
