@@ -2829,7 +2829,7 @@ body.blog .post-content {
   .front-image-holder {
     width: 100%;
     height: auto;
-    padding: 5vh 0;
+    padding: 4vh 0;
   }
   .front-image-holder a {
     height: 100%;
@@ -2949,6 +2949,9 @@ body.blog .post-content {
   }
   .scroll-col-right {
     padding: 84px 16px 81px;
+  }
+  .front-image-holder {
+    padding: 6vh 0;
   }
   .project-content-holder {
     padding-top: 84px;
