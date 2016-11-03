@@ -38,7 +38,7 @@ if ( $query->have_posts() ) {
         $img_elem = wp_get_attachment_image($image_left, 'item-l-6-4x3');
       }
 ?>
-          <div class="front-image-holder">
+          <div class="front-image-holder desktop-front-item">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>
@@ -85,7 +85,7 @@ if ( $query->have_posts() ) {
       }
 ?>
           
-          <div class="front-image-holder">
+          <div class="front-image-holder desktop-front-item">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>

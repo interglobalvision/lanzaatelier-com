@@ -64,6 +64,12 @@ Site.ScrollMagic = {
       _this.toggleOverflow();
 
       _this.getColHeights();
+      
+      // Redo when finished loading to adjust with fully loaded images
+      $(window).on('load', function() {
+        _this.getColHeights();
+      });
+
     }
   },
 
@@ -74,10 +80,31 @@ Site.ScrollMagic = {
     return false;
   },
 
-  getColHeights: function() {
+  // set padding on top and bottom items of each col
+  setColPadding: function() {
     var _this = this;
 
     if (_this.overMinWindowWidth()) {
+      $('.scroll-col').each( function(i, element) {
+        var $colFirstItem = $(element).children('.desktop-front-item').first();
+        var $colLastItem = $(element).children('.desktop-front-item').last();
+
+        var halfWindowMinusFooter = ($(window).height() / 2) - $('#footer').outerHeight();
+        var halfWindowMinusHeader = ($(window).height() / 2) - $('#header').outerHeight();
+
+        $colFirstItem.css('padding-top', (halfWindowMinusHeader - ($colFirstItem.find('img').height() / 2)) + 'px');
+        $colLastItem.css('padding-bottom', (halfWindowMinusFooter - ($colLastItem.find('img').height() / 2)) + 'px');
+      });
+    }
+  },
+
+  getColHeights: function() {
+    var _this = this;
+
+    _this.setColPadding();
+
+    if (_this.overMinWindowWidth()) {
+      
       _this.cols.left.height = $('.scroll-col-left').outerHeight(true);
       _this.cols.right.height = $('.scroll-col-right').outerHeight(true);
       _this.cols.holder.height = $('.scroll-cols-holder').outerHeight(true);
@@ -272,5 +299,6 @@ Site.Project = {
     }
   }
 };
+
 
 Site.init();
