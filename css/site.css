@@ -2861,9 +2861,6 @@ body.blog .post-content {
   .project-content-holder.hide {
     display: none;
   }
-  .single-project-photos {
-    padding-left: 48px;
-  }
   .project-text-title {
     display: block;
   }
@@ -2963,14 +2960,18 @@ body.blog .post-content {
     padding-bottom: 81px;
     padding-right: 24px;
   }
-  .single-project-photos {
-    padding-left: 24px;
-  }
   .swiper-container {
     margin-top: 108px;
   }
   .project-photos-container {
     height: calc(100vh -  213px);
+  }
+  .archive-photos-container {
+    margin-top: 24px;
+  }
+  .archive-project-title {
+    text-indent: -16px;
+    margin-left: 16px;
   }
   .index-container {
     padding-left: 80px;

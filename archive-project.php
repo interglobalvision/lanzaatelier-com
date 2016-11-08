@@ -26,7 +26,7 @@ if( have_posts() ) {
             </ul>
           </div>
 
-          <div class="grid-item item-s-12 item-l-6 grid-column justify-center align-items-center archive-project-photos">
+          <div class="grid-item item-s-12 item-l-6 grid-column justify-center align-items-start archive-project-photos">
 <?php
   while( have_posts() ) {
     the_post();
