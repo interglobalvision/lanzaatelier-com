@@ -10,25 +10,20 @@ get_header();
 <?php
 
 // WP_Query arguments
-$args = array (
-  'post_type'              => array( 'project' ),
-  'posts_per_page'         => '5',
-);
+$projects = get_post_meta(get_the_ID(), '_igv_front_projects', true);
 
-// The Query
-$query = new WP_Query( $args );
+//pr($projects); die;
 
 // The Loop
-if ( $query->have_posts() ) {
+if ($projects) {
 ?>
       <div class="grid-item item-s-12 item-l-6">
         <div class="scroll-col scroll-col-left text-align-center" data-side="left">
 <?php
-  while ( $query->have_posts() ) {
-    $query->the_post();
+  foreach ($projects as $project) {
 
-    $image_left = get_post_meta($post->ID, '_igv_front_image_left_id', true);
-    $image_right = get_post_meta($post->ID, '_igv_front_image_right_id', true);
+    $image_left = get_post_meta($project['id'], '_igv_front_image_left_id', true);
+    $image_right = get_post_meta($project['id'], '_igv_front_image_right_id', true);
 
     if (!empty($image_left)) {
       $check_filetype = wp_check_filetype(wp_get_attachment_url($image_left));
@@ -39,7 +34,7 @@ if ( $query->have_posts() ) {
       }
 ?>
           <div class="front-image-holder desktop-front-item">
-            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+            <a href="<?php echo get_the_permalink($project['id']); ?>" class="project-<?php echo $project['id']; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>
           </div>
@@ -55,7 +50,7 @@ if ( $query->have_posts() ) {
       }
 ?>
           <div class="front-image-holder mobile-front-item">
-            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+            <a href="<?php echo get_the_permalink($project['id']); ?>" class="project-<?php echo $project['id']; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>
           </div>
@@ -68,13 +63,11 @@ if ( $query->have_posts() ) {
       <div class="grid-item item-s-12 item-l-6">
         <div class="scroll-col scroll-col-right text-align-center desktop-front-item" data-side="right">
 <?php
-  $posts_reversed = array_reverse($query->posts);
-  $query->posts = $posts_reversed;
+  $projects_reversed = array_reverse($projects);
 
-  while ( $query->have_posts() ) {
-    $query->the_post();
+  foreach ($projects_reversed as $project) {
 
-    $image_right = get_post_meta($post->ID, '_igv_front_image_right_id', true);
+    $image_right = get_post_meta($project['id'], '_igv_front_image_right_id', true);
 
     if (!empty($image_right)) {
       $check_filetype = wp_check_filetype(wp_get_attachment_url($image_right));
@@ -86,7 +79,7 @@ if ( $query->have_posts() ) {
 ?>
           
           <div class="front-image-holder desktop-front-item">
-            <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
+            <a href="<?php echo get_the_permalink($project['id']); ?>" class="project-<?php echo $project['id']; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>
           </div>
