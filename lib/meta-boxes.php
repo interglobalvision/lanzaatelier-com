@@ -110,7 +110,7 @@ function igv_cmb_metaboxes() {
     'id'           => $prefix . 'front_meta',
     'title'        => __( 'Front Page Projects', 'cmb2' ),
     'object_types' => array( 'page', ),
-    'show_on'      => array( 'key' => 'id', 'value' => array( get_id_by_slug('home') ) ),
+    'show_on'      => array( 'key' => 'id', 'value' => array( get_option( 'page_on_front' ) ) ),
   ) );
 
   $front_group_id = $front_meta->add_field( array(
