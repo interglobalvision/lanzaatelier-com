@@ -39,6 +39,8 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  // PROJECT META
+
   $project_meta = new_cmb2_box( array(
     'id'           => $prefix . 'project_meta',
     'title'        => __( 'Project Options', 'cmb2' ),
@@ -100,6 +102,37 @@ function igv_cmb_metaboxes() {
     'desc' => __( 'Imagen que aparece en la columna derecha del Home', 'cmb2' ),
     'id'   => $prefix . 'front_image_right',
     'type' => 'file',
+  ) );
+
+  // FRONT PAGE META
+
+  $front_meta = new_cmb2_box( array(
+    'id'           => $prefix . 'front_meta',
+    'title'        => __( 'Front Page Projects', 'cmb2' ),
+    'object_types' => array( 'page', ),
+    'show_on'      => array( 'key' => 'id', 'value' => array( get_option( 'page_on_front' ) ) ),
+  ) );
+
+  $front_group_id = $front_meta->add_field( array(
+    'id'          => $prefix . 'front_projects',
+    'type'        => 'group',
+    'description' => __( 'Front page projects', 'cmb2' ),
+    'options'     => array(
+      'group_title'   => __( 'Project {#}', 'cmb2' ), // {#} gets replaced by row number
+      'add_button'    => __( 'Add Another Project', 'cmb2' ),
+      'remove_button' => __( 'Remove Project', 'cmb2' ),
+      'sortable'      => true, // beta
+      // 'closed'     => true, // true to have the groups closed by default
+    ),
+  ) );
+
+  $front_meta->add_group_field( $front_group_id, array(
+    'name'        => __( 'Project' ),
+    'id'          => 'id',
+    'type'        => 'post_search_text',
+    'post_type'   => 'project',
+    'select_type' => 'radio',
+    'select_behavior' => 'replace',
   ) );
 
 }

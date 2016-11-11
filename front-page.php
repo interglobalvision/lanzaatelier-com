@@ -9,11 +9,22 @@ get_header();
         <div class="grid-row">
 <?php
 
-// WP_Query arguments
-$args = array (
-  'post_type'              => array( 'project' ),
-  'posts_per_page'         => '5',
-);
+$projects = get_post_meta(get_the_ID(), '_igv_front_projects', true);
+
+if (!empty($projects[0])) {
+  $project_ids = array_map('array_map_filter_project_ids', $projects);
+
+  $args = array (
+    'post_type' => array( 'project' ),
+    'post__in' => $project_ids
+  );
+
+} else {
+  $args = array (
+    'post_type'  => array( 'project' ),
+    'posts_per_page' => '5',
+  );
+}
 
 // The Query
 $query = new WP_Query( $args );
