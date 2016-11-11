@@ -12,7 +12,7 @@ get_header();
 $projects = get_post_meta(get_the_ID(), '_igv_front_projects', true);
 
 if (!empty($projects[0])) {
-  $project_ids = array_map(array_map_filter_project_ids, $projects);
+  $project_ids = array_map('array_map_filter_project_ids', $projects);
 
   $args = array (
     'post_type' => array( 'project' ),
@@ -43,7 +43,7 @@ if ( $query->have_posts() ) {
 
     if (!empty($image_left)) {
       $check_filetype = wp_check_filetype(wp_get_attachment_url($image_left));
-      if ($check_filetype['ext'] == 'gif') {
+      if ($check_filetype['ext'] == 'gif') { 
         $img_elem = '<img src="' . wp_get_attachment_url($image_left) . '">';
       } else {
         $img_elem = wp_get_attachment_image($image_left, 'item-l-6-4x3');
@@ -54,12 +54,12 @@ if ( $query->have_posts() ) {
               <?php echo $img_elem; ?>
             </a>
           </div>
-<?php
+<?php 
     }
 
     if (!empty($image_right)) {
       $check_filetype = wp_check_filetype(wp_get_attachment_url($image_right));
-      if ($check_filetype['ext'] == 'gif') {
+      if ($check_filetype['ext'] == 'gif') { 
         $img_elem = '<img src="' . wp_get_attachment_url($image_right) . '">';
       } else {
         $img_elem = wp_get_attachment_image($image_right, 'item-l-6-4x3');
@@ -70,7 +70,7 @@ if ( $query->have_posts() ) {
               <?php echo $img_elem; ?>
             </a>
           </div>
-<?php
+<?php 
     }
   }
 ?>
@@ -89,19 +89,19 @@ if ( $query->have_posts() ) {
 
     if (!empty($image_right)) {
       $check_filetype = wp_check_filetype(wp_get_attachment_url($image_right));
-      if ($check_filetype['ext'] == 'gif') {
+      if ($check_filetype['ext'] == 'gif') { 
         $img_elem = '<img src="' . wp_get_attachment_url($image_right) . '">';
       } else {
         $img_elem = wp_get_attachment_image($image_right, 'item-l-6-4x3');
       }
 ?>
-
+          
           <div class="front-image-holder desktop-front-item">
             <a href="<?php echo get_the_permalink($post->ID); ?>" class="project-<?php echo $post->ID; ?>  grid-column justify-center align-items-center">
               <?php echo $img_elem; ?>
             </a>
           </div>
-<?php
+<?php 
     }
   }
 ?>
