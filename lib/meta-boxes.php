@@ -128,7 +128,7 @@ function igv_cmb_metaboxes() {
 
   $front_meta->add_group_field( $front_group_id, array(
     'name'        => __( 'Project' ),
-    'id'          => 'project_id',
+    'id'          => 'id',
     'type'        => 'post_search_text',
     'post_type'   => 'project',
     'select_type' => 'radio',
