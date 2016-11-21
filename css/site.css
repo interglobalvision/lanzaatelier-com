@@ -1244,10 +1244,12 @@ p {
 .font-larger {
   font-size: 1.3rem;
 }
-.font-italic {
+.font-italic,
+em {
   font-style: italic;
 }
-.font-bold {
+.font-bold,
+strong {
   font-weight: bold;
 }
 .font-small-caps {
