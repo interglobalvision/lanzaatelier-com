@@ -1286,9 +1286,12 @@ a:visited {
 a:hover {
   color: #0009ff;
 }
-p a,
-p a:active,
-p a:visited {
+.post-content a,
+.single-project-text a,
+.post-content a:active,
+.single-project-text a:active,
+.post-content a:visited,
+.single-project-text a:visited {
   text-decoration: underline;
 }
 html,
