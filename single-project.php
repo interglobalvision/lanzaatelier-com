@@ -28,7 +28,7 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6 single-project-drawings project-content-holder">
-            <h1 class="padding-left-basic margin-bottom-small font-size-mid"><a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+            <h1 class="padding-left-basic margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
 <?php
     if (!empty($drawings)) {
       foreach($drawings as $image) {
@@ -39,7 +39,7 @@ if( have_posts() ) {
           </div>
           
           <div class="grid-item item-s-12 item-l-6 single-project-text project-content-holder hide">
-            <h1 class="padding-left-basic project-text-title margin-bottom-small font-size-mid"><a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+            <h1 class="padding-left-basic project-text-title margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
             <?php the_content(); ?>
             <?php 
               if (!empty($credits)) {

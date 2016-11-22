@@ -1244,10 +1244,12 @@ p {
 .font-larger {
   font-size: 1.3rem;
 }
-.font-italic {
+.font-italic,
+em {
   font-style: italic;
 }
-.font-bold {
+.font-bold,
+strong {
   font-weight: bold;
 }
 .font-small-caps {
@@ -1286,9 +1288,12 @@ a:visited {
 a:hover {
   color: #0009ff;
 }
-p a,
-p a:active,
-p a:visited {
+.post-content a,
+.single-project-text a,
+.post-content a:active,
+.single-project-text a:active,
+.post-content a:visited,
+.single-project-text a:visited {
   text-decoration: underline;
 }
 html,
