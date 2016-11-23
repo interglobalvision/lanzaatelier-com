@@ -66,22 +66,34 @@ if( have_posts() ) {
           $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
         }
 ?>
-                <div class="swiper-slide project-photo-holder grid-column justify-center align-items-start <?php echo count($photos) > 1 ? 'slider-cursor' : ''; ?>">
+                <div class="swiper-slide project-photo-holder grid-column justify-center align-items-start">
                   <?php echo $img_elem ?>
                 </div>
 <?php
       }
 ?>
               </div>
+<?php
+      if (count($photos) > 1) {
+?>
+              <div id ="project-gallery-pagination">
+                <div id="project-slide-prev"></div>
+                <div id="project-slide-next"></div>
+              </div>
+<?php 
+      }
+?>
             </div>
 <?php
     } 
 ?>
-            <div class="project-gallery-pagination font-mono padding-top-tiny padding-left-mid u-inline-block"></div>
+            <div id="project-gallery-index" class="font-mono padding-top-tiny padding-left-mid u-inline-block"></div>
 <?php 
 if (!empty($pdf)) { 
 ?>
-            <div class="project-pdf font-mono padding-top-tiny u-inline-block"><a href="<?php echo esc_url($pdf); ?>">PDF</a></div>
+            <div class="project-pdf font-mono padding-top-tiny u-inline-block">
+              <a href="<?php echo esc_url($pdf); ?>">PDF</a>
+            </div>
 <?php 
 }
 ?>
