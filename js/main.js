@@ -204,6 +204,7 @@ Site.Layout = {
 
     if ($('.swiper-slide').length > 1) {
       _this.initSwiper();
+      _this.bindSwiperPagination();
     }
   },
 
@@ -214,18 +215,31 @@ Site.Layout = {
       loop: true,
       nextButton: '.project-gallery-next',
       prevButton: '.project-gallery-prev',
-      pagination: '.project-gallery-pagination',
+      pagination: '#project-gallery-index',
       paginationType: 'custom',
       spaceBetween: 48,
       setWrapperSize: true,
       paginationCustomRender: function (swiper, current, total) {
-        if ($('.project-gallery-pagination').length) {
+        if ($('#project-gallery-index').length) {
           return '<span id="gallery-index-active">' + current + '</span>/<span id="gallery-index-length">' + total + '</span>';
         }
       },
-      onClick: function(swiper) {
-        swiper.slideNext();
-      },
+    });
+  },
+
+  bindSwiperPagination: function() {
+    var _this = this;
+    
+    $('#project-slide-prev').bind('click', function(event) {
+      event.stopPropagation();
+
+      _this.swiper.slidePrev();
+    });
+
+    $('#project-slide-next').bind('click', function(event) {
+      event.stopPropagation();
+
+      _this.swiper.slideNext();
     });
   },
 };
