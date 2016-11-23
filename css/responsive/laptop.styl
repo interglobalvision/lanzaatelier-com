@@ -78,6 +78,8 @@ $footer-height = 80px
   margin-bottom: 0
   &.hide
     display: none
+  .project-content-wrapper
+    padding-bottom: $footer-height
     
 .project-text-title 
   display: block
@@ -96,6 +98,7 @@ $footer-height = 80px
   height: calc('100vh - ' ($header-height + $footer-height + ($margin-basic * 2)))
   
 .project-photo-holder
+  align-items: flex-start
   img 
     flex: 0 1 auto
     max-height: 100%
@@ -110,6 +113,10 @@ $footer-height = 80px
 .project-content-holder
   a:link
     cursor: pointer 
+    
+.single-project-photos
+  .project-content-wrapper
+    padding-bottom: 0
 
 // ******************************************************
 
