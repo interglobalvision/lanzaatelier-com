@@ -1371,9 +1371,6 @@ img {
       -ms-grid-row-align: center;
       align-items: center;
 }
-.project-photo-holder.slider-cursor {
-  cursor: url("../img/dist/ui-cursor-arrow.png"), pointer;
-}
 .project-photo-holder img {
   width: auto;
 }
@@ -1382,6 +1379,29 @@ img {
 }
 .swiper-pagination-custom {
   width: auto;
+}
+#project-gallery-pagination {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+#project-slide-prev,
+#project-slide-next {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+#project-slide-prev {
+  left: 0;
+  cursor: url("../img/dist/ui-cursor-arrow-left.png"), w-resize;
+}
+#project-slide-next {
+  right: 0;
+  cursor: url("../img/dist/ui-cursor-arrow-right.png"), e-resize;
 }
 .project-pdf {
   position: absolute;
