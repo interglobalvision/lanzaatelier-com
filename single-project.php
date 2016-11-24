@@ -28,31 +28,36 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6 single-project-drawings project-content-holder">
-            <h1 class="padding-left-basic margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
+            <div class="project-content-wrapper">
+              <h1 class="padding-left-basic margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
 <?php
     if (!empty($drawings)) {
       foreach($drawings as $image) {
         echo wp_get_attachment_image($image, 'item-l-6-4x3', '', array('class'=>'margin-bottom-small'));
       }
     }
-?>
+?>        
+            </div>
           </div>
           
           <div class="grid-item item-s-12 item-l-6 single-project-text project-content-holder hide">
-            <h1 class="padding-left-basic project-text-title margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
-            <?php the_content(); ?>
-            <?php 
-              if (!empty($credits)) {
-            ?>
-            <div class="single-project-credits margin-top-small padding-left-basic padding-right-basic font-mono font-size-small">
-              <?php echo apply_filters('the_content', $credits); ?>
-            </div>
-            <?php 
-              }
-            ?>          
-            </div>
+            <div class="project-content-wrapper">
+              <h1 class="padding-left-basic project-text-title margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
+              <?php the_content(); ?>
+              <?php 
+                if (!empty($credits)) {
+              ?>
+              <div class="single-project-credits margin-top-small padding-left-basic padding-right-basic font-mono font-size-small">
+                <?php echo apply_filters('the_content', $credits); ?>
+              </div>
+              <?php 
+                }
+              ?> 
+            </div>         
+          </div>
 
           <div class="grid-item item-s-12 item-l-6 single-project-photos">
+            <div class="project-content-wrapper">
 <?php
     if (!empty($photos)) {
 ?>
@@ -66,7 +71,7 @@ if( have_posts() ) {
           $img_elem = wp_get_attachment_image($image, 'item-l-6-4x3');
         }
 ?>
-                <div class="swiper-slide project-photo-holder grid-column justify-center align-items-start">
+                <div class="swiper-slide project-photo-holder grid-column justify-center">
                   <?php echo $img_elem ?>
                 </div>
 <?php
@@ -97,6 +102,7 @@ if (!empty($pdf)) {
 <?php 
 }
 ?>
+            </div>
           </div>
 
         </div>

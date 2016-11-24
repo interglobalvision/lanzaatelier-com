@@ -1879,13 +1879,20 @@ body.menu-active #footer svg {
 .project-text-title {
   display: none;
 }
+.project-photo-holder {
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+      -ms-grid-row-align: center;
+      align-items: center;
+}
 .project-photo-holder img {
   max-height: 300px;
 }
 .single-project-drawings {
   padding-top: 58px;
 }
-.single-project-photos {
+.single-project-photos .project-content-wrapper {
   padding-bottom: 57px;
 }
 .project-content-holder {
@@ -2484,11 +2491,14 @@ body.blog .post-content {
   .single-project-drawings {
     padding-top: 81px;
   }
-  .single-project-photos {
+  .single-project-photos .project-content-wrapper {
     padding-bottom: 78px;
   }
   .project-content-holder {
     margin-bottom: 36px;
+  }
+  .project-content-holder .project-content-wrapper {
+    padding-bottom: 78px;
   }
   .project-photo-holder img {
     max-height: 500px;
@@ -2886,6 +2896,9 @@ body.blog .post-content {
   .project-content-holder.hide {
     display: none;
   }
+  .project-content-holder .project-content-wrapper {
+    padding-bottom: 80px;
+  }
   .project-text-title {
     display: block;
   }
@@ -2900,6 +2913,13 @@ body.blog .post-content {
   }
   .project-photos-container {
     height: calc(100vh -  257px);
+  }
+  .project-photo-holder {
+    -webkit-align-items: flex-start;
+    -ms-align-items: flex-start;
+    -ms-flex-align: start;
+        -ms-grid-row-align: flex-start;
+        align-items: flex-start;
   }
   .project-photo-holder img {
     -webkit-flex: 0 1 auto;
@@ -2916,6 +2936,9 @@ body.blog .post-content {
   }
   .project-content-holder a:link {
     cursor: pointer;
+  }
+  .single-project-photos .project-content-wrapper {
+    padding-bottom: 0;
   }
   .archive-project-photos {
     display: -webkit-flex;
@@ -2984,6 +3007,9 @@ body.blog .post-content {
     padding-top: 84px;
     padding-bottom: 81px;
     padding-right: 24px;
+  }
+  .project-content-holder .project-content-wrapper {
+    padding-bottom: 81px;
   }
   .swiper-container {
     margin-top: 108px;
