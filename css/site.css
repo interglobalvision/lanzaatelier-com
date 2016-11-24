@@ -1871,7 +1871,10 @@ body.menu-active #footer svg {
   padding: 58px 0 57px;
 }
 .scroll-col img {
-  margin: 0 0 56px;
+  margin: 0 0 40px;
+}
+.mobile-front-item:last-of-type img {
+  margin-bottom: 0;
 }
 .desktop-front-item {
   display: none;
@@ -2869,7 +2872,7 @@ body.blog .post-content {
   .front-image-holder {
     width: 100%;
     height: auto;
-    padding: 4vh 0;
+    padding: 3vh 0;
   }
   .front-image-holder a {
     height: 100%;
@@ -3001,7 +3004,7 @@ body.blog .post-content {
     padding: 84px 16px 81px;
   }
   .front-image-holder {
-    padding: 6vh 0;
+    padding: 5vh 0;
   }
   .project-content-holder {
     padding-top: 84px;
