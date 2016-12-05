@@ -278,6 +278,7 @@ Site.Project = {
 
       _this.bindProjectToggle();
       _this.perfectScrollbar();
+      _this.insertBreakTabs();
     },
 
     bindProjectToggle: function() {
@@ -292,6 +293,10 @@ Site.Project = {
       $('.project-content-holder').perfectScrollbar({
         suppressScrollX: true,
       });
+    },
+
+    insertBreakTabs: function() {
+      $('<span class="padding-left-basic u-inline-block"></span>').insertAfter('.single-project-text p br');
     },
   },
 
