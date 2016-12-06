@@ -64,7 +64,7 @@ Site.ScrollMagic = {
       _this.toggleOverflow();
 
       _this.getColHeights();
-      
+
       // Redo when finished loading to adjust with fully loaded images
       $(window).on('load', function() {
         _this.getColHeights();
@@ -104,7 +104,7 @@ Site.ScrollMagic = {
     _this.setColPadding();
 
     if (_this.overMinWindowWidth()) {
-      
+
       _this.cols.left.height = $('.scroll-col-left').outerHeight(true);
       _this.cols.right.height = $('.scroll-col-right').outerHeight(true);
       _this.cols.holder.height = $('.scroll-cols-holder').outerHeight(true);
@@ -145,7 +145,7 @@ Site.ScrollMagic = {
   },
 
   checkScrollPos: function() {
-    var _this = this; 
+    var _this = this;
 
     if (_this.cols.left.pos > 0 || _this.cols.left.height <  _this.cols.holder.height) {
       _this.cols.left.pos = 0;
@@ -229,7 +229,7 @@ Site.Layout = {
 
   bindSwiperPagination: function() {
     var _this = this;
-    
+
     $('#project-slide-prev').bind('click', function(event) {
       event.stopPropagation();
 

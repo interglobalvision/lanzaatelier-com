@@ -36,24 +36,27 @@ if( have_posts() ) {
         echo wp_get_attachment_image($image, 'item-l-6-4x3', '', array('class'=>'margin-bottom-small'));
       }
     }
-?>        
+?>
             </div>
           </div>
-          
+
           <div class="grid-item item-s-12 item-l-6 single-project-text project-content-holder hide">
             <div class="project-content-wrapper">
               <h1 class="padding-left-basic project-text-title margin-bottom-small font-size-mid"><?php the_title(); ?></h1>
-              <?php the_content(); ?>
-              <?php 
+              <?php
+                $content = apply_filters('the_content', $post->post_content);
+                $content_with_tab = str_replace('<br />', '<br /><span class="padding-left-basic u-inline-block"></span>', $content);
+                echo $content_with_tab;
+
                 if (!empty($credits)) {
               ?>
               <div class="single-project-credits margin-top-small padding-left-basic padding-right-basic font-mono font-size-small">
                 <?php echo apply_filters('the_content', $credits); ?>
               </div>
-              <?php 
+              <?php
                 }
-              ?> 
-            </div>         
+              ?>
+            </div>
           </div>
 
           <div class="grid-item item-s-12 item-l-6 single-project-photos">
@@ -85,21 +88,21 @@ if( have_posts() ) {
                 <div id="project-slide-prev"></div>
                 <div id="project-slide-next"></div>
               </div>
-<?php 
+<?php
       }
 ?>
             </div>
 <?php
-    } 
+    }
 ?>
             <div id="project-gallery-index" class="font-mono padding-top-tiny padding-left-mid u-inline-block"></div>
-<?php 
-if (!empty($pdf)) { 
+<?php
+if (!empty($pdf)) {
 ?>
             <div class="project-pdf font-mono padding-top-tiny u-inline-block">
               <a href="<?php echo esc_url($pdf); ?>">PDF</a>
             </div>
-<?php 
+<?php
 }
 ?>
             </div>
