@@ -54,7 +54,7 @@ function cmb_initialize_cmb_meta_boxes() {
     require_once 'lib/cmb-field-gallery/cmb-field-gallery.php';
   }
 }
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 11 );
 
 function composer_autoload() {
   require_once( 'vendor/autoload.php' );
