@@ -2876,7 +2876,6 @@ body.blog .post-content {
   }
   .scroll-col-right {
     bottom: 0;
-    padding: 81px 32px 80px;
   }
   .front-image-holder {
     width: 100%;
@@ -3008,9 +3007,6 @@ body.blog .post-content {
   }
   .scroll-col-left {
     padding: 84px 32px 81px 0;
-  }
-  .scroll-col-right {
-    padding: 84px 16px 81px;
   }
   .front-image-holder {
     padding: 5vh 0;
