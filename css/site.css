@@ -1356,6 +1356,15 @@ img {
 .scroll-cols-holder {
   font-size: 0;
 }
+.scroll-col div:first-child {
+  padding-top: 0;
+}
+.scroll-col-left div:nth-last-child(2) {
+  padding-bottom: 0;
+}
+.scroll-col-right div:last-child {
+  padding-bottom: 0;
+}
 #footer {
   position: fixed;
   bottom: 0;
