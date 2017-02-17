@@ -44,7 +44,7 @@ $color-green-light = rgb(57, 126, 88)
 
 // BASIC
 
-html, body 
+html, body
   height: 100%
 
 html
@@ -53,16 +53,16 @@ html
 img
   max-width: 100%
   height: auto
-    
+
 #header,
-#footer 
+#footer
   a
     &:hover,
     &.current
       font-style: italic
     &:hover
       color: $color-blue
-      svg 
+      svg
         fill: $color-blue
     &.current
       color: $color-green-light
@@ -73,44 +73,53 @@ img
         font-style: normal
         color: $color-black
         padding-right: 0
-        
+
 .qtranxs-available-languages-message
   display: none
-  
+
 .ps-scrollbar-x-rail,
 .ps-scrollbar-y-rail
   position: absolute
   left: -9999px
   width: 0px
-  
+
 // ******************************************************
 
-// HEADER 
+// HEADER
 
-#header 
-  position: fixed 
+#header
+  position: fixed
   top: 0
-  left: 0 
+  left: 0
   width: 100%
   z-index: 9000
   background-image: linear-gradient(to bottom, $color-white 0, $color-white 75%, $color-white-trans 100%)
-  
+
 // ******************************************************
 
-// FRONT PAGE 
+// FRONT PAGE
 
 .scroll-cols-holder
   // eliminates white-space between imgs
   font-size: 0
 
+.scroll-col div:first-child
+  padding-top: 0
+
+.scroll-col-left div:nth-last-child(2)
+  padding-bottom: 0
+
+.scroll-col-right div:last-child
+  padding-bottom: 0
+
 // ******************************************************
 
-// FOOTER 
+// FOOTER
 
-#footer 
-  position: fixed 
+#footer
+  position: fixed
   bottom: 0
-  left: 0 
+  left: 0
   width: 100%
   z-index: 9000
   background-image: linear-gradient(to top, $color-white 0, $color-white 75%, $color-white-trans 100%)
@@ -121,18 +130,18 @@ img
 
 .swiper-wrapper
   align-items: center
-  
+
 .project-photo-holder
-  img 
+  img
     width: auto
-    
-.single-project-drawings 
+
+.single-project-drawings
   // eliminates white-space between imgs
   font-size: 0
-    
+
 .swiper-pagination-custom
   width: auto
-  
+
 #project-gallery-pagination
   position: absolute
   top: 0
@@ -141,22 +150,22 @@ img
   height: 100%
   z-index: 1000
 
-#project-slide-prev, 
+#project-slide-prev,
 #project-slide-next
   position: absolute
   top: 0
   width: 50%
   height: 100%
-  
-#project-slide-prev 
+
+#project-slide-prev
   left: 0
   cursor: url('../img/dist/ui-cursor-arrow-left.png'), w-resize
-  
-#project-slide-next 
+
+#project-slide-next
   right: 0
   cursor: url('../img/dist/ui-cursor-arrow-right.png'), e-resize
-  
-.project-pdf 
+
+.project-pdf
   position: absolute
   width: 100%
   left: 0
@@ -169,16 +178,16 @@ img
 .archive-project-title
   &:hover
     font-style: italic
-  
+
 .project-photos-container
   &.hide
     display: none
-  
+
 // ******************************************************
 
 // MEDIA QUERIES
 
-$gutter = 16px 
+$gutter = 16px
 
 $margin-micro = ($gutter / 3)
 $margin-tiny = ($gutter / 2)
@@ -186,7 +195,7 @@ $margin-small = ($gutter)
 $margin-basic = ($gutter * 1.5)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
-    
+
 $font-size-basic = 12px
 $font-size-small = 10px
 $font-size-mid = 14px
@@ -204,36 +213,36 @@ font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large,
 
 @media screen and (min-width: 500px)
 
-  $gutter = 24px 
+  $gutter = 24px
 
   grid(96%, $gutter, s)
 
 @media screen and (min-width: 720px)
 
   $gutter = 24px
-  
+
   $margin-micro = ($gutter / 3)
   $margin-tiny = ($gutter / 2)
   $margin-small = ($gutter)
   $margin-basic = ($gutter * 1.5)
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
-  
+
   $font-size-basic = 14px
   $font-size-small = 12px
   $font-size-mid = 16px
   $font-size-large = 28px
   $font-size-extra = 36px
-  
+
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
-  
+
   grid(680px, $gutter, m)
-  
+
   font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large, $font-size-extra)
-  
+
   .mobile-only
     display: none
-  
+
   @import 'responsive/tablet'
 
 @media screen and (min-width: 1024px)
@@ -246,21 +255,21 @@ font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large,
   $margin-basic = ($gutter * 1.5)
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
-  
+
   $font-size-basic = 15px
   $font-size-small = 13px
   $font-size-mid = 17px
 
   grid(1000px, $gutter, l)
-  
+
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
-  
+
   font-sizes($font-size-basic, $font-size-small, $font-size-mid)
 
   @import 'responsive/laptop'
-  
+
 @media screen and (min-width: 1280px)
-  
+
   grid(1200px)
 
 @media screen and (min-width: 1366px)
@@ -270,13 +279,13 @@ font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large,
 @media screen and (min-width: 1680px)
 
   grid(1600px)
-  
+
   $font-size-basic = 16px
   $font-size-small = 14px
   $font-size-mid = 18px
-  
+
   font-sizes($font-size-basic, $font-size-small, $font-size-mid)
-  
+
   @import 'responsive/monitor'
 
 @media screen and (min-width: 1920px)

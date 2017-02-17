@@ -1356,6 +1356,15 @@ img {
 .scroll-cols-holder {
   font-size: 0;
 }
+.scroll-col div:first-child {
+  padding-top: 0;
+}
+.scroll-col-left div:nth-last-child(2) {
+  padding-bottom: 0;
+}
+.scroll-col-right div:last-child {
+  padding-bottom: 0;
+}
 #footer {
   position: fixed;
   bottom: 0;
@@ -2867,7 +2876,6 @@ body.blog .post-content {
   }
   .scroll-col-right {
     bottom: 0;
-    padding: 81px 32px 80px;
   }
   .front-image-holder {
     width: 100%;
@@ -2999,9 +3007,6 @@ body.blog .post-content {
   }
   .scroll-col-left {
     padding: 84px 32px 81px 0;
-  }
-  .scroll-col-right {
-    padding: 84px 16px 81px;
   }
   .front-image-holder {
     padding: 5vh 0;

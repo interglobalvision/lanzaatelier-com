@@ -5,24 +5,24 @@ $footer-height = 80px
 
 .main-content-padding
   padding: $header-height 0 $footer-height
-  
+
 // ******************************************************
 
 // HEADER
 
-.nav-item 
+.nav-item
   margin-right: $margin-small
-  
+
 // ******************************************************
- 
+
 // FRONT PAGE
 
-#front-page 
-  width: 100% 
+#front-page
+  width: 100%
   height: 100%
   position: relative
   z-index: 100
-  .container, .grid-row 
+  .container, .grid-row
     height: 100%
 
 .scroll-cols-holder
@@ -33,42 +33,41 @@ $footer-height = 80px
   padding: 0
   top: 0
   left: 0
-  
-.scroll-col 
+
+.scroll-col
   position: absolute
   width: 100%
   font-size: 0
-  img 
+  img
     margin: 0
-  
+
 .scroll-col-left
-  padding: $header-height ($margin-small * 2) $footer-height 0
+  padding: $header-height ($margin-basic + $margin-tiny) $footer-height 0
 
 .scroll-col-right
-  bottom: 0 
-  padding: $header-height $margin-small $footer-height
-  
-.front-image-holder 
+  bottom: 0
+
+.front-image-holder
   width: 100%
   height: auto
-  padding: 3vh 0 
+  padding: 3vh 0
   a
     height: 100%
     width: 100%
-  img 
+  img
     width: auto
     max-height: 100%
-    
+
 .desktop-front-item
   display: block
-  
+
 .mobile-front-item
   display: none
-  
+
 // ******************************************************
 
 // SINGLE PROJECT
-  
+
 .project-content-holder
   height: 100vh
   overflow: hidden
@@ -80,40 +79,40 @@ $footer-height = 80px
     display: none
   .project-content-wrapper
     padding-bottom: $footer-height
-    
-.project-text-title 
+
+.project-text-title
   display: block
-  
+
 .single-project-text
-  p 
+  p
     max-width: 650px
-    
+
 .single-project-credits
   max-width: 500px
-  
+
 .swiper-container
   margin-top: $header-height + $margin-basic
 
 .project-photos-container
   height: calc('100vh - ' ($header-height + $footer-height + ($margin-basic * 2)))
-  
+
 .project-photo-holder
   align-items: flex-start
-  img 
+  img
     flex: 0 1 auto
     max-height: 100%
     width: auto
-    
-.single-project-drawings 
-  cursor: url('../img/dist/ui-cursor-plus.png'), pointer 
-  
-.single-project-text 
-  cursor: url('../img/dist/ui-cursor-close.png'), pointer 
-  
+
+.single-project-drawings
+  cursor: url('../img/dist/ui-cursor-plus.png'), pointer
+
+.single-project-text
+  cursor: url('../img/dist/ui-cursor-close.png'), pointer
+
 .project-content-holder
   a:link
-    cursor: pointer 
-    
+    cursor: pointer
+
 .single-project-photos
   .project-content-wrapper
     padding-bottom: 0
@@ -124,14 +123,14 @@ $footer-height = 80px
 
 .archive-project-photos
   display: flex
-  
+
 .archive-photos-container
   margin-top: $margin-basic
-  
+
 .archive-project-title
   text-indent: -($margin-small)
   margin-left: $margin-small
-  
+
 // ******************************************************
 
 // INDEX
@@ -139,7 +138,7 @@ $footer-height = 80px
 .index-container
   padding-left: $margin-small
   padding-right: $margin-small
-  
+
 // ******************************************************
 
 // PAGE INFO

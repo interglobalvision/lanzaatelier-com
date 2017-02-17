@@ -80,28 +80,8 @@ Site.ScrollMagic = {
     return false;
   },
 
-  // set padding on top and bottom items of each col
-  setColPadding: function() {
-    var _this = this;
-
-    if (_this.overMinWindowWidth()) {
-      $('.scroll-col').each( function(i, element) {
-        var $colFirstItem = $(element).children('.desktop-front-item').first();
-        var $colLastItem = $(element).children('.desktop-front-item').last();
-
-        var halfWindowMinusFooter = ($(window).height() / 2) - $('#footer').outerHeight();
-        var halfWindowMinusHeader = ($(window).height() / 2) - $('#header').outerHeight();
-
-        $colFirstItem.css('padding-top', (halfWindowMinusHeader - ($colFirstItem.find('img').height() / 2)) + 'px');
-        $colLastItem.css('padding-bottom', (halfWindowMinusFooter - ($colLastItem.find('img').height() / 2)) + 'px');
-      });
-    }
-  },
-
   getColHeights: function() {
     var _this = this;
-
-    _this.setColPadding();
 
     if (_this.overMinWindowWidth()) {
 
