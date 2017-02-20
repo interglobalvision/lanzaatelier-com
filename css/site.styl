@@ -103,17 +103,6 @@ img
   // eliminates white-space between imgs
   font-size: 0
 
-/*
-.scroll-col div:first-child
-  padding-top: 0
-
-.scroll-col-left div:nth-last-child(2)
-  padding-bottom: 0
-
-.scroll-col-right div:last-child
-  padding-bottom: 0
-*/
-
 // ******************************************************
 
 // FOOTER
@@ -212,6 +201,14 @@ space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-m
 font-sizes($font-size-basic, $font-size-small, $font-size-mid, $font-size-large, $font-size-extra)
 
 @import 'responsive/mobile'
+
+@media screen and (orientation: landscape) and (max-height: 300px)
+  #nav-holder
+    padding-top: 43px
+    padding-bottom: 40px
+    font-size: 17px
+  #mobile-email
+    font-size: 16px
 
 @media screen and (min-width: 500px)
 
