@@ -1785,7 +1785,6 @@ html,
   padding-top: 56px;
   padding-bottom: 56px;
   font-size: 36px;
-  overflow-x: scroll;
 }
 #nav-menu {
   display: -webkit-flex;
