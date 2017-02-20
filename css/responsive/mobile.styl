@@ -8,16 +8,16 @@ $footer-height = 57px
 
 .site-title
   text-align: center
-  
+
 .site-logo
   svg
     height: 12px
-  
+
 // ******************************************************
 
 // HEADER
 
-#header 
+#header
   font-size: $font-size-mid
 
 #mobile-header
@@ -28,7 +28,7 @@ $footer-height = 57px
   left: 0
   padding: $margin-small 0 $margin-basic
   background-image: linear-gradient(to bottom, $color-white 0, $color-white 75%, $color-white-trans 100%)
-  
+
 .mobile-toggle
   position: absolute
   height: 100%
@@ -40,16 +40,16 @@ $footer-height = 57px
   text-align: center
   color: $color-blue
   cursor: pointer
-  
-.menu-open 
-  svg 
+
+.menu-open
+  svg
     width: 21px
     height: 16px
     fill: $color-blue
-  
+
 .menu-close
   display: none
-  svg 
+  svg
     width: 18px
     height: 18px
 
@@ -65,23 +65,27 @@ $footer-height = 57px
   padding-top: $margin-mid
   padding-bottom: $margin-mid
   font-size: 36px
-  
+
+@media screen and (orientation: landscape)
+  #nav-holder
+    font-size: 30px
+
 #nav-menu
   display: flex
   flex-direction: column
   justify-content: center
-  ul 
-    li 
+  ul
+    li
       display: block
-    
+
 #lang-holder
   display: flex
   flex-direction: column
   justify-content: space-around
-  
+
 #mobile-email
   font-size: $font-size-large
-  
+
 body.menu-active
   #mobile-header
     background: initial
@@ -96,23 +100,23 @@ body.menu-active
     display: none
   .menu-close
     display: initial
-  #header, #footer 
+  #header, #footer
     background: initial
     a
       &:hover,
       &.current
         font-style: italic
         color: $color-black
-        svg 
+        svg
           fill: $color-white
-    svg 
+    svg
       fill: $color-white
-    
+
 // ******************************************************
-    
+
 // FOOTER
 
-#footer 
+#footer
   padding: $margin-basic 0 $margin-small
 
 .footer-logo-holder
@@ -120,49 +124,49 @@ body.menu-active
 
 .footer-email-holder
   display: none
-  
+
 // ******************************************************
- 
+
 // FRONT PAGE
 
 .scroll-cols-holder
   padding: $header-height 0 $footer-height
 
 .scroll-col
-  img 
+  img
     margin: 0 0 40px
-    
+
 .mobile-front-item:last-of-type
-  img 
-    margin-bottom: 0 
-    
+  img
+    margin-bottom: 0
+
 .desktop-front-item
   display: none
-  
+
 // ******************************************************
 
 // SINGLE PROJECT
 
-.project-text-title 
+.project-text-title
   display: none
 
 .project-photo-holder
   align-items: center
-  img 
+  img
     max-height: 300px
-    
+
 .single-project-drawings
   padding-top: $header-height
-  
+
 .single-project-photos
   .project-content-wrapper
     padding-bottom: $footer-height
-  
+
 .project-content-holder
   margin-bottom: $margin-basic
-  
+
 .single-project-text
-  p 
+  p
     max-width: 500px
 
 // ******************************************************
@@ -175,7 +179,7 @@ body.menu-active
 
 .archive-project-photos
   display: none
-  
+
 // ******************************************************
 
 // INDEX
@@ -183,7 +187,7 @@ body.menu-active
 .index-container
   padding-left: $margin-basic
   padding-right: $margin-basic
-  
-body.blog 
-  .post-content 
+
+body.blog
+  .post-content
     display: none
