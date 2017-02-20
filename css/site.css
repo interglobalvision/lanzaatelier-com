@@ -3007,10 +3007,10 @@ body.blog .post-content {
     font-size: 18px;
   }
   .scroll-col-left {
-    padding: 84px 16px 81px 0;
+    padding: 84px 32px 81px 0;
   }
   .scroll-col-right {
-    padding-right: 16px;
+    padding-right: 32px;
   }
   .front-image-holder {
     padding: 5vh 0;
@@ -3018,7 +3018,7 @@ body.blog .post-content {
   .project-content-holder {
     padding-top: 84px;
     padding-bottom: 81px;
-    padding-right: 8px;
+    padding-right: 16px;
   }
   .project-content-holder .project-content-wrapper {
     padding-bottom: 81px;
