@@ -1794,11 +1794,7 @@ html,
   padding-top: 56px;
   padding-bottom: 56px;
   font-size: 36px;
-}
-@media screen and (orientation: landscape) {
-  #nav-holder {
-    font-size: 30px;
-  }
+  overflow-x: scroll;
 }
 #nav-menu {
   display: -webkit-flex;
@@ -1931,6 +1927,16 @@ body.menu-active #footer svg {
 }
 body.blog .post-content {
   display: none;
+}
+@media screen and (orientation: landscape) and (max-height: 300px) {
+  #nav-holder {
+    padding-top: 43px;
+    padding-bottom: 40px;
+    font-size: 17px;
+  }
+  #mobile-email {
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 500px) {
   .container {

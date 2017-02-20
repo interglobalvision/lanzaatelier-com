@@ -65,10 +65,7 @@ $footer-height = 57px
   padding-top: $margin-mid
   padding-bottom: $margin-mid
   font-size: 36px
-
-@media screen and (orientation: landscape)
-  #nav-holder
-    font-size: 30px
+  overflow-x: scroll
 
 #nav-menu
   display: flex
@@ -191,3 +188,11 @@ body.menu-active
 body.blog
   .post-content
     display: none
+
+@media screen and (orientation: landscape) and (max-height: 300px)
+  #nav-holder
+    padding-top: 43px
+    padding-bottom: 40px
+    font-size: 17px
+  #mobile-email
+    font-size: 16px
