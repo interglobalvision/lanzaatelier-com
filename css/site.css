@@ -2872,10 +2872,11 @@ body.blog .post-content {
     margin: 0;
   }
   .scroll-col-left {
-    padding: 81px 64px 80px 0;
+    padding: 81px 32px 80px 0;
   }
   .scroll-col-right {
     bottom: 0;
+    padding-right: 32px;
   }
   .front-image-holder {
     width: 100%;
@@ -2901,7 +2902,7 @@ body.blog .post-content {
     overflow: hidden;
     padding-top: 81px;
     padding-bottom: 80px;
-    padding-right: 48px;
+    padding-right: 16px;
     margin-bottom: 0;
   }
   .project-content-holder.hide {
@@ -3006,7 +3007,10 @@ body.blog .post-content {
     font-size: 18px;
   }
   .scroll-col-left {
-    padding: 84px 32px 81px 0;
+    padding: 84px 16px 81px 0;
+  }
+  .scroll-col-right {
+    padding-right: 16px;
   }
   .front-image-holder {
     padding: 5vh 0;
@@ -3014,7 +3018,7 @@ body.blog .post-content {
   .project-content-holder {
     padding-top: 84px;
     padding-bottom: 81px;
-    padding-right: 24px;
+    padding-right: 8px;
   }
   .project-content-holder .project-content-wrapper {
     padding-bottom: 81px;
