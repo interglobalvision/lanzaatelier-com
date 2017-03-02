@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main id="main-content" class="main-content-padding">
+<main id="main-content">
   <section id="projects">
 
 <?php
@@ -13,7 +13,7 @@ if( have_posts() ) {
       <div class="container">
         <div class="grid-row">
 
-          <div class="grid-item item-s-12 item-l-6">
+          <div class="grid-item item-s-12 item-l-6" id="archive-project-holder">
             <ul>
 <?php
   while( have_posts() ) {

@@ -47,8 +47,14 @@ $footer-height = 81px
 
 // ARCHIVE PROJECT
 
-.archive-photos-container
-  margin-top: $margin-basic
+#archive-project-holder
+  padding-top: $header-height
+  padding-bottom: $footer-height
+  padding-right: $margin-tiny
+
+.archive-project-photos
+  height: calc('100vh - ' ($header-height + $footer-height + ($margin-basic * 2)))
+  margin-top: $header-height + $margin-basic
 
 .archive-project-title
   text-indent: -($margin-small)

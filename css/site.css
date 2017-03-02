@@ -1904,6 +1904,10 @@ body.menu-active #footer svg {
 .single-project-text p {
   max-width: 500px;
 }
+#archive-project-holder {
+  padding-top: 58px;
+  padding-bottom: 57px;
+}
 .archive-project-title {
   text-indent: -24px;
   margin-left: 24px;
@@ -2519,6 +2523,10 @@ body.blog .post-content {
   .single-project-text p {
     max-width: 550px;
   }
+  #archive-project-holder {
+    padding-top: 81px;
+    padding-bottom: 78px;
+  }
   .archive-project-title {
     text-indent: -24px;
     margin-left: 24px;
@@ -2953,13 +2961,20 @@ body.blog .post-content {
   .single-project-photos .project-content-wrapper {
     padding-bottom: 0;
   }
+  #archive-project-holder {
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 81px;
+    padding-bottom: 80px;
+    padding-right: 16px;
+    margin-bottom: 0;
+  }
   .archive-project-photos {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  }
-  .archive-photos-container {
-    margin-top: 48px;
+    height: calc(100vh -  257px);
+    margin-top: 129px;
   }
   .archive-project-title {
     text-indent: -32px;
@@ -3030,8 +3045,14 @@ body.blog .post-content {
   .project-photos-container {
     height: calc(100vh -  213px);
   }
-  .archive-photos-container {
-    margin-top: 24px;
+  #archive-project-holder {
+    padding-top: 84px;
+    padding-bottom: 81px;
+    padding-right: 8px;
+  }
+  .archive-project-photos {
+    height: calc(100vh -  213px);
+    margin-top: 108px;
   }
   .archive-project-title {
     text-indent: -16px;

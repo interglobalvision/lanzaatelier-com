@@ -300,6 +300,7 @@ Site.Project = {
       var _this = this;
 
       _this.bindTitleHover();
+      _this.perfectScrollbar();
     },
 
     bindTitleHover: function() {
@@ -310,7 +311,13 @@ Site.Project = {
         // Mouse leave
         $('.project-photos-container[data-id=' + $(this).attr('data-id') + ']').addClass('hide');
       });
-    }
+    },
+
+    perfectScrollbar: function() {
+      $('#archive-project-holder').perfectScrollbar({
+        suppressScrollX: true,
+      });
+    },
   }
 };
 
