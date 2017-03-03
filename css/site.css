@@ -2969,6 +2969,9 @@ body.blog .post-content {
     padding-right: 16px;
     margin-bottom: 0;
   }
+  #archive-project-list {
+    padding-bottom: 80px;
+  }
   .archive-project-photos {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3050,6 +3053,9 @@ body.blog .post-content {
     padding-top: 84px;
     padding-bottom: 81px;
     padding-right: 8px;
+  }
+  #archive-project-list {
+    padding-bottom: 81px;
   }
   .archive-project-photos {
     height: calc(100vh -  213px);

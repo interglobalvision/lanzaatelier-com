@@ -14,7 +14,7 @@ if( have_posts() ) {
         <div class="grid-row">
 
           <div class="grid-item item-s-12 item-l-6" id="archive-project-holder">
-            <ul>
+            <ul id="archive-project-list">
 <?php
   while( have_posts() ) {
     the_post();
