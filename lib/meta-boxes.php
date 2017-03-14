@@ -51,9 +51,9 @@ function igv_cmb_metaboxes() {
     'name'    => __( 'Creditos', 'cmb2' ),
     'id'      => $prefix . 'project_credits',
     'type'    => 'wysiwyg',
-    'options' => array( 
+    'options' => array(
       'media_buttons' => false,
-      'textarea_rows' => 3, 
+      'textarea_rows' => 3,
       'editor_class' => 'cmb2-qtranslate'
     )
   ) );
@@ -127,12 +127,14 @@ function igv_cmb_metaboxes() {
   ) );
 
   $front_meta->add_group_field( $front_group_id, array(
-    'name'        => __( 'Project' ),
-    'id'          => 'id',
-    'type'        => 'post_search_text',
-    'post_type'   => 'project',
-    'select_type' => 'radio',
-    'select_behavior' => 'replace',
+    'name'             => __( 'Project', 'cmb2' ),
+    'id'               => 'id',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => get_post_objects(array(
+      'post_type'       => 'project',
+      'posts_per_page'  => -1,
+    )),
   ) );
 
 }
