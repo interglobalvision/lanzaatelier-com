@@ -65,12 +65,12 @@ Site.ScrollMagic = {
       if (document.readyState === "complete") {
         _this.getColHeights(true);
         _this.bind();
-        _this.cols.holder.show();
+        $('#front-loading').addClass('u-hidden');
       } else {
         $(window).on('load', function() {
           _this.getColHeights(true);
           _this.bind();
-          _this.cols.holder.show();
+          $('#front-loading').addClass('u-hidden');
         });
       }
 
