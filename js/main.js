@@ -59,18 +59,18 @@ Site.ScrollMagic = {
       _this.cols.left.pos = 0;
       _this.cols.right.pos = 0;
 
-      _this.bind();
-
       _this.toggleOverflow();
 
       // Redo when finished loading to adjust with fully loaded images
       if (document.readyState === "complete") {
-        console.log("complete");
         _this.getColHeights(true);
+        _this.bind();
+        _this.cols.holder.show();
       } else {
-        document.addEventListener("DOMContentLoaded", function(event) {
-          console.log("loaded");
+        $(window).on('load', function() {
           _this.getColHeights(true);
+          _this.bind();
+          _this.cols.holder.show();
         });
       }
 
@@ -166,13 +166,11 @@ Site.ScrollMagic = {
 
   updateScroll: function(initialLoad) {
     var _this = this;
-    console.log('update');
+
     _this.checkScrollPos();
 
     if (_this.overMinWindowWidth()) {
       // is desktop
-
-      //initialLoad = false;
 
       if (initialLoad) {
         // set scroll pos at column middles
