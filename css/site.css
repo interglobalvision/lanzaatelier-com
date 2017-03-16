@@ -1353,6 +1353,18 @@ img {
   z-index: 9000;
   background-image: linear-gradient(to bottom,#fff 0,#fff 75%,rgba(255,255,255,0) 100%);
 }
+#front-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-image: url("../img/dist/loading.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+}
 .scroll-cols-holder {
   font-size: 0;
 }

@@ -59,16 +59,20 @@ Site.ScrollMagic = {
       _this.cols.left.pos = 0;
       _this.cols.right.pos = 0;
 
-      _this.bind();
-
       _this.toggleOverflow();
 
-      _this.getColHeights();
-
       // Redo when finished loading to adjust with fully loaded images
-      $(window).on('load', function() {
-        _this.getColHeights();
-      });
+      if (document.readyState === "complete") {
+        _this.getColHeights(true);
+        _this.bind();
+        $('#front-loading').addClass('u-hidden');
+      } else {
+        $(window).on('load', function() {
+          _this.getColHeights(true);
+          _this.bind();
+          $('#front-loading').addClass('u-hidden');
+        });
+      }
 
     }
   },
@@ -98,7 +102,7 @@ Site.ScrollMagic = {
     }
   },
 
-  getColHeights: function() {
+  getColHeights: function(initialLoad) {
     var _this = this;
 
     _this.setColPadding();
@@ -112,7 +116,7 @@ Site.ScrollMagic = {
       _this.cols.left.max = -(_this.cols.left.height - _this.cols.holder.height);
       _this.cols.right.max = (_this.cols.right.height - _this.cols.holder.height);
 
-      _this.updateScroll();
+      _this.updateScroll(initialLoad);
     }
   },
 
@@ -160,24 +164,40 @@ Site.ScrollMagic = {
     }
   },
 
-  updateScroll: function() {
+  updateScroll: function(initialLoad) {
     var _this = this;
 
     _this.checkScrollPos();
 
     if (_this.overMinWindowWidth()) {
+      // is desktop
 
-      requestAnimationFrame(function() {
+      if (initialLoad) {
+        // set scroll pos at column middles
+
+        _this.cols.left.pos = ($(window).height() / 2) - (_this.cols.left.innerHeight() / 2);
+        _this.cols.right.pos = (_this.cols.right.innerHeight() / 2) - ($(window).height() / 2);
 
         _this.cols.left.css('transform', 'translateY(' + _this.cols.left.pos + 'px)');
-
         _this.cols.right.css('transform', 'translateY(' + _this.cols.right.pos + 'px)');
 
-      });
+      } else {
+        //on mousewheel
+
+        requestAnimationFrame(function() {
+
+          _this.cols.left.css('transform', 'translateY(' + _this.cols.left.pos + 'px)');
+          _this.cols.right.css('transform', 'translateY(' + _this.cols.right.pos + 'px)');
+
+        });
+      }
 
     } else {
+      //is tablet or mobile
+
       _this.cols.left.css('transform', 'translateY(0)');
       _this.cols.right.css('transform', 'translateY(0)');
+
     }
   },
 
@@ -320,6 +340,5 @@ Site.Project = {
     },
   }
 };
-
 
 Site.init();
