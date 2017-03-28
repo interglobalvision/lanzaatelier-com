@@ -12,10 +12,12 @@
   ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-  <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon-16x16.png" sizes="16x16">
   <link rel="shortcut" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.ico">
-  <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon-touch.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#263aa8">
+  <meta name="theme-color" content="#ffffff">
 
   <?php if (is_singular() && pings_open(get_queried_object())) { ?>
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -34,13 +36,13 @@
       <div class="grid-row">
         <div class="grid-item item-s-12 item-m-4 item-l-6">
           <div id="mobile-header" class="site-title">
-            <a href="<?php echo home_url(); ?>" class="site-logo"><?php 
-            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo-lanza.svg'); 
+            <a href="<?php echo home_url(); ?>" class="site-logo"><?php
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/logo-lanza.svg');
           ?></a>
-            <div class="mobile-toggle mobile-only"><span class="menu-open"><?php 
-            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-menu.svg'); 
-          ?></span><span class="menu-close"><?php 
-            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-close.svg'); 
+            <div class="mobile-toggle mobile-only"><span class="menu-open"><?php
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-menu.svg');
+          ?></span><span class="menu-close"><?php
+            echo file_get_contents(get_bloginfo('stylesheet_directory') . '/img/dist/ui-close.svg');
           ?></span></div>
           </div>
         </div>
@@ -53,7 +55,7 @@
             </ul>
           </nav>
           <div class="grid-item item-s-12 item-m-3" id="lang-holder">
-<?php 
+<?php
   $en = is_404() ? site_url() : qtranxf_convertURL('', 'en', false, true);
   $es = is_404() ? site_url() : qtranxf_convertURL('', 'es', false, true);
   $lang = qtranxf_getLanguage();
@@ -63,13 +65,13 @@
             <nav id="lang-menu">
               <a href="<?php echo $en; ?>" <?php echo $lang == 'en' ? 'class="current-lang"' : ''; ?>>EN</a> / <a href="<?php echo $es; ?>" <?php echo $lang == 'es' ? 'class="current-lang"' : ''; ?>>ES</a>
             </nav>
-<?php 
+<?php
   if (!empty($email)) {
 ?>
             <div id="mobile-email" class="mobile-only">
               <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
             </div>
-<?php 
+<?php
   }
 ?>
           </div>
