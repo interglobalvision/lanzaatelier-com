@@ -21,6 +21,7 @@ return array(
         "future" => 'in %s',
         "past"   => '%s geleden',
         "s"      => 'een paar seconden',
+        "ss"      => '%d seconden',
         "m"      => 'een minuut',
         "mm"     => '%d minuten',
         "h"      => 'een uur',
@@ -40,4 +41,17 @@ return array(
         "dow" => 1, // Monday is the first day of the week.
         "doy" => 4  // The week that contains Jan 4th is the first week of the year.
     ),
+    "customFormats" => array(
+        "LTS"  => "G:i:s", // 20:30:15
+        "LT"   => "G:i", // 20:30
+        "L"    => "d/m/Y", // 04/09/1986
+        "l"    => "j/n/Y", // 4/9/1986
+        "LL"   => "jS F Y", // 4 September 1986
+        "ll"   => "j M Y", // 4 Sep 1986
+        "LLL"  => "jS F Y G:i", // 4 September 1986 20:30
+        "lll"  => "j M Y G:i", // 4 Sep 1986 20:30
+        "LLLL" => "l jS F Y G:i", // Donderdag 4 September 1986 20:30
+        "llll" => "D j M Y G:i", // Do 4 Sep 1986 20:30
+    ),
+
 );
